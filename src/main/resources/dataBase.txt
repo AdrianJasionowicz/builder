@@ -1,0 +1,135 @@
+INSERT INTO UNIT_STATS (ID, WS, BS, S, T, W, A, LD, BASIC_SAVE, WARD_SAVE, M, I) VALUES
+(1, 3, 3, 3, 3, 1, 1, 5, 6, NULL, 5, 4),   -- Clanrat
+(2, 4, 3, 3, 3, 1, 1, 6, 5, NULL, 5, 5),   -- Stormvermin
+(3, 3, 3, 4, 4, 1, 2, 6, 5, NULL, 5, 3),   -- Plague Monks
+(4, 4, 0, 5, 5, 4, 3, 6, NULL, 6, 6, 3),   -- Rat Ogre
+(5, 3, 0, 5, 5, 5, 3, 7, NULL, NULL, 8, 3),   -- Doomwheel
+(6, 4, 0, 4, 4, 1, 1, 6, NULL, NULL, 5, 2),   -- Warp-lock Jezzail
+(7, 4, 0, 5, 5, 6, 4, 6, NULL, 6, 6, 3),   -- Plague Furnace
+(8, 6, 4, 5, 5, 7, 5, 5, 6, NULL, 5, 5),    -- Vermin Lord
+(9, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 7),   -- Warlord
+(10, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 7),   -- Grey Seer
+(11, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 5),   -- Assassin
+(12, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 5),   -- Warlock Engineer
+(13, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 5),   -- Chieftain
+(14, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 5),   -- Plague Priest
+(15, 3, 0, 3, 3, 1, 1, 5, NULL, NULL, 5, 3),   -- Skavenslaves
+(16, 4, 0, 3, 3, 1, 1, 6, NULL, NULL, 5, 5),   -- Night Runners
+(17, 0, 0, 3, 3, 1, 1, 5, NULL, NULL, 5, 4),   -- Giant Rats
+(18, 0, 0, 3, 3, 1, 1, 5, NULL, NULL, 5, 4),   -- Rat Swarms
+(19, 0, 0, 4, 4, 1, 1, 6, NULL, NULL, 5, 5),   -- Gutter Runners
+(20, 0, 0, 4, 4, 3, 3, 6, NULL, NULL, 5, 4),   -- Plague Censer Bearers
+(21, 0, 0, 4, 4, 1, 1, 5, NULL, NULL, 5, 4),   -- Warlock Jezzails
+(22, 0, 0, 4, 4, 1, 1, 5, NULL, NULL, 5, 4),   -- Poisoned Wind Globadiers
+(23, 0, 0, 5, 5, 6, 6, 7, NULL, NULL, 6, 4),   -- Abomination
+(24, 0, 0, 5, 4, 4, 3, 6, NULL, NULL, 8, 4),   -- Warp Lightning Cannon
+(25, 0, 0, 5, 4, 4, 3, 6, NULL, NULL, 8, 4);   -- Plague Claw Catapult
+
+
+
+
+INSERT INTO UNIT (ID, MIN_QUANTITY, POINTS_COST_PER_UNIT, UNIT_STATS_ID, NAME, NATION, UNIT_TYPE) VALUES
+(1, 20, 4, 1, 'Clanrat', 'Skaven', 'Core'),
+(2, 10, 7, 2, 'Stormvermin', 'Skaven', 'Core'),
+(3, 10, 7, 3, 'Plague Monks', 'Skaven', 'Special'),
+(4, 1, 50, 4, 'Rat Ogre', 'Skaven', 'Special'),
+(5, 1, 150, 5, 'Doomwheel', 'Skaven', 'Rare'),
+(6, 5, 30, 6, 'Warp-lock Jezzail', 'Skaven', 'Special'),
+(7, 1, 90, 24, 'Warp Lightning Cannon', 'Skaven', 'Rare'),
+(8, 1, 100, 25, 'Plague Claw Catapult', 'Skaven', 'Rare'),
+(9, 20, 2, 15, 'Skavenslaves', 'Skaven', 'Core'),
+(10, 10, 7, 16, 'Night Runners', 'Skaven', 'Core'),
+(11, 10, 3, 17, 'Giant Rats', 'Skaven', 'Special'),
+(12, 10, 25, 18, 'Rat Swarm', 'Skaven', 'Special'),
+(13, 10, 12, 19, 'Gutter Runners', 'Skaven', 'Special'),
+(14, 1, 235, 23, 'Hell-pit Abomination', 'Skaven', 'Rare'),
+(15, 10, 16, 20, 'Plague Censer Bearers', 'Skaven', 'Special'),
+(16, 10, 20, 21, 'Warlock Jezzails', 'Skaven', 'Special'),
+(17, 10, 10, 22, 'Poisoned Wind Globadiers', 'Skaven', 'Special'),
+(18, 1, 500, 8, 'Vermin Lord', 'Skaven', 'Lords'),
+(19, 1, 90, 9, 'Warlord', 'Skaven', 'Lords'),
+(20, 1, 240, 10, 'Grey Seer', 'Skaven', 'Lords'),
+(21, 1, 120, 11, 'Assassin', 'Skaven', 'Hero'),
+(22, 1, 15, 12, 'Warlock Engineer', 'Skaven', 'Hero'),
+(23, 1, 45, 13, 'Chieftain', 'Skaven', 'Hero'),
+(24, 1, 100, 14, 'Plague Priest', 'Skaven', 'Hero');
+
+
+
+
+-- Clanrat
+INSERT INTO UPGRADE (ID, POINTS_COST, UNIT_ID, DESCRIPTION, NAME, UPGRADE_TYPE) VALUES
+(1, 8, 1, 'Champion', 'Clawleader', 'SingleBuy'),
+(2, 4, 1, 'Musician', 'Musician', 'SingleBuy'),
+(3, 8, 1, 'Standard Bearer', 'Standard Bearer', 'SingleBuy'),
+(4, 0.5, 1, 'Spears', 'Spears', 'Weapon'),
+(5, 0.5, 1, 'Shields', 'Shields', 'Weapon'),
+(6, 65, 1, 'Special Weapon Team', 'Poisoned Wind Mortar', 'Weapon Team'),
+(7, 70, 1, 'Special Weapon Team', 'Warp Fire Thrower', 'Weapon Team'),
+(8, 55, 1, 'Special Weapon Team', 'Ratling Gun', 'Weapon Team'),
+(9, 55, 1, 'Special Weapon Team', 'Doom-flayer', 'Weapon Team'),
+(10, 0, 1, 'Free hand weapons to fight', 'Hand Weapon', 'Free upgrade'),
+(11, 0, 1, 'Free Light armors grants 6+ save', 'Light Armor', 'Free upgrade'),
+(12, 0, 1, 'Flee 1" more', 'Scurry Away', 'Race special rule'),
+(13, 0, 1, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+
+-- Stormvermin
+(14, 10, 2, 'Champion', 'Champion', 'SingleBuy'),
+(15, 5, 2, 'Musician', 'Musician', 'SingleBuy'),
+(16, 10, 2, 'Standard Bearer', 'Standard Bearer', 'SingleBuy'),
+(17, 10, 2, 'Halberd', 'Halberd', 'Weapon'),
+(18, 1, 2, 'Shields', 'Shield', 'Weapon'),
+(19, 55, 2, 'Ratling Gun', 'Ratling Gun', 'Weapon Team'),
+(20, 70, 2, 'Warpfire Thrower', 'Warpfire Thrower', 'Weapon Team'),
+(21, 65, 2, 'Poisoned Wind Mortar', 'Poisoned Wind Mortar', 'Weapon Team'),
+(22, 55, 2, 'Doom-flayer', 'Doom-flayer', 'Weapon Team'),
+(23, 0, 2, 'Free hand weapons to fight', 'Hand Weapon', 'Free upgrade'),
+(24, 0, 2, 'Free Heavy armors grants 5+ save', 'Heavy Armor', 'Free upgrade'),
+(25, 0, 2, 'Flee 1" more', 'Scurry Away', 'Race special rule'),
+(26, 0, 2, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+
+-- Skavenslaves
+(27, 4, 9, 'Champion', 'Champion', 'SingleBuy'),
+(28, 2, 9, 'Musician', 'Musician', 'SingleBuy'),
+(29, 0.5, 9, 'One more rank can attack', 'Spears', 'Weapon'),
+(30, 0.5, 9, 'Slings', 'Slings', 'Weapon'),
+(31, 0.5, 9, 'Shields grants 6+ save and 6+ ward save in front', 'Shield', 'Weapon'),
+(32, 0, 9, 'Automatically passes all Panic test except of other skavenslaves', 'Expendable', 'Free upgrade'),
+(33, 0, 9, 'If unit breaks from combat all unit within d6" suffers d3 s3 dmg from each rank left', 'Cornered rats', 'Free upgrade'),
+(34, 0, 9, 'Flee 1" more', 'Scurry Away', 'Race special rule'),
+(35, 0, 9, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+
+-- Plague Priest
+(36, 0, 14, 'Grants One spell', 'Level 1 Wizard', 'Magic'),
+(37, 35, 14, 'Grants One more spell', 'Level 2 Wizard', 'Magic'),
+(38, 16, 14, 'All units around must pass Toughness test', 'Plague Censer', 'Weapon'),
+(39, 4, 14, 'Grants +2 Strength in first turn of combat', 'Flail', 'Weapon'),
+(40, 2, 14, 'Grants One more attack', 'Additional hand Weapon', 'Weapon'),
+(41, 30, 14, 'Big rat on rat', 'Great Pox Rat', 'Mount'),
+(42, 150, 14, 'Plague Furnace', 'Plague Furnace', 'RARE'),
+(43, 200, 14, 'Hand Weapon', 'Hand Weapon', 'Free'),
+(44, 0, 14, 'Frenzy grants +1 attack', 'Frenzy', 'Free'),
+(45, 0, 14, 'Flee 1" more', 'Scurry Away', 'Race special rule'),
+(46, 0, 14, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+
+
+-- Gutter Runners
+(48, 30, 13, 'Poisoned Wind Globadiers', 'Poisoned Wind Globadiers', 'SPECIAL'),
+(49, 30, 13, 'Warp-grinder', 'Warp-grinder', 'Weapon Team'),
+
+-- Plague Monks
+(50, 10, 3, 'Champion', 'Champion', 'SingleBuy'),
+(51, 5, 3, 'Musician', 'Musician', 'SingleBuy'),
+(52, 10, 3, 'Standard Bearer', 'Standard Bearer', 'SingleBuy'),
+
+-- Warlock Engineer
+(53, 0, 22, 'Grants One spell', 'Level 1 Wizard', 'Magic'),
+(54, 35, 22, 'Grants One more spell', 'Level 2 Wizard', 'Magic'),
+(55, 4, 22, 'Grants +2 Strength in first turn of combat', 'Flail', 'Weapon'),
+(56, 2, 22, 'Grants One more attack', 'Additional hand Weapon', 'Weapon'),
+(57, 10, 22, 'Add 10 points to attack', 'Warplock Pistol', 'Weapon'),
+(58, 0, 22, 'Add armor save', 'Warp Armor', 'Armor'),
+(59, 15, 22, 'Add 15 points for a shield', 'Shield', 'Armor'),
+(60, 20, 22, 'Add 20 points for a Warplock Pistol', 'Warplock Pistol', 'Weapon'),
+(61, 0, 22, 'Flee 1" more', 'Scurry Away', 'Race special rule'),
+(62, 0, 2, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule');
