@@ -16,5 +16,6 @@ public class UnitDTO {
     private String unitType;
     private String nation;
     private double pointsCostPerUnit;
+    private double minQuantity;
 
 }

@@ -118,6 +118,10 @@ public class SelectedUnitService {
     public void calculateTotalCostOfUnits() {
     List<SelectedUnit> selectedUnits = getSelectedUnits();
         for (SelectedUnit selectedUnit : selectedUnits) {
+            if (selectedUnit.getUnit() == null) {
+                System.err.println("⚠ Brak powiązanego Unit lub pointsCostPerUnit dla SelectedUnit ID = " + selectedUnit.getId());
+                continue;
+            }
             selectedUnit.setTotalCost(selectedUnit.getQuantity() * selectedUnit.getUnit().getPointsCostPerUnit());
 
             List<SelectedUpgrade> selectedUpgradeList = selectedUnit.getSelectedUpgrades();

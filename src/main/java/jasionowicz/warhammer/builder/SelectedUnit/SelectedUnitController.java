@@ -1,7 +1,6 @@
 package jasionowicz.warhammer.builder.SelectedUnit;
 
-
-import jasionowicz.warhammer.builder.Army.Army;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,8 +29,9 @@ public class SelectedUnitController {
     }
 
     @PostMapping("/increaseUnitQuantity")
-    public void increaseUnitQuantity(@RequestParam("id") Integer selectedId) {
+    public ResponseEntity<?> increaseUnitQuantity(@RequestParam("id") Integer selectedId) {
         selectedUnitService.increaseUnitQuantity(selectedId);
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/decreaseUnitQuantity")
