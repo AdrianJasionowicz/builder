@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jasionowicz.warhammer.builder.Army.Army;
+import jasionowicz.warhammer.builder.Army.ArmyDTO;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,7 +26,6 @@ public class LoginUserDTO {
     private String password;
     private String email;
     private Role role;
-    private List<Army> armies = new ArrayList<>();
 
 
 

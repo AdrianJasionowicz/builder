@@ -26,7 +26,7 @@ public class SelectedUpgradeController {
     public ResponseEntity<String> addUpgrade(@RequestParam Integer upgradeId) {
         selectedUpgradeService.addUpgrade(upgradeId);
 
-        armyService.calculateDedicatedPoints();
+      //  armyService.calculateDedicatedPoints();
         selectedUnitService.calculateTotalCostOfUnits();
 
         return ResponseEntity.ok("Upgrade added successfully");

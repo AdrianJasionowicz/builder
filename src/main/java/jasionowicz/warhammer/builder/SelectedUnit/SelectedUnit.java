@@ -32,7 +32,7 @@ public class SelectedUnit {
     @OneToOne
     @JoinColumn(name = "selectedStats_id")
     private SelectedStats selectedStats;
-    @OneToMany(mappedBy = "selectedUnit", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "selectedUnit", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<SelectedUpgrade> selectedUpgrades = new ArrayList<>();
     @ManyToOne
@@ -41,13 +41,13 @@ public class SelectedUnit {
     private double totalCost;
 
 
-//        public String getUnitType() {
-//        if (unit == null) {
-//            throw new IllegalStateException("Unit is not initialized");
-//        }
-//        return unit.getUnitType();
-//    }
-//
+        public String getUnitType() {
+        if (unit == null) {
+            throw new IllegalStateException("Unit is not initialized");
+        }
+        return unit.getUnitType();
+    }
+
     public SelectedUnit(Unit unit) {
         this.unit = unit;
         this.quantity = unit.getMinQuantity();

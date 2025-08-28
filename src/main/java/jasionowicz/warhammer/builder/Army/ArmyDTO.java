@@ -1,24 +1,24 @@
 package jasionowicz.warhammer.builder.Army;
 
-import jakarta.persistence.*;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jasionowicz.warhammer.builder.LoginUser.LoginUser;
+import jasionowicz.warhammer.builder.LoginUser.LoginUserDTO;
 import jasionowicz.warhammer.builder.SelectedUnit.SelectedUnit;
+import jasionowicz.warhammer.builder.SelectedUnit.SelectedUnitDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-@AllArgsConstructor
-@NoArgsConstructor
 @Setter
 @Getter
-@Entity
-public class Army {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@AllArgsConstructor
+@NoArgsConstructor
+public class ArmyDTO {
     private long id;
     private String factionName;
     private String name;
@@ -38,8 +38,6 @@ public class Army {
     private Double rarePointsUsed;
     private Double pointsUsed;
 
-    @ManyToOne
-    private LoginUser owner;
-    @OneToMany(mappedBy = "army", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<SelectedUnit> selectedUnitsList = new ArrayList<>();
+    private LoginUserDTO owner;
+    private List<SelectedUnitDTO> selectedUnitsList = new ArrayList<>();
 }

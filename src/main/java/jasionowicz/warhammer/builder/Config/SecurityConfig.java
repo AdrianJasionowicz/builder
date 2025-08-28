@@ -42,7 +42,7 @@ private JwtFilter jwtFilter;
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login","/login/**", "/register","/register/**","/actuator/swagger-ui","/actuator/swagger-ui/**","/h2-console/**", "/h2-console/" ).permitAll()
+                        .requestMatchers("/login","/login/**", "/register","/register/**","/actuator/swagger-ui","/actuator/swagger-ui/**","/h2-console/**", "/h2-console/","/setPointsRestriction","/setPointsRestriction/**","/usedPoints","/usedPoints/**" ).permitAll()
                         .anyRequest().authenticated()
                 )
                 .authenticationProvider(authenticationProvider())
