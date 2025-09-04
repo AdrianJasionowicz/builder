@@ -1,0 +1,33 @@
+.btn-increase {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.btn-decrease {
+  background-color: #f59e0b;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  margin-right: 4px;
+  cursor: pointer;
+}
+
+.btn-remove {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.btn-disabled {
+  background-color: #d1d5db;
+  color: #6b7280;
+  border: none;
+  padding: 4px 8px;
+  cursor: not-allowed;
+}
