@@ -1,5 +1,7 @@
 package jasionowicz.warhammer.builder.Unit;
 
+import jasionowicz.warhammer.builder.Army.Army;
+import jasionowicz.warhammer.builder.Army.ArmyRepository;
 import jasionowicz.warhammer.builder.Mapper.UnitMapper;
 import jasionowicz.warhammer.builder.SelectedUnit.SelectedUnit;
 import jasionowicz.warhammer.builder.SelectedUnit.SelectedUnitService;
@@ -14,17 +16,24 @@ public class UnitService {
    private final UnitRepository unitRepository;
    private final UnitMapper unitMapper;
    private final SelectedUnitService selectedUnitService;
+    private final ArmyRepository armyRepository;
 
-    public UnitService(UnitRepository unitRepository, UnitMapper unitMapper, SelectedUnitService selectedUnitService) {
+    public UnitService(UnitRepository unitRepository, UnitMapper unitMapper, SelectedUnitService selectedUnitService, ArmyRepository armyRepository) {
         this.unitRepository = unitRepository;
         this.unitMapper = unitMapper;
         this.selectedUnitService = selectedUnitService;
+        this.armyRepository = armyRepository;
     }
 
 
 
-    public List<UnitDTO> getAllUnitsByNation(String nation) {
+    public List<UnitDTO> getAllUnitsByNation(Long armyId) {
+
+        String nation;
+        Army army = armyRepository.getReferenceById(armyId);
+        nation = army.getFactionName();
         List<Unit> unitListByNation = unitRepository.getAllByNation(nation);
+
         return unitListByNation.stream()
                 .map(unitMapper::unitToUnitDTO)
                 .toList();
@@ -34,14 +43,6 @@ public class UnitService {
         unitRepository.deleteById(id);
     }
 
-    public List<UnitDTO> getAllUnits() {
-
-        List<Unit> units = unitRepository.findAll();
-        return units
-                .stream()
-                .map(unitMapper::unitToUnitDTO)
-                .toList();
-    }
 
     public void getUnitByIdAndSendItToSelectedUnit(Integer unitId) {
        Unit unit = unitRepository.getReferenceById(unitId);

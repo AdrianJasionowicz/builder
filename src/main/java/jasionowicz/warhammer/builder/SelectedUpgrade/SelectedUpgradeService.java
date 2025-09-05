@@ -165,6 +165,7 @@ public class SelectedUpgradeService {
                 throw new WeaponTeamException("Unit can take only one Weapon team");
             }
         }
+        Long id = selectedUpgrade.getSelectedUnit().getArmy().getId();
 
         if (selectedUnit.getUnit().getUnitType().equals("Lords")) {
             checkLordsUpgrades(unitId);

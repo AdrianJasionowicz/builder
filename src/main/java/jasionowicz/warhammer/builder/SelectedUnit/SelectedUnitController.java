@@ -1,11 +1,8 @@
 package jasionowicz.warhammer.builder.SelectedUnit;
 
-
-import jasionowicz.warhammer.builder.Army.Army;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,25 +14,14 @@ public class SelectedUnitController {
         this.selectedUnitService = selectedUnitService;
     }
 
-
-    @GetMapping("/getSelectedUnits")
-    public List<SelectedUnitDTO> getSelectedUnits() {
-        return selectedUnitService.convertListToDTO();
-
-    }
-
-    @PostMapping("/removeUnit")
-    public void removeUnit(@RequestParam("id") Integer selectedId) {
-        selectedUnitService.removeUnitById(selectedId);
-    }
-
     @PostMapping("/increaseUnitQuantity")
-    public void increaseUnitQuantity(@RequestParam("id") Integer selectedId) {
-        selectedUnitService.increaseUnitQuantity(selectedId);
+    public ResponseEntity<?> increaseUnitQuantity(@RequestParam("id") Integer selectedId,Authentication authentication) {
+        selectedUnitService.increaseUnitQuantity(selectedId,authentication);
+        return ResponseEntity.ok().build();
     }
 
     @PostMapping("/decreaseUnitQuantity")
-    public void decreaseUnitQuantity(@RequestParam("id") Integer selectedId) {
-        selectedUnitService.decreaseUnitQuantity(selectedId);
+    public void decreaseUnitQuantity(@RequestParam("id") Integer selectedId,Authentication authentication) {
+        selectedUnitService.decreaseUnitQuantity(selectedId,authentication);
     }
 }

@@ -1,9 +1,7 @@
 package jasionowicz.warhammer.builder.SelectedStats;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jasionowicz.warhammer.builder.SelectedUnit.SelectedUnit;
 import jasionowicz.warhammer.builder.UnitStats.UnitStats;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,6 +30,9 @@ public class SelectedStats {
     private Integer ld;
     private Integer basicSave;
     private Integer wardSave;
+
+    @OneToOne(mappedBy = "selectedStats")
+    private SelectedUnit selectedUnit;
 
     public SelectedStats(UnitStats unitStats) {
         this.m = unitStats.getM();

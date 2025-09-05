@@ -24,9 +24,9 @@ public class UnitController {
         this.selectedUnitService = selectedUnitService;
     }
 
-    @GetMapping("/getAllUnits")
-    public ResponseEntity<List<UnitDTO>> getAllUnits(@RequestParam String nation) {
-        List<UnitDTO> units = unitService.getAllUnitsByNation(nation);
+    @GetMapping("/getAllUnits/{armyId}")
+    public ResponseEntity<List<UnitDTO>> getAllUnits(@PathVariable Long armyId) {
+        List<UnitDTO> units = unitService.getAllUnitsByNation(armyId);
         return units.isEmpty()
                 ? ResponseEntity.noContent().build()
                 : ResponseEntity.ok(units);
@@ -39,14 +39,7 @@ public class UnitController {
         unitService.deleteById(id);
     }
 
-    @GetMapping("/getAvailableUnits")
- //   @PreAuthorize("isAuthenticated()")
-    public ResponseEntity<List<UnitDTO>> getAvailableUnits(Authentication authentication) {
-        List<UnitDTO> unitDTOList = unitService.getAllUnits();
-        return unitDTOList.isEmpty()
-                ? new ResponseEntity<>(HttpStatus.NOT_FOUND)
-                : new ResponseEntity<>(unitDTOList, HttpStatus.OK);
-    }
+
 
 
         @PostMapping("/addUnit")
