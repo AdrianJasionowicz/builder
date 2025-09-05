@@ -29,10 +29,10 @@ public class SelectedUnit {
     private double quantity;
     @ManyToOne
     private Unit unit;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "selectedStats_id")
     private SelectedStats selectedStats;
-    @OneToMany(mappedBy = "selectedUnit", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "selectedUnit", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<SelectedUpgrade> selectedUpgrades = new ArrayList<>();
     @ManyToOne
@@ -41,21 +41,27 @@ public class SelectedUnit {
     private double totalCost;
 
 
-//        public String getUnitType() {
-//        if (unit == null) {
-//            throw new IllegalStateException("Unit is not initialized");
-//        }
-//        return unit.getUnitType();
-//    }
-//
-    public SelectedUnit(Unit unit) {
-        this.unit = unit;
-        this.quantity = unit.getMinQuantity();
-        this.selectedStats = new SelectedStats(unit.getUnitStats());
-        this.selectedUpgrades = unit.getUpgradesList().stream()
-                .map(upgrade -> new SelectedUpgrade(upgrade, this))
-                .collect(Collectors.toList());
+        public String getUnitType() {
+        if (unit == null) {
+            throw new IllegalStateException("Unit is not initialized");
+        }
+        return unit.getUnitType();
     }
 
+public SelectedUnit(Unit unit) {
+    this.unit = unit;
+    this.quantity = unit.getMinQuantity();
+
+    this.selectedStats = new SelectedStats(unit.getUnitStats());
+    this.selectedStats.setSelectedUnit(this);
+
+    this.selectedUpgrades = unit.getUpgradesList().stream()
+            .map(upgrade -> {
+                SelectedUpgrade su = new SelectedUpgrade(upgrade, this);
+                su.setSelectedUnit(this);
+                return su;
+            })
+            .collect(Collectors.toList());
+}
 
 }

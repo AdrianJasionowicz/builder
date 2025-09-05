@@ -16,5 +16,5 @@ public class UpgradeDTO {
     private double pointsCost;
     private String description;
     private String upgradeType;
-
+    private Upgrade upgrade;
 }

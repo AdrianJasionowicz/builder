@@ -26,8 +26,7 @@ public class SelectedUpgradeController {
     public ResponseEntity<String> addUpgrade(@RequestParam Integer upgradeId) {
         selectedUpgradeService.addUpgrade(upgradeId);
 
-        armyService.calculateDedicatedPoints();
-        selectedUnitService.calculateTotalCostOfUnits();
+      //  armyService.calculateDedicatedPoints();
 
         return ResponseEntity.ok("Upgrade added successfully");
     }
@@ -35,16 +34,15 @@ public class SelectedUpgradeController {
 
     @PostMapping("/removeSelectedUpgrade")
     public ResponseEntity<String> removeSelectedUpgrade(int upgradeId) {
-        selectedUnitService.calculateTotalCostOfUnits();
 
         selectedUpgradeService.removeSelectedUpgrade(upgradeId);
         return ResponseEntity.ok().body("Error while deleting selectedUpgrade");
     }
-
-    @GetMapping("/units/{id}/upgrades")
-    public ResponseEntity<List<SelectedUpgradeDTO>> getSelectedUpgrades(@PathVariable Integer id) {
-        List<SelectedUpgradeDTO> selectedUpgradeDTO = selectedUpgradeService.getSelectedUpgradesBySelectedUnitId(id);
-
-        return ResponseEntity.ok().body(selectedUpgradeDTO);
-    }
+//
+//    @GetMapping("/units/{id}/upgrades")
+//    public ResponseEntity<List<SelectedUpgradeDTO>> getSelectedUpgrades(@PathVariable Integer id) {
+//        List<SelectedUpgradeDTO> selectedUpgradeDTO = selectedUpgradeService.getSelectedUpgradesBySelectedUnitId(id);
+//
+//        return ResponseEntity.ok().body(selectedUpgradeDTO);
+//    }
 }
