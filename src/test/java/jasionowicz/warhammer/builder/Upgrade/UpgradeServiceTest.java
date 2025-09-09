@@ -25,35 +25,7 @@ class UpgradeServiceTest {
     UpgradeService upgradeService;
 
 
-        @Test
-        void addUpgrade() {
-            UpgradeDTO upgradeDTO = new UpgradeDTO();
-            upgradeDTO.setId(1);
-            upgradeDTO.setDescription("description");
 
-            Upgrade mapped = new Upgrade();
-            mapped.setId(999);
-            mapped.setDescription("description");
-
-            when(upgradeMapper.dtoToUpgrade(upgradeDTO)).thenReturn(mapped);
-
-            upgradeService.addUpgrade(upgradeDTO);
-
-            ArgumentCaptor<Upgrade> captor = ArgumentCaptor.forClass(Upgrade.class);
-            verify(upgradeRepository).save(captor.capture());
-            Upgrade saved = captor.getValue();
-
-            assertEquals("description", saved.getDescription());
-            assertEquals(999, saved.getId());
-        }
-
-    @Test
-    void deleteUpgradeById() {
-        Upgrade upgrade = new Upgrade();
-        upgrade.setId(999);
-        upgradeService.deleteUpgradeById(999);
-        verify(upgradeRepository).deleteById(999);
-    }
 
     @Test
     void updateUpgrade_mapsDtoAndSavesMergedEntity() {

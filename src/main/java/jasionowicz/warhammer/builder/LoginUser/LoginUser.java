@@ -28,7 +28,7 @@ public class LoginUser implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
     private boolean isEnabled = true;
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
     private List<Army> armies = new ArrayList<>();
 
     @Override

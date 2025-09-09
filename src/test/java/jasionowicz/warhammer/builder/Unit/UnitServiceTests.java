@@ -42,30 +42,4 @@ public class UnitServiceTests {
 
 
 
-    @Test
-    void getUnitByIdAndSendItToSelectedUnit_savesSelectedUnitBuiltFromFetchedUnit() {
-            int unitId = 1000;
-            UnitStats stats = new UnitStats();
-            stats.setA(1);
-            stats.setLd(1);
-            stats.setM(1);
-            stats.setBs(1);
-
-            Unit unit = new Unit();
-            unit.setId(unitId);
-            unit.setUnitStats(stats);
-
-            when(unitRepository.getReferenceById(unitId)).thenReturn(unit);
-
-            ArgumentCaptor<SelectedUnit> captor = ArgumentCaptor.forClass(SelectedUnit.class);
-
-            unitService.getUnitByIdAndSendItToSelectedUnit(unitId);
-
-            verify(unitRepository).getReferenceById(unitId);
-            verify(selectedUnitService).saveSelectedUnit(captor.capture());
-
-            SelectedUnit saved = captor.getValue();
-            assertNotNull(saved, "SelectedUnit przekazany do zapisu nie powinien być nullem");
-            assertSame(unit, saved.getUnit(), "SelectedUnit powinien zawierać dokładnie ten sam Unit");
-        }
     }

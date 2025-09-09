@@ -13,15 +13,6 @@ public class UpgradeService {
         this.upgradeMapper = upgradeMapper;
     }
 
-    public void addUpgrade(UpgradeDTO upgradeDTO) {
-        Upgrade upgrade = upgradeMapper.dtoToUpgrade(upgradeDTO);
-        upgradeRepository.save(upgrade);
-    }
-
-    public void deleteUpgradeById(Integer id) {
-        upgradeRepository.deleteById(id);
-    }
-
     public void updateUpgrade(Integer id, UpgradeDTO upgradeDTO) {
         Upgrade existing = upgradeRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Upgrade not found"));

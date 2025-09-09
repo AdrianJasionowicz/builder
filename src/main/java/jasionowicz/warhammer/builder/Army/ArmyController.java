@@ -13,7 +13,7 @@ import java.util.Map;
 @RestController
 public class ArmyController {
 
-    private ArmyService armyService;
+    private final ArmyService armyService;
 
     public ArmyController(ArmyService armyService) {
         this.armyService = armyService;
@@ -60,15 +60,6 @@ public class ArmyController {
         }
     }
 
-    @GetMapping("/template/{id}")
-    public ResponseEntity<ArmyDTO> getTemplate(@PathVariable Long id, Authentication authentication) {
-        try {
-            ArmyDTO template = armyService.loadTemplate(id, authentication);
-            return ResponseEntity.ok(template);
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body(null);
-        }
-    }
 
     @GetMapping("/army/{armyId}/units")
     public ResponseEntity<List<SelectedUnitDTO>> getUnits(@PathVariable Long armyId, Authentication authentication) {

@@ -11,12 +11,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class LoginUserService implements UserDetailsService {
-    private final PasswordEncoder passwordEncoder;
-    private LoginUserRepository loginUserRepository;
+    private final LoginUserRepository loginUserRepository;
 
-    public LoginUserService(LoginUserRepository loginUserRepository, PasswordEncoder passwordEncoder) {
+    public LoginUserService(LoginUserRepository loginUserRepository) {
         this.loginUserRepository = loginUserRepository;
-        this.passwordEncoder = passwordEncoder;
     }
 
 
@@ -27,38 +25,9 @@ public class LoginUserService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
     }
 
-    public void setUserEmail(String email, String password, Authentication authentication) {
-        String username = authentication.getName();
-        LoginUser loginUser = loginUserRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found with username: " + username));
-        String encodedPassword = passwordEncoder.encode(password);
-        if (encodedPassword.equals(loginUser.getPassword())) {
-            loginUser.setEmail(email);
-        } else {
-            throw new RuntimeException("Wrong password");
-        }
-    }
 
 
-    public void setUserPassword(String password, String newPassword, Authentication authentication) {
-        String username = authentication.getName();
-        LoginUser loginUser = loginUserRepository.findByUsername(username).orElse(null);
-        String encodedPassword = passwordEncoder.encode(password);
-        if (encodedPassword.equals(loginUser.getPassword())) {
-            loginUser.setPassword(newPassword);
-        } else {
-            throw new RuntimeException("Wrong password");
-        }
-    }
 
 
-    public LoginUserPreview getUserInfo(Authentication authentication) {
-        String username = authentication.getName();
-        LoginUser loginUser = loginUserRepository.findByUsername(username).orElse(null);
-        LoginUserPreview loginUserPreview = new LoginUserPreview();
-        loginUserPreview.setId(loginUser.getId());
-        loginUserPreview.setUsername(loginUser.getUsername());
-        loginUserPreview.setEmail(loginUser.getEmail());
-        return loginUserPreview;
-    }
 
 }

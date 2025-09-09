@@ -23,13 +23,13 @@ public class Army {
     private String factionName;
     private String name;
     private String description;
-    private Double pointsLimit;
 
     private Double lordPointsLimit;
     private Double heroPointsLimit;
     private Double corePointsLimit;
     private Double specialPointsLimit;
     private Double rarePointsLimit;
+    private Double pointsLimit;
 
     private Double lordPointsUsed;
     private Double heroPointsUsed;
@@ -40,6 +40,6 @@ public class Army {
 
     @ManyToOne
     private LoginUser owner;
-    @OneToMany(mappedBy = "army", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "army", cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
     private List<SelectedUnit> selectedUnitsList = new ArrayList<>();
 }

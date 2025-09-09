@@ -1,6 +1,7 @@
 package jasionowicz.warhammer.builder.SelectedUpgrade;
 
 import jakarta.annotation.PostConstruct;
+import jasionowicz.warhammer.builder.Exceptions.MagicItemsException;
 import jasionowicz.warhammer.builder.Exceptions.StandardBannerCannotTakeMagicWeapons;
 import jasionowicz.warhammer.builder.Exceptions.UpgradeAlreadySelectedException;
 import jasionowicz.warhammer.builder.Exceptions.WeaponTeamException;
@@ -9,6 +10,7 @@ import jasionowicz.warhammer.builder.SelectedUnit.SelectedUnitDTO;
 import jasionowicz.warhammer.builder.SelectedUnit.SelectedUnitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,8 +19,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class SelectedUpgradeService {
-    private SelectedUpgradeRepository selectedUpgradeRepository;
-    private SelectedUnitRepository selectedUnitRepository;
+    private final SelectedUpgradeRepository selectedUpgradeRepository;
+    private final SelectedUnitRepository selectedUnitRepository;
 
     public SelectedUpgradeService(SelectedUpgradeRepository selectedUpgradeRepository, SelectedUnitRepository selectedUnitRepository) {
         this.selectedUpgradeRepository = selectedUpgradeRepository;
@@ -32,14 +34,31 @@ public class SelectedUpgradeService {
 
 
 
-    public boolean checkChieftainBattleStandard(Integer selectedId) {
-        List<SelectedUpgrade> checkUpgrades = selectedUpgradeRepository.findAllBySelectedUnitId(selectedId);
-        for (SelectedUpgrade checkUpgrade : checkUpgrades) {
-            if (checkUpgrade.isSelected() && "Battle Standard".equals(checkUpgrade.getUpgrade().getUpgradeType())) {
-                return true;
-            }
+    public boolean checkChieftainBattleStandard(Integer selectedId,Integer upgradeId ) {
+        List<SelectedUpgrade> upgrades = selectedUpgradeRepository.findAllBySelectedUnitId(selectedId);
+        SelectedUpgrade chosenUpgrade = selectedUpgradeRepository.findById(upgradeId).orElse(null);
+
+        if (chosenUpgrade == null) return false;
+
+        boolean hasBattleStandard = upgrades.stream()
+                .anyMatch(u -> u.isSelected() && "Battle Standard".equalsIgnoreCase(u.getUpgrade().getName()));
+
+        boolean hasMagicBanner = upgrades.stream()
+                .anyMatch(u -> u.isSelected() && "Magic Banner".equalsIgnoreCase(u.getUpgrade().getUpgradeType()));
+
+        if (!hasBattleStandard && chosenUpgrade.getUpgrade().getUpgradeType().equalsIgnoreCase("Magic Banner")) {
+            return true;
         }
-        return false;
+        if (chosenUpgrade.getUpgrade().getUpgradeType().equalsIgnoreCase("Weapon")) {
+            return false;
+        }
+        if (!hasBattleStandard) {
+            return false;
+        }
+        if (!hasMagicBanner) {
+            return false;
+        }
+        return true;
     }
 
     public ResponseEntity<String> checkHeroUpgrades(Integer selectedId) {
@@ -60,39 +79,24 @@ public class SelectedUpgradeService {
         List<SelectedUpgrade> selectedUpgrades = selectedUpgradeRepository.findAllBySelectedUnitId(selectedId);
         for (SelectedUpgrade selectedUpgrade : selectedUpgrades) {
             if (selectedUpgrade.getUpgrade().getUpgradeType().equals("Weapon Team") && selectedUpgrade.isSelected()) {
-
                 return true;
-
             }
-
-
-
         }
         return false;
     }
 
-    public ResponseEntity<String> checkLordsUpgrades(Integer selectedId) {
-        Optional<SelectedUnit> optionalSelectedUnit = selectedUnitRepository.findById(selectedId);
-        if (optionalSelectedUnit.isPresent()) {
-            SelectedUnit selectedUnit = optionalSelectedUnit.get();
-            String isSelectedUnitALord = selectedUnit.getUnit().getUnitType();
-
-            if (isSelectedUnitALord.equals("Lords")) {
-                List<SelectedUpgrade> upgradeList = selectedUpgradeRepository.findAllBySelectedUnitId(selectedId);
-                double upgradeLimit = 0;
-                for (SelectedUpgrade upgrade : upgradeList) {
-                    if (upgrade.isSelected() && "Magic weapon".equals(upgrade.getUpgrade().getUpgradeType())) {
-                        upgradeLimit += upgrade.getUpgrade().getPointsCost();
-                    }
-                }
-                if (upgradeLimit > 100) {
-                    return ResponseEntity.badRequest().body("Upgrade limit exceeded");
-                }
-                return ResponseEntity.ok("Done");
-            }
+    public Boolean checkLordsUpgrades(Integer selectedId) {
+        List<SelectedUpgrade> selectedUpgrades = selectedUpgradeRepository.findAllBySelectedUnitId(selectedId);
+        double upgradeLimit = 0;
+        for (SelectedUpgrade selectedUpgrade : selectedUpgrades) {
+               if (selectedUpgrade.isSelected() && selectedUpgrade.getUpgrade().getUpgradeType().equalsIgnoreCase("Magic Weapon") || selectedUpgrade.getUpgrade().getUpgradeType().equalsIgnoreCase("The Scavenge-Pile")) {
+                  upgradeLimit += selectedUpgrade.getUpgrade().getPointsCost();
+               }
         }
-
-        return ResponseEntity.ok().body("Done");
+        if ( upgradeLimit >= 100) {
+            return false;
+        }
+        return true;
     }
 
     public ResponseEntity<String> checkAmmountOfSBattleStandardsInArmy() {
@@ -120,21 +124,25 @@ public class SelectedUpgradeService {
         }
     }
 
-    public void addFreeUpgradesAndSpecialRaceUpgrades(int unitId) {
-        List<SelectedUpgrade> selectedUpgradeList = selectedUpgradeRepository.findAllBySelectedUnitId(unitId);
+    public SelectedUnit addFreeUpgradesAndSpecialRaceUpgrades(SelectedUnit selectedUnit) {
+        List<SelectedUpgrade> selectedUpgradeList = selectedUnit.getSelectedUpgrades();
         if (!selectedUpgradeList.isEmpty()) {
             for (SelectedUpgrade selectedUpgrade : selectedUpgradeList) {
-                if (selectedUpgrade.getUpgrade().getUpgradeType().equals("Free upgrade")) {
+                if (selectedUpgrade.getUpgrade().getUpgradeType().equalsIgnoreCase("Free upgrade")) {
                     selectedUpgrade.setSelected(true);
-                    selectedUpgradeRepository.save(selectedUpgrade);
 
                 }
-                if (selectedUpgrade.getUpgrade().getUpgradeType().equals("Race special rule")) {
+                if (selectedUpgrade.getUpgrade().getUpgradeType().equalsIgnoreCase("Free")) {
                     selectedUpgrade.setSelected(true);
-                    selectedUpgradeRepository.save(selectedUpgrade);
+
+
+                }
+                if (selectedUpgrade.getUpgrade().getUpgradeType().equalsIgnoreCase("Race special rule")) {
+                    selectedUpgrade.setSelected(true);
                 }
             }
         }
+        return selectedUnit;
     }
 
     public void removeSelectedUpgrade(int upgradeId) {
@@ -165,12 +173,23 @@ public class SelectedUpgradeService {
                 throw new WeaponTeamException("Unit can take only one Weapon team");
             }
         }
-        Long id = selectedUpgrade.getSelectedUnit().getArmy().getId();
 
         if (selectedUnit.getUnit().getUnitType().equals("Lords")) {
-            checkLordsUpgrades(unitId);
-        } else if (selectedUnit.getUnit().getUnitType().equals("Hero")) {
-            if (checkChieftainBattleStandard(unitId)) {
+           boolean areUpgradesLessThan100Point = checkLordsUpgrades(unitId);
+           if (!areUpgradesLessThan100Point) {
+               selectedUpgrade.setSelected(false);
+               throw new MagicItemsException("Unit can take only one Weapon team");
+           }
+        }
+        if (selectedUnit.getUnit().getUnitType().equals("Hero")) {
+            boolean areUpgradesLessThan50Point = checkLordsUpgrades(unitId);
+            if (!areUpgradesLessThan50Point) {
+                selectedUpgrade.setSelected(false);
+                throw new MagicItemsException("Unit can take only one Weapon team");
+            }
+        }
+        if (selectedUnit.getUnit().getUnitType().equals("Hero")) {
+            if (checkChieftainBattleStandard(unitId,upgradeId)) {
                 throw new StandardBannerCannotTakeMagicWeapons("Hero with Standard banner cannot take Magic items");
             }
             checkHeroUpgrades(unitId);
@@ -188,7 +207,7 @@ public class SelectedUpgradeService {
 
     private void updateSelectedUpgradeQuantity(SelectedUpgrade selectedUpgrade, SelectedUnit selectedUnit) {
         String upgradeType = selectedUpgrade.getUpgrade().getUpgradeType();
-        if (upgradeType.equals("Weapon Team") || upgradeType.equals("SingleBuy")) {
+        if (upgradeType.equals("Weapon Team") || upgradeType.equals("SingleBuy") || upgradeType.equals("Champion")) {
             selectedUpgrade.setQuantity(1);
         } else {
             SelectedUnit selectedUnitForQuantity = selectedUnitRepository.findById(selectedUnit.getId()).orElseThrow();

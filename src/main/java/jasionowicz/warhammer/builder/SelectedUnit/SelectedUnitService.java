@@ -31,7 +31,7 @@ public class SelectedUnitService {
     private final SelectedUnitMapper selectedUnitMapper;
     private final LoginUserRepository loginUserRepository;
     private final ArmyRepository armyRepository;
-    private SelectedUpgradeService selectdUpgradeService;
+    private final SelectedUpgradeService selectdUpgradeService;
 
     public SelectedUnitService(SelectedStatsRepository selectedStatsRepository, SelectedUpgradeRepository selectedUpgradeRepository, SelectedUnitMapper selectedUnitMapper, UnitRepository unitRepository, SelectedUnitRepository selectedUnitRepository, SelectedUpgradeService selectedUpgradeService, SelectedUpgradeService selectdUpgradeService, LoginUserRepository loginUserRepository, ArmyRepository armyRepository) {
         this.selectedStatsRepository = selectedStatsRepository;
@@ -94,24 +94,6 @@ public class SelectedUnitService {
         return ResponseEntity.badRequest().body("You have no permission to decrease quantity");
     }
 
-    public void saveSelectedUnit(SelectedUnit selectedUnit) {
-
-        if (selectedUnit.getSelectedStats() != null) {
-            selectedStatsRepository.save(selectedUnit.getSelectedStats());
-        }
-        selectedUnitRepository.save(selectedUnit);
-
-        List<SelectedUpgrade> selectedUpgradeList = selectedUnit.getSelectedUpgrades().stream()
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList());
-
-        if (!selectedUpgradeList.isEmpty()) {
-            selectedUpgradeService.addFreeUpgradesAndSpecialRaceUpgrades(selectedUnit.getId());
-            selectedUpgradeRepository.saveAll(selectedUpgradeList);
-        }
-    }
-
-
     public void calculateTotalCostOfUnits(Long armyId) {
         Army army = armyRepository.findById(armyId).orElseThrow(() -> new RuntimeException("Army not found " + armyId));
 
@@ -136,13 +118,6 @@ public class SelectedUnitService {
 
 
     }
-
-
-
-    public Object getUnitsGroupedByType(Long armyId) {
-        return null;
-    }
-
 
 }
 

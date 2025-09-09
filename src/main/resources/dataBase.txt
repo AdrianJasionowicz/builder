@@ -1,29 +1,46 @@
 INSERT INTO UNIT_STATS (ID, WS, BS, S, T, W, A, LD, BASIC_SAVE, WARD_SAVE, M, I) VALUES
-(1, 3, 3, 3, 3, 1, 1, 5, 6, NULL, 5, 4),   -- Clanrat
-(2, 4, 3, 3, 3, 1, 1, 6, 5, NULL, 5, 5),   -- Stormvermin
-(3, 3, 3, 4, 4, 1, 2, 6, 5, NULL, 5, 3),   -- Plague Monks
-(4, 4, 0, 5, 5, 4, 3, 6, NULL, 6, 6, 3),   -- Rat Ogre
-(5, 3, 0, 5, 5, 5, 3, 7, NULL, NULL, 8, 3),   -- Doomwheel
-(6, 4, 0, 4, 4, 1, 1, 6, NULL, NULL, 5, 2),   -- Warp-lock Jezzail
-(7, 4, 0, 5, 5, 6, 4, 6, NULL, 6, 6, 3),   -- Plague Furnace
-(8, 6, 4, 5, 5, 7, 5, 5, 6, NULL, 5, 5),    -- Vermin Lord
-(9, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 7),   -- Warlord
-(10, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 7),   -- Grey Seer
-(11, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 5),   -- Assassin
-(12, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 5),   -- Warlock Engineer
-(13, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 5),   -- Chieftain
-(14, 4, 4, 4, 4, 3, 3, 7, NULL, NULL, 5, 5),   -- Plague Priest
-(15, 3, 0, 3, 3, 1, 1, 5, NULL, NULL, 5, 3),   -- Skavenslaves
-(16, 4, 0, 3, 3, 1, 1, 6, NULL, NULL, 5, 5),   -- Night Runners
-(17, 0, 0, 3, 3, 1, 1, 5, NULL, NULL, 5, 4),   -- Giant Rats
-(18, 0, 0, 3, 3, 1, 1, 5, NULL, NULL, 5, 4),   -- Rat Swarms
-(19, 0, 0, 4, 4, 1, 1, 6, NULL, NULL, 5, 5),   -- Gutter Runners
-(20, 0, 0, 4, 4, 3, 3, 6, NULL, NULL, 5, 4),   -- Plague Censer Bearers
-(21, 0, 0, 4, 4, 1, 1, 5, NULL, NULL, 5, 4),   -- Warlock Jezzails
-(22, 0, 0, 4, 4, 1, 1, 5, NULL, NULL, 5, 4),   -- Poisoned Wind Globadiers
-(23, 0, 0, 5, 5, 6, 6, 7, NULL, NULL, 6, 4),   -- Abomination
-(24, 0, 0, 5, 4, 4, 3, 6, NULL, NULL, 8, 4),   -- Warp Lightning Cannon
-(25, 0, 0, 5, 4, 4, 3, 6, NULL, NULL, 8, 4);   -- Plague Claw Catapult
+(1, 3, 3, 3, 3, 1, 1, 5, 0, 0, 5, 4),   -- Clanrat Z
+(2, 4, 3, 3, 3, 1, 1, 6, 0, 0, 5, 5),   -- Stormvermin Z
+(3, 3, 3, 3, 4, 1, 1, 5, 0, 0, 5, 3),   -- Plague Monks
+(4, 4, 0, 5, 5, 4, 3, 6, 0, 6, 6, 3),   -- Rat Ogre
+(5, 0, 0, 6, 6, 5, 0, 0, 4, 0, 0, 0),   -- Doomwheel
+(8, 6, 4, 5, 5, 7, 5, 5, 0, 0, 5, 5),    -- Vermin Lord
+(9, 4, 4, 4, 4, 3, 3, 7, 0, 0, 5, 7),   -- Warlord
+(10, 4, 4, 4, 4, 3, 3, 7, 0, 0, 5, 7),   -- Grey Seer
+(11, 4, 4, 4, 4, 3, 3, 7, 0, 0, 5, 5),   -- Assassin
+(12, 4, 4, 4, 4, 3, 3, 7, 0, 0, 5, 5),   -- Warlock Engineer
+(13, 4, 4, 4, 4, 3, 3, 7, 0, 0, 5, 5),   -- Chieftain
+(14, 4, 4, 4, 4, 3, 3, 7, 0, 0, 5, 5),   -- Plague Priest
+(15, 3, 0, 3, 3, 1, 1, 5, 0, 0, 5, 3),   -- Skavenslaves
+(16, 3, 3, 3, 3, 1, 1, 6, 0, 0, 6, 5),   -- Night Runners
+(17, 0, 0, 3, 3, 1, 1, 5, 0, 0, 5, 4),   -- Giant Rats
+(18, 0, 0, 3, 3, 1, 1, 5, 0, 0, 5, 4),   -- Rat Swarms
+(19, 4, 4, 3, 3, 1, 1, 7, 0, 0, 6, 5),   -- Gutter Runners
+(20, 3, 3, 3, 4, 1, 2, 5, 0, 0, 5, 3),   -- Plague Censer Bearers
+(21, 3, 3, 3, 4, 1, 2, 5, 4, 0, 5, 3),   -- Warplock Jezzails
+(22, 0, 0, 4, 4, 1, 1, 5, 0, 0, 5, 4),   -- Poisoned Wind Globadiers
+(23, 0, 0, 5, 5, 6, 6, 7, 0, 0, 6, 4),   -- Abomination
+(24, 0, 0, 0, 6, 4, 0, 0, 0, 0, 0, 0),   -- Warp Lightning Cannon
+(25, 0, 0, 0, 6, 4, 0, 0, 0, 0, 0, 0),   -- Plague Claw Catapult
+(26, 0, 0, 5, 6, 6, 0, 0, 0, 0, 0, 0),   -- Screaming Bell
+(27, 3, 0, 5, 0, 0, 3, 0, 0, 0, 0, 4),   -- Rat Ogre Crew
+(28, 0, 0, 5, 6, 6, 0, 0, 0, 0, 0, 0),   -- Plague Furnace
+(29, 3, 0, 3, 0, 0, 6, 0, 0, 0, 0, 3),   -- Plague Monk Crew
+(30, 3, 3, 3, 3, 1, 2, 5, 5, 0, 5, 3),   -- Weapon Team
+(31, 3, 3, 3, 3, 1, 2, 5, 0, 0, 5, 4),   -- Clawleader
+(32, 4, 3, 3, 3, 1, 2, 6, 0, 0, 5, 5),   -- Fangleader
+(33, 3, 0, 3, 3, 1, 2, 5, 0, 0, 5, 3),   -- Pawleader
+(34, 3, 4, 3, 3, 1, 1, 6, 0, 0, 6, 5),   -- Nightleader
+(35, 4, 4, 3, 3, 1, 2, 7, 0, 0, 6, 5),   -- Deathrunner
+(36, 3, 3, 3, 4, 1, 2, 5, 0, 0, 5, 3),   -- Bringer-of-the-Word
+(37, 3, 3, 3, 4, 1, 3, 5, 0, 0, 5, 3),   -- Plague Chanter
+(38, 3, 4, 3, 4, 1, 2, 5, 4, 0, 5, 3),   -- Sharpshooter
+(39, 3, 3, 2, 0, 0, 0, 7, 0, 0, 0, 4),   -- Doomwheel crew
+(40, 3, 3, 3, 3, 0, 3, 7, 0, 0, 5, 3),   -- Warp Lightning cannon and crew
+(41, 3, 3, 3, 4, 0, 0, 7, 0, 0, 5, 3),   -- Plague Claw Catapult Crew
+(42, 4, 3, 5, 5, 4, 5, 5, 0, 0, 6, 3),   -- Rat Ogre Bonebreaker
+(43, 3, 3, 4, 4, 1, 2, 2, 0, 0, 6, 5),   -- Great Pox Rat
+(44, 4, 0, 4, 0, 0, 4, 0, 0, 0, 5, 5);   -- War-litter
 
 
 
@@ -34,7 +51,6 @@ INSERT INTO UNIT (ID, MIN_QUANTITY, POINTS_COST_PER_UNIT, UNIT_STATS_ID, NAME, N
 (3, 10, 7, 3, 'Plague Monks', 'Skaven', 'Special'),
 (4, 1, 50, 4, 'Rat Ogre', 'Skaven', 'Special'),
 (5, 1, 150, 5, 'Doomwheel', 'Skaven', 'Rare'),
-(6, 5, 30, 6, 'Warp-lock Jezzail', 'Skaven', 'Special'),
 (7, 1, 90, 24, 'Warp Lightning Cannon', 'Skaven', 'Rare'),
 (8, 1, 100, 25, 'Plague Claw Catapult', 'Skaven', 'Rare'),
 (9, 20, 2, 15, 'Skavenslaves', 'Skaven', 'Core'),
@@ -44,7 +60,7 @@ INSERT INTO UNIT (ID, MIN_QUANTITY, POINTS_COST_PER_UNIT, UNIT_STATS_ID, NAME, N
 (13, 10, 12, 19, 'Gutter Runners', 'Skaven', 'Special'),
 (14, 1, 235, 23, 'Hell-pit Abomination', 'Skaven', 'Rare'),
 (15, 10, 16, 20, 'Plague Censer Bearers', 'Skaven', 'Special'),
-(16, 10, 20, 21, 'Warlock Jezzails', 'Skaven', 'Special'),
+(16, 10, 20, 21, 'Warplock Jezzails', 'Skaven', 'Special'),
 (17, 10, 10, 22, 'Poisoned Wind Globadiers', 'Skaven', 'Special'),
 (18, 1, 500, 8, 'Vermin Lord', 'Skaven', 'Lords'),
 (19, 1, 90, 9, 'Warlord', 'Skaven', 'Lords'),
@@ -52,84 +68,937 @@ INSERT INTO UNIT (ID, MIN_QUANTITY, POINTS_COST_PER_UNIT, UNIT_STATS_ID, NAME, N
 (21, 1, 120, 11, 'Assassin', 'Skaven', 'Hero'),
 (22, 1, 15, 12, 'Warlock Engineer', 'Skaven', 'Hero'),
 (23, 1, 45, 13, 'Chieftain', 'Skaven', 'Hero'),
-(24, 1, 100, 14, 'Plague Priest', 'Skaven', 'Hero');
+(24, 1, 100, 14, 'Plague Priest', 'Skaven', 'Hero'),
+(25, 1, 0, 26, 'Screaming Bell', 'None', 'Mount'),
+(26, 1, 0, 27, 'Screaming Bell Crew', 'Rat Ogre', 'Mount'),
+(27, 1, 0, 28, 'Plague Furnace', 'None', 'Mount'),
+(28, 1, 0, 29, 'Plague Furnace Crew', 'Plague Monk Crew', 'Mount'),
+(29, 1, 0, 30, 'Weapon Team', 'Weapon Team', 'Weapon Team'),
+(30, 1, 0, 31, 'Clawleader', 'Clawleader', 'Clawleader'),
+(31, 1, 0, 32, 'Fangleader', 'Fangleader', 'Fangleader'),
+(32, 1, 0, 33, 'Pawleader', 'Pawleader', 'Pawleader'),
+(33, 1, 0, 34, 'Nightleader', 'Nightleader', 'Nightleader'),
+(34, 1, 0, 35, 'Deathrunner', 'Deathrunner', 'Deathrunner'),
+(35, 1, 0, 36, 'Bringer-of-the-Word', 'Bringer-of-the-Word', 'Bringer-of-the-Word'),
+(36, 1, 0, 37, 'Plague Chanter', 'Plague Chanter', 'Plague Chanter'),
+(37, 1, 0, 38, 'Sharpshooter', 'Sharpshooter', 'Sharpshooter'),
+(38, 1, 0, 39, 'Doomwheel crew', 'Doomwheel crew', 'Doomwheel crew'),
+(39, 1, 0, 40, 'Warp Lightning cannon crew', 'Warp Lightning cannon crew', 'Warp Lightning cannon crew'),
+(40, 1, 0, 41, 'Plague Claw Catapult Crew', 'Plague Claw Catapult Crew', 'Plague Claw Catapult Crew'),
+(41, 1, 0, 42, 'Rat Ogre Bonebreaker', 'Rat Ogre Bonebreaker', 'Rat Ogre Bonebreaker'),
+(42, 1, 0, 43, 'Great Pox Rat', 'Great Pox Rat', 'Great Pox Rat'),
+(43, 1, 0, 44, 'War-litter', 'War-litter', 'War-litter');
 
 
 
 
--- Clanrat
+/* Clan rats */
+
 INSERT INTO UPGRADE (ID, POINTS_COST, UNIT_ID, DESCRIPTION, NAME, UPGRADE_TYPE) VALUES
-(1, 8, 1, 'Champion', 'Clawleader', 'SingleBuy'),
+(1, 8, 1, 'Champion', 'Clawleader', 'Champion'),
 (2, 4, 1, 'Musician', 'Musician', 'SingleBuy'),
 (3, 8, 1, 'Standard Bearer', 'Standard Bearer', 'SingleBuy'),
 (4, 0.5, 1, 'Spears', 'Spears', 'Weapon'),
-(5, 0.5, 1, 'Shields', 'Shields', 'Weapon'),
+(5, 0.5, 1, 'Shields', 'Shield', 'Weapon'),
 (6, 65, 1, 'Special Weapon Team', 'Poisoned Wind Mortar', 'Weapon Team'),
 (7, 70, 1, 'Special Weapon Team', 'Warp Fire Thrower', 'Weapon Team'),
 (8, 55, 1, 'Special Weapon Team', 'Ratling Gun', 'Weapon Team'),
 (9, 55, 1, 'Special Weapon Team', 'Doom-flayer', 'Weapon Team'),
 (10, 0, 1, 'Free hand weapons to fight', 'Hand Weapon', 'Free upgrade'),
-(11, 0, 1, 'Free Light armors grants 6+ save', 'Light Armor', 'Free upgrade'),
-(12, 0, 1, 'Flee 1" more', 'Scurry Away', 'Race special rule'),
+(11, 0, 1, 'Free Light armors grants 6+ save', 'Light Armour', 'Free upgrade'),
+(12, 0, 1, 'The Skaven embody the adage (he who runs away lives to fight another day!) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
 (13, 0, 1, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
 
--- Stormvermin
-(14, 10, 2, 'Champion', 'Champion', 'SingleBuy'),
-(15, 5, 2, 'Musician', 'Musician', 'SingleBuy'),
-(16, 10, 2, 'Standard Bearer', 'Standard Bearer', 'SingleBuy'),
-(17, 10, 2, 'Halberd', 'Halberd', 'Weapon'),
-(18, 1, 2, 'Shields', 'Shield', 'Weapon'),
-(19, 55, 2, 'Ratling Gun', 'Ratling Gun', 'Weapon Team'),
-(20, 70, 2, 'Warpfire Thrower', 'Warpfire Thrower', 'Weapon Team'),
-(21, 65, 2, 'Poisoned Wind Mortar', 'Poisoned Wind Mortar', 'Weapon Team'),
-(22, 55, 2, 'Doom-flayer', 'Doom-flayer', 'Weapon Team'),
-(23, 0, 2, 'Free hand weapons to fight', 'Hand Weapon', 'Free upgrade'),
-(24, 0, 2, 'Free Heavy armors grants 5+ save', 'Heavy Armor', 'Free upgrade'),
-(25, 0, 2, 'Flee 1" more', 'Scurry Away', 'Race special rule'),
-(26, 0, 2, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+/* Giant Rats */
+(14, 0, 11, '???', 'Sharp teeth/claws.', 'Free upgrade'),
+(15, 0, 11, '???', 'Mixed Unit', 'Free upgrade'),
+(16, 0, 11, '??', 'Rat Pack', 'Free upgrade'),
+(17, 0, 11, '???', 'Wave of Rats', 'Free upgrade'),
+(18, 0, 11, 'The Skaven embody the adage (he who runs away lives to fight another day!) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(19, 0, 11, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
 
--- Skavenslaves
-(27, 4, 9, 'Champion', 'Champion', 'SingleBuy'),
-(28, 2, 9, 'Musician', 'Musician', 'SingleBuy'),
-(29, 0.5, 9, 'One more rank can attack', 'Spears', 'Weapon'),
-(30, 0.5, 9, 'Slings', 'Slings', 'Weapon'),
-(31, 0.5, 9, 'Shields grants 6+ save and 6+ ward save in front', 'Shield', 'Weapon'),
-(32, 0, 9, 'Automatically passes all Panic test except of other skavenslaves', 'Expendable', 'Free upgrade'),
-(33, 0, 9, 'If unit breaks from combat all unit within d6" suffers d3 s3 dmg from each rank left', 'Cornered rats', 'Free upgrade'),
-(34, 0, 9, 'Flee 1" more', 'Scurry Away', 'Race special rule'),
-(35, 0, 9, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
-
--- Plague Priest
-(36, 0, 14, 'Grants One spell', 'Level 1 Wizard', 'Magic'),
-(37, 35, 14, 'Grants One more spell', 'Level 2 Wizard', 'Magic'),
-(38, 16, 14, 'All units around must pass Toughness test', 'Plague Censer', 'Weapon'),
-(39, 4, 14, 'Grants +2 Strength in first turn of combat', 'Flail', 'Weapon'),
-(40, 2, 14, 'Grants One more attack', 'Additional hand Weapon', 'Weapon'),
-(41, 30, 14, 'Big rat on rat', 'Great Pox Rat', 'Mount'),
-(42, 150, 14, 'Plague Furnace', 'Plague Furnace', 'RARE'),
-(43, 200, 14, 'Hand Weapon', 'Hand Weapon', 'Free'),
-(44, 0, 14, 'Frenzy grants +1 attack', 'Frenzy', 'Free'),
-(45, 0, 14, 'Flee 1" more', 'Scurry Away', 'Race special rule'),
-(46, 0, 14, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+/* Rat Swarm */
+(20, 0, 12, 'Always pass ld test', 'Unbreakable (Swarm)', 'Free upgrade'),
+(21, 0, 12, 'Do not block line of sight', 'Small', 'Free upgrade'),
 
 
--- Gutter Runners
-(48, 30, 13, 'Poisoned Wind Globadiers', 'Poisoned Wind Globadiers', 'SPECIAL'),
-(49, 30, 13, 'Warp-grinder', 'Warp-grinder', 'Weapon Team'),
+/* Warplock Jezzails */
+(22, 10, 16, 'Champion', 'Sharpshooter', 'Champion'),
+(23, 0, 16, 'Free hand weapons to fight', ' Hand weapon', 'Free upgrade'),
+(24, 0, 16, '36 range 6Str armour save -4 page 65 skavenbook', 'Jezzail', 'Free upgrade'),
+(25, 0, 16, 'The large and cumbersome shield carried by the front Skaven gives the Warplock Jezzail team a protective 4+ armour save.', 'Pavise', 'Free upgrade'),
+(26, 0, 16, 'The Skaven embody the adage (he who runs away lives to fight another day!) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
 
--- Plague Monks
-(50, 10, 3, 'Champion', 'Champion', 'SingleBuy'),
-(51, 5, 3, 'Musician', 'Musician', 'SingleBuy'),
-(52, 10, 3, 'Standard Bearer', 'Standard Bearer', 'SingleBuy'),
+/* Poisoned Wind Globadiers */
+(27, 5, 17, 'Champion', 'Bombardier', 'SingleBuy'),
+(28, 25, 17, 'A Bombardier may purchase a Death Globe.', 'Death Globe', 'SingleBuy'),
+(29, 65, 17, 'Mortal special weapon', 'Poisoned Wind Mortar', 'Weapon Team'),
 
--- Warlock Engineer
-(53, 0, 22, 'Grants One spell', 'Level 1 Wizard', 'Magic'),
-(54, 35, 22, 'Grants One more spell', 'Level 2 Wizard', 'Magic'),
-(55, 4, 22, 'Grants +2 Strength in first turn of combat', 'Flail', 'Weapon'),
-(56, 2, 22, 'Grants One more attack', 'Additional hand Weapon', 'Weapon'),
-(57, 10, 22, 'Add 10 points to attack', 'Warplock Pistol', 'Weapon'),
-(58, 0, 22, 'Add armor save', 'Warp Armor', 'Armor'),
-(59, 15, 22, 'Add 15 points for a shield', 'Shield', 'Armor'),
-(60, 20, 22, 'Add 20 points for a Warplock Pistol', 'Warplock Pistol', 'Weapon'),
-(61, 0, 22, 'Flee 1" more', 'Scurry Away', 'Race special rule'),
-(62, 0, 2, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule');
+(30, 0, 17, 'Free hand weapons to fight', 'Hand Weapon', 'Free upgrade'),
+(31, 0, 17, 'Free Heavy armors grants 5+ save', 'Heavy Armour', 'Free upgrade'),
+
+(32, 0, 17, 'p59 skaven rulebook', 'Poisoned wind globes', 'Free upgrade'),
+(33, 0, 17, 'Poisoned Wind Globadiers are allowed to fire into combat. SkavenBook p59 read errata also ', 'Life is Cheap', 'Free upgrade'),
+(34, 0, 17, 'read rules', 'Skirmish', 'Free upgrade'),
+(35, 0, 17, 'If the Globadiers are themselves in combat, models in base contact with the foe fight with their hand weapons, but unengaged models can lob missiles into their own units melee, as described below.', 'Volley from the Back p59 Skavenbook', 'Free upgrade'),
+(36, 0, 17, 'The Skaven embody the adage (he who runs away lives to fight another day!) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+
+
+/* Plague Censer Bearers */
+(37, 0, 15, 'Flail +2 Str in first combat turn. Any unit in base contact muss pass toughness test p46 skavenbook', 'Plague censer', 'Free upgrade'),
+(38, 13, 15, 'Unit', 'Plague Chanter', 'Champion'),
+
+(39, 0, 15, 'A unit of Plague Censer Bearers that is within 6" of a unit of Plague Monks may use the rank bonus of the Plague Monks to modify their own Leadership. If the Censer Bearers are within 12" of a Plague Furnace they are Stubborn.', 'Plague Disciples', 'Free upgrade'),
+(40, 0, 15, 'Unit', 'Skirmish', 'Free upgrade'),
+(41, 0, 15, 'Unit rerolls all failed to hit and wound rolls in first combat turn', 'Hatred', 'Free upgrade'),
+(42, 0, 15, '+1 Attack', 'Frenzy', 'Free upgrade'),
+(43, 0, 15, 'The Skaven embody the adage (he who runs away lives to fight another day!) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(44, 0, 15, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+
+/* Warp Lightning Cannon */
+(45, 0, 7, 'Special Weapon Team', 'Ponderous War Machine', 'Free upgrade'),
+(46, 0, 7, 'Upg to get crew', 'Warp Lightning cannon crew', 'Mount'),
+
+/* Plague Claw Catapult */
+(47, 0, 8, 'Special Weapon Team', 'Ponderous War Machine', 'Free upgrade'),
+(48, 0, 8, 'D6 ATTACKS!!!', 'Plague Claw Catapult Crew', 'Mount'),
+
+
+/* Night Runners */
+(49, 8, 10, 'Leader', 'Nightleader', 'Champion'),
+(50, 1, 10, '24range', 'Slings', 'Weapon'),
+(51, 60, 10, 'Warp-grinder', 'Warp-grinder', 'Weapon Team'),
+
+(52, 0, 10, '+1 Attack', 'Two handed weapons', 'Free upgrade'),
+(53, 0, 10, 'range weapon', 'Throwing stars', 'Free upgrade'),
+
+(54, 0, 10, 'The Skaven embody the adage (he who runs away lives to fight another day) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(55, 0, 10, 'Check', 'Dodge (6+) Nightleader only', 'Free upgrade'),
+(56, 0, 10, 'Check', 'Slinking Advance', 'Free upgrade'),
+(57, 0, 10, 'Skaven gain courage from numbers. With Strength in Numbers, a unit adds its rank bonus to Leadership (max 10). Losing rank bonus also loses Leadership bonus. Example: Clanrats Ld 5 in 3 ranks get +2.', 'Strength in numbers', 'Race special rule'),
+
+/* Hell-pit Abomination */
+(58, 0, 14, 'Monster', 'Monster', 'Free upgrade'),
+(59, 0, 14, 'Read', ' Impact Hits (D6)', 'Free upgrade'),
+(60, 0, 14, 'Large Target', ' Large Target', 'Free upgrade'),
+(61, 0, 14, '+4 Regeneration ', 'Regenerate', 'Free upgrade'),
+(62, 0, 14, '3D6 Movement', 'Shambling Horror', 'Free upgrade'),
+(63, 0, 14, 'P57 Skaven RuleBook', 'Special Close Combat Attacks', 'Free upgrade'),
+(64, 0, 14, 'Stubborn', 'Stubborn', 'Free upgrade'),
+(65, 0, 14, 'Unit Causes Terror', 'Terror', 'Free upgrade'),
+(66, 0, 14, 'P57 Skaven RuleBook', 'Too Horrible to Die', 'Free upgrade'),
+
+(67, 35, 14, 'Magic attacks and Magic res(1)', 'Warpstone spikes', 'Weapon'),
+
+
+
+/* Vermin Lord */
+(774, 0, 18, 'Chose Ur General', 'General', 'Pick up General'),
+(68, 0, 18, 'Each unsaved wound caused by the Doom Glaive is multiplied to D3 wounds.', 'Doom Glaive', 'Free upgrade'),
+
+(69, 0, 18, 'Wizzard lvl 4 can use Spells from Ruin and Plague lore', 'Wizzard 4 lvl', 'Free upgrade'),
+
+(70, 0, 18, 'The Skaven embody the adage (he who runs away lives to fight another day!) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(71, 0, 18, 'Immune to Psychology', 'Immune to Psychology', 'Free upgrade'),
+(72, 0, 18, 'Large Target', 'Large Target', 'Free upgrade'),
+(73, 0, 18, 'Unstable Emotional Rat (jk) read rules', 'Rat Daemon', 'Free upgrade'),
+(74, 0, 18, 'Causes Terror', 'Terror', 'Free upgrade'),
+(75, 0, 18, 'Ward Save 5+', 'Ward save (5+)', 'Free upgrade'),
+
+/* Warlord */
+(775, 0, 19, 'Chose Ur General', 'General', 'Pick up General'),
+
+(76, 0, 19, 'Free hand weapons to fight', 'Hand weapon', 'Free upgrade'),
+(77, 0, 19, 'Free Heavy armors grants 5+ save', 'Heavy Armour', 'Free upgrade'),
+
+(78, 6, 19, '+2 Str, always strike last', 'Great weapon', 'Weapon'),
+(79, 3, 19, 'Shields', 'Additional hand an weapon', 'Weapon'),
+(80, 3, 19, '+1 Str', 'Halberd', 'Weapon'),
+(81, 3, 19, '+1 save / 6+ ward save in front', 'Shield', 'Weapon'),
+
+(82, 65, 19, 'Upg to get unit stats', 'Rat Ogre Bonebreaker', 'Mount'),
+(83, 35, 19, 'Upg to get unit stats', 'War-litter', 'Mount'),
+(84, 30, 19, 'Upg to get unit stats', 'Great Pox Rat', 'Mount'),
+
+(85, 15, 19, 'Warpmusket: a rifle like a warplock jezzail. Range 24 inches, Strength 5, Armour Piercing, uses Unstable Ammunition. Can move or fire. Warpstone Weapon.', 'Warpmusket', 'The Scavenge-Pile'),
+(86, 15, 19, 'Poisoned Attacks: all close combat attacks by this model are Poisoned. Affects tail weapons but not magic weapons or Rat Hound Bodyguard.', 'Poisoned Attacks', 'The Scavenge-Pile'),
+(87, 8, 19, 'Tail Weapon: an extra appendage wielding a blade, spike, or mace. Grants 1 additional S3 attack at the models WS and Initiative, usable with other attacks, but has no magical properties.', 'Tail Weapon', 'The Scavenge-Pile'),
+(88, 8, 19, 'Warplock Pistol: range 10in, Armour Piercing, uses Unstable Ammunition, Warpstone Weapon. Superior to other races pistols.', 'Warplock Pistol', 'The Scavenge-Pile'),
+(89, 5, 19, 'Rat Hound upgrade grants an extra WS3/S3 attack at the owners Initiative. On a To Hit roll of 1, the hound hits its owner. Despite loyalty, verminous instincts may make it attack if the master seems vulnerable.', 'Rat Hound Bodyguard', 'The Scavenge-Pile'),
+
+(90, 30, 19, 'Magic Weapon +1 to hit', 'Sword of Striking', 'Magic Weapon'),
+(91, 25, 19, 'Magic Weapon +1 to Attack', 'Sword of Battle', 'Magic Weapon'),
+(92, 20, 19, 'Magic Weapon +1 to Strength', 'Sword of Might', 'Magic Weapon'),
+(93, 5, 19, 'Magic Weapon -1 to armour save', 'Bitting Blade', 'Magic Weapon'),
+(94, 5, 19, 'Magic armour 5+ armour save', 'Enchanted Shield', 'Magic Weapon'),
+(95, 5, 19, 'Talisman grants 6+ ward save', 'Talisman of Protection', 'Magic Weapon'),
+(96, 100, 19, 'Str 10 enemy must reroll all succes ward saves, any unsaved roll is multiplied to d6. Roll d6 at any end of weilder turn 3+ nothing happens, 1-2 user takes wound without armour save allowed', 'Fellblade', 'Magic Weapon'),
+(97, 50, 19, 'Armour saves cannont be taken against this sword', 'Warpforged Blade', 'Magic Weapon'),
+(98, 45, 19, '+1 Str +1 Attack', 'Warlock-Augumented Weapon', 'Magic Weapon'),
+(99, 35, 19, '+1 Str any unsaved Wound is multipled to 2,If wielder makes a hit roll that has two or more rolls of 1 the wielder suffers wound that is multipled to 2', 'Blade of Corruption', 'Magic Weapon'),
+(100, 30, 19, 'Has armour piercing each unsaved wound is multipled to d3', 'Weeping Blade', 'Magic Weapon'),
+(101, 25, 19, '+1 Str to all attacks in close combat Agains Dwarfs grants armour piercing and re-rolls all failed to Wound rolls', 'Dwarfbane', 'Magic Weapon'),
+(102, 10, 19, 'Enemy lose 1 T of every wound taken if his T = 0 he dies', 'Blade of Nurglitch', 'Magic Weapon'),
+(103, 30, 19, 'Grants 4+ save, all succes armour saves armour inflicts S4 hit against the model that struckt the blow', 'Warpstone armour', 'Magic Weapon'),
+(104, 25, 19, 'Grants 4+ save, first succesfull wound Destroys the armour and wound is discounted ', 'Worlds Edge Armour', 'Magic Weapon'),
+(105, 15, 19, 'Any model in base contact suffer -1 attack (minimum 1 attack) to strike shield bearer', 'Shield of Distraction', 'Magic Weapon'),
+(106, 30, 19, 'ward save 5+', 'Foul Pendant', 'Magic Weapon'),
+(107, 15, 19, 'One Use Only A Skaven model can make a single enemy in game in base contact to re roll all its successful to hit dice rolls', 'Rival hide talisman', 'Magic Weapon'),
+(108, 50, 19, 'A character carrying can force Clanrats of Stormvermin to drink roll d6 - 1 gone bad the unit takes d6  s3 hits , 2-3 the units has hatred of all enemies, 4-5 Frienzied units has frenzy, 6 rabid grants +2 attacks per unit and d6 automatics hits per turn', 'Skavenbrew', 'Magic Weapon'),
+
+(109, 60, 19, '+3 Str p501 rulebook', 'Giant Blade', 'Magic Weapon'),
+(110, 60, 19, '+3 Attacks p501 rulebook', 'Sword of Bloodshed', 'Magic Weapon'),
+(111, 40, 19, 'Armour saves cannont be taken against wounds caused by Obsidian Blade', 'Obsidian Blade', 'Magic Weapon'),
+(112, 40, 19, '+2 Str', 'Ogre Blade', 'Magic Weapon'),
+(113, 40, 19, '+2 Attacks made by this sword in close combat', 'Sword of Strife', 'Magic Weapon'),
+(114, 35, 19, 'Paired weapons. The bearer has Weapon skill 10', 'Fencers Blades', 'Magic Weapon'),
+(115, 30, 19, 'The bearer has +1 Str and +1 for every enemy in base contact p501 rulebook', 'Sword of Anti-heroes', 'Magic Weapon'),
+(116, 25, 19, 'A Wizard that suffers unsaved  wounds  from  the Spellthieving Sword loses one of his spell (determined randomly) for each unsaved wound.', 'Spellthieving Sword', 'Magic Weapon'),
+(117, 25, 19, 'Always Strikes First special rule.', 'Sword of Swift Slaying', 'Magic Weapon'),
+(118, 20, 19, '+1 Attack', 'Sword of Battle', 'Magic Weapon'),
+(119, 20, 19, 'The bearer has the Frenzy special rule and can never lose his Frenzy', 'Berseker Sword', 'Magic Weapon'),
+(120, 20, 19, 'Close combat attacks made with this sword are resolved at +1 Strength.', 'Sword of Might', 'Magic Weapon'),
+(121, 15, 19, '+1 Attack', 'Gold Sigil Sword', 'Magic Weapon'),
+(122, 15, 19, 'Attacks made by this sword are made at Initiative 10', 'Sword of Striking', 'Magic Weapon'),
+(123, 15, 19, 'Attacks made with the Sword of Striking receive a +1 bonus to hit.', 'Sword of Striking', 'Magic Weapon'),
+(124, 10, 19, 'Close combat attacks made by the Biting Blade are armour piercing.', 'Bitting Blade', 'Magic Weapon'),
+(125, 10, 19, 'Attacks made with the Relic Sword will always wound on a 5+, unless they would normally need a lower result.', 'Relic Sword', 'Magic Weapon'),
+(126, 10, 19, 'The bearer causes Fear', 'Shrieking Sword', 'Magic Weapon'),
+(127, 5, 19, 'A monster or character that suffers an unsaved wound from the Tormentor sword has the Stupidity special rule for the rest of the game.', 'Tormentor Sword', 'Magic Weapon'),
+(128, 5, 19, 'A monster or character that suffers unsaved wounds from Warrior Bane permanently loses one Attack for each unsaved wound (to a minimum of Attacks 1).', 'Warriors Bane', 'Magic Weapon'),
+
+(129, 50, 19, 'The Armour of Destiny grants the Heavy Armour. The Armour wearer a 4+ ward save.', 'Armour of Destiny', 'Magic Weapon'),
+(130, 50, 19, 'The wearer counts his armour save as being one point higher than normal. Any successful roll to wound made against the wound made against the wearer of the Tricksters Helm must be re-rolled.', 'Tricksters helm', 'Magic Weapon'),
+(132, 45, 19, 'Armour of Silvered Steel grants its wearer a 2+ armour save that cannot be improved by any means.', 'Armour of Silvered Steel', 'Magic Weapon'),
+(133, 35, 19, 'Heavy armour. The Armour of Fortune grants the wearer a 5+ ward save.', 'Armour of Fortune', 'Magic Weapon'),
+(134, 30, 19, 'The wearer counts his armour save as being one point higher than normal. p502 rulebook', 'Helm of Discord', 'Magic Weapon'),
+(135, 25, 19, 'Light armour: Enemies suffer a-1 to hit penalty when attempting', 'Glittering Scales', 'Magic Weapon'),
+(136, 25, 19, 'Shield. The bearer has +1 armour save against the shooting attacks', 'Shield of Ptolos', 'Magic Weapon'),
+(137, 20, 19, 'Shield. The bearer gains Magic Resistance(1)', 'Spellshield', 'Magic Weapon'),
+(138, 20, 19, 'Heavy Armour The Armour grants the wearer a 6+ ward save', 'Gamblers Armour', 'Magic Weapon'),
+(139, 10, 19, 'The wearer counts his armour save as being one point higher than normal. The wearer has a 2+ ward save against flaming ', 'Dragonhelm', 'Magic Weapon'),
+(140, 5, 19, 'Shield. The bearer counts his armour save as being two points higher than normal, rather than the it ur than the usual one point that a shield would normally grant', 'Enchanted Shield', 'Magic Weapon'),
+(141, 5, 19, 'Shield. One use only. The first hit suffered by the bearer of the Charmed Sield is discounted on a roll of 2+.', 'Charmed Shield', 'Magic Weapon'),
+
+(142, 45, 19, '4+ ward save', 'Talisman of Preservation', 'Magic Weapon'),
+(143, 45, 19, 'Grants Magic resistance(3)', 'Obsidian Lodestone', 'Magic Weapon'),
+(144, 30, 19, '5+ ward save', 'Talisman of Endurance', 'Magic Weapon'),
+(145, 30, 19, 'Grants Magic resistance(2)', 'Obsidian Amulet', 'Magic Weapon'),
+(146, 30, 19, 'The bearer re-rolls failed armour saves', 'Dawn Stone', 'Magic Weapon'),
+(147, 15, 19, 'One use only +4 ward save against the first wound suffered by bearer p503 rulebook', 'Opal Amulet', 'Magic Weapon'),
+(148, 15, 19, 'Grants Magic resistance(1)', 'Obsidian Trinket', 'Magic Weapon'),
+(149, 10, 19, 'The bearer has regeneration(6+) special rule', 'Seed of rebirth', 'Magic Weapon'),
+(150, 5, 19, 'The bearer of the Dragonbane Gem has a 2+ ward save against flaming attacks.', 'Dragonbane gem', 'Magic Weapon'),
+(151, 5, 19, 'This item grants grants the bearer a 5+ ward save against wounds caused in close combat by models that have the Fly special ', 'Pidgeon Plucker Pendant', 'Magic Weapon'),
+(152, 5, 19, 'One Use Only The luck stone allows the bearer to re-roll failed armour save', 'Luckstone', 'Magic Weapon'),
+
+
+(153, 0, 19, 'The Skaven embody the adage (he who runs away lives to fight another day!) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(154, 0, 19, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+(155, 0, 19, 'Skaven may refuse a challenge without losing honour. Fleeing to safety is a leaders right. Model moves to back rank but the unit still benefits from its Leadership or Battle Standard ability.', 'Verminous Valour', 'Free upgrade'),
+
+
+
+/* Assassin */
+(156, 0, 21, '+1 Attack', 'Two hand weapons', 'Free upgrade'),
+(157, 0, 21, 'Range weapon', 'Throwing stars', 'Free upgrade'),
+
+(158, 0, 21, 'Read Rules', 'Sneaky Infiltrator', 'Free upgrade'),
+(159, 0, 21, 'Unit cant be a leader', 'A Killer, Not A Leader', 'Free upgrade'),
+(160, 0, 21, 'Always strike first', 'Always Strikes First', 'Free upgrade'),
+(161, 0, 21, 'Grants 4+ ward save', 'Dodge (4+)', 'Free upgrade'),
+(162, 0, 21, 'Unit can start hidden in ranks', 'Hidden', 'Free upgrade'),
+(163, 0, 21, 'Model with the Poisoned Attacks special rule wounds his target automatically if his natural dice roll to hit is a 6. Armour saves are modified by the Strength of the attack as normal.', 'Poisoned Attacks', 'Free upgrade'),
+(164, 0, 21, 'read rules ', 'Scouts', 'Free upgrade'),
+
+(165, 15, 21, 'Warpmusket: a rifle like a warplock jezzail. Range 24 inches, Strength 5, Armour Piercing, uses Unstable Ammunition. Can move or fire. Warpstone Weapon.', 'Warpmusket', 'The Scavenge-Pile'),
+(166, 15, 21, 'Poisoned Attacks: all close combat attacks by this model are Poisoned. Affects tail weapons but not magic weapons or Rat Hound Bodyguard.', 'Poisoned Attacks', 'The Scavenge-Pile'),
+(167, 8, 21, 'Tail Weapon: an extra appendage wielding a blade, spike, or mace. Grants 1 additional S3 attack at the models WS and Initiative, usable with other attacks, but has no magical properties.', 'Tail Weapon', 'The Scavenge-Pile'),
+(168, 8, 21, 'Warplock Pistol: range 10in, Armour Piercing, uses Unstable Ammunition, Warpstone Weapon. Superior to other races pistols.', 'Warplock Pistol', 'The Scavenge-Pile'),
+(169, 5, 21, 'Rat Hound upgrade grants an extra WS3/S3 attack at the owners Initiative. On a To Hit roll of 1, the hound hits its owner. Despite loyalty, verminous instincts may make it attack if the master seems vulnerable.', 'Rat Hound Bodyguard', 'The Scavenge-Pile'),
+
+
+(170, 30, 21, 'Magic Weapon +1 to hit', 'Sword of Striking', 'Magic Weapon'),
+(171, 25, 21, 'Magic Weapon +1 to Attack', 'Sword of Battle', 'Magic Weapon'),
+(172, 20, 21, 'Magic Weapon +1 to Strength', 'Sword of Might', 'Magic Weapon'),
+(173, 5, 21, 'Magic Weapon -1 to armour save', 'Bitting Blade', 'Magic Weapon'),
+(174, 5, 21, 'Magic armour 5+ armour save', 'Enchanted Shield', 'Magic Weapon'),
+(175, 5, 21, 'Talisman grants 6+ ward save', 'Talisman of Protection', 'Magic Weapon'),
+(176, 100, 21, 'Str 10 enemy must reroll all succes ward saves, any unsaved roll is multiplied to d6. Roll d6 at any end of weilder turn 3+ nothing happens, 1-2 user takes wound without armour save allowed', 'Fellblade', 'Magic Weapon'),
+(178, 50, 21, 'Armour saves cannont be taken against this sword', 'Warpforged Blade', 'Magic Weapon'),
+(179, 45, 21, '+1 Str +1 Attack', 'Warlock-Augumented Weapon', 'Magic Weapon'),
+(180, 35, 21, '+1 Str any unsaved Wound is multipled to 2,If wielder makes a hit roll that has two or more rolls of 1 the wielder suffers wound that is multipled to 2', 'Blade of Corruption', 'Magic Weapon'),
+(181, 30, 21, 'Has armour piercing each unsaved wound is multipled to d3', 'Weeping Blade', 'Magic Weapon'),
+(182, 25, 21, '+1 Str to all attacks in close combat Agains Dwarfs grants armour piercing and re-rolls all failed to Wound rolls', 'Dwarfbane', 'Magic Weapon'),
+(183, 10, 21, 'Enemy lose 1 T of every wound taken if his T = 0 he dies', 'Blade of Nurglitch', 'Magic Weapon'),
+(184, 30, 21, 'Grants 4+ save, all succes armour saves armour inflicts S4 hit against the model that struckt the blow', 'Warpstone armour', 'Magic Weapon'),
+(185, 25, 21, 'Grants 4+ save, first succesfull wound Destroys the armour and wound is discounted ', 'Worlds Edge Armour', 'Magic Weapon'),
+(186, 15, 21, 'Any model in base contact suffer -1 attack (minimum 1 attack) to strike shield bearer', 'Shield of Distraction', 'Magic Weapon'),
+(187, 30, 21, 'ward save 5+', 'Foul Pendant', 'Magic Weapon'),
+(188, 15, 21, 'One Use Only A Skaven model can make a single enemy in game in base contact to re roll all its successful to hit dice rolls', 'Rival hide talisman', 'Magic Weapon'),
+(189, 50, 21, 'A character carrying can force Clanrats of Stormvermin to drink roll d6 - 1 gone bad the unit takes d6  s3 hits , 2-3 the units has hatred of all enemies, 4-5 Frienzied units has frenzy, 6 rabid grants +2 attacks per unit and d6 automatics hits per turn', 'Skavenbrew', 'Magic Weapon'),
+
+(190, 60, 21, '+3 Str p501 rulebook', 'Giant Blade', 'Magic Weapon'),
+(191, 60, 21, '+3 Attacks p501 rulebook', 'Sword of Bloodshed', 'Magic Weapon'),
+(192, 40, 21, 'Armour saves cannont be taken against wounds caused by Obsidian Blade', 'Obsidian Blade', 'Magic Weapon'),
+(193, 40, 21, '+2 Str', 'Ogre Blade', 'Magic Weapon'),
+(194, 40, 21, '+2 Attacks made by this sword in close combat', 'Sword of Strife', 'Magic Weapon'),
+(195, 35, 21, 'Paired weapons. The bearer has Weapon skill 10', 'Fencers Blades', 'Magic Weapon'),
+(196, 30, 21, 'The bearer has +1 Str and +1 for every enemy in base contact p501 rulebook', 'Sword of Anti-heroes', 'Magic Weapon'),
+(197, 25, 21, 'A Wizard that suffers unsaved  wounds  from  the Spellthieving Sword loses one of his spell (determined randomly) for each unsaved wound.', 'Spellthieving Sword', 'Magic Weapon'),
+(198, 25, 21, 'Always Strikes First special rule.', 'Sword of Swift Slaying', 'Magic Weapon'),
+(199, 20, 21, '+1 Attack', 'Sword of Battle', 'Magic Weapon'),
+(200, 20, 21, 'The bearer has the Frenzy special rule and can never lose his Frenzy', 'Berseker Sword', 'Magic Weapon'),
+(201, 20, 21, 'Close combat attacks made with this sword are resolved at +1 Strength.', 'Sword of Might', 'Magic Weapon'),
+(202, 15, 21, '+1 Attack', 'Gold Sigil Sword', 'Magic Weapon'),
+(203, 15, 21, 'Attacks made by this sword are made at Initiative 10', 'Sword of Striking', 'Magic Weapon'),
+(204, 15, 21, 'Attacks made with the Sword of Striking receive a +1 bonus to hit.', 'Sword of Striking', 'Magic Weapon'),
+(205, 10, 21, 'Close combat attacks made by the Biting Blade are armour piercing.', 'Bitting Blade', 'Magic Weapon'),
+(206, 10, 21, 'Attacks made with the Relic Sword will always wound on a 5+, unless they would normally need a lower result.', 'Relic Sword', 'Magic Weapon'),
+(207, 10, 21, 'The bearer causes Fear', 'Shrieking Sword', 'Magic Weapon'),
+(208, 5, 21, 'A monster or character that suffers an unsaved wound from the Tormentor sword has the Stupidity special rule for the rest of the game.', 'Tormentor Sword', 'Magic Weapon'),
+(209, 5, 21, 'A monster or character that suffers unsaved wounds from Warrior Bane permanently loses one Attack for each unsaved wound (to a minimum of Attacks 1).', 'Warriors Bane', 'Magic Weapon'),
+
+(210, 50, 21, 'The Armour of Destiny grants the Heavy armour. The Armour wearer a 4+ ward save.', 'Armour of Destiny', 'Magic Weapon'),
+(211, 50, 21, 'The wearer counts his armour save as being one point higher than normal. Any successful roll to wound made against the wound made against the wearer of the Tricksters Helm must be re-rolled.', 'Tricksters helm', 'Magic Weapon'),
+(212, 45, 21, 'Armour of Silvered Steel grants its wearer a 2+ armour save that cannot be improved by any means.', 'Armour of Silvered Steel', 'Magic Weapon'),
+(213, 35, 21, 'Heavy armour. The Armour of Fortune grants the wearer a 5+ ward save.', 'Armour of Fortune', 'Magic Weapon'),
+(214, 30, 21, 'The wearer counts his armour save as being one point higher than normal. p502 rulebook', 'Helm of Discord', 'Magic Weapon'),
+(215, 25, 21, 'Light armour: Enemies suffer a-1 to hit penalty when attempting', 'Glittering Scales', 'Magic Weapon'),
+(216, 25, 21, 'Shield. The bearer has +1 armour save against the shooting attacks', 'Shield of Ptolos', 'Magic Weapon'),
+(217, 20, 21, 'Shield. The bearer gains Magic Resistance(1)', 'Spellshield', 'Magic Weapon'),
+(218, 20, 21, 'Heavy Armour The Armour grants the wearer a 6+ ward save', 'Gamblers Armour', 'Magic Weapon'),
+(219, 10, 21, 'The wearer counts his armour save as being one point higher than normal. The wearer has a 2+ ward save against flaming ', 'Dragonhelm', 'Magic Weapon'),
+(220, 5, 21, 'Shield. The bearer counts his armour save as being two points higher than normal, rather than the it ur than the usual one point that a shield would normally grant', 'Enchanted Shield', 'Magic Weapon'),
+(221, 5, 21, 'Shield. One use only. The first hit suffered by the bearer of the Charmed Sield is discounted on a roll of 2+.', 'Charmed Shield', 'Magic Weapon'),
+
+(222, 45, 21, '4+ ward save', 'Talisman of Preservation', 'Magic Weapon'),
+(223, 45, 21, 'Grants Magic resistance(3)', 'Obsidian Lodestone', 'Magic Weapon'),
+(224, 30, 21, '5+ ward save', 'Talisman of Endurance', 'Magic Weapon'),
+(225, 30, 21, 'Grants Magic resistance(2)', 'Obsidian Amulet', 'Magic Weapon'),
+(226, 30, 21, 'The bearer re-rolls failed armour saves', 'Dawn Stone', 'Magic Weapon'),
+(227, 15, 21, 'One use only +4 ward save against the first wound suffered by bearer p503 rulebook', 'Opal Amulet', 'Magic Weapon'),
+(228, 15, 21, 'Grants Magic resistance(1)', 'Obsidian Trinket', 'Magic Weapon'),
+(229, 10, 21, 'The bearer has regeneration(6+) special rule', 'Seed of rebirth', 'Magic Weapon'),
+(230, 5, 21, 'The bearer of the Dragonbane Gem has a 2+ ward save against flaming attacks.', 'Dragonbane gem', 'Magic Weapon'),
+(231, 5, 21, 'This item grants grants the bearer a 5+ ward save against wounds caused in close combat by models that have the Fly special ', 'Pidgeon Plucker Pendant', 'Magic Weapon'),
+(232, 5, 21, 'One Use Only The luck stone allows the bearer to re-roll failed armour save', 'Luckstone', 'Magic Weapon'),
+
+(233, 0, 21, 'Skaven may refuse a challenge without losing honour. Fleeing to safety is a leaders right. Model moves to back rank but the unit still benefits from its Leadership or Battle Standard ability.', 'Verminous Valour', 'Free upgrade'),
+(234, 0, 21, 'The Skaven embody the adage (he who runs away lives to fight another day) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+
+/* Chieftain */
+(776, 0, 23, 'Chose Ur General', 'General', 'Pick up General'),
+
+(235, 0, 23, 'Free hand weapons to fight', 'Hand weapon', 'Free upgrade'),
+(236, 0, 23, 'Free Heavy armors grants 5+ save', 'Heavy Armour', 'Free upgrade'),
+
+(237, 4, 23, '+2 Str, Always Strike Last', 'Great weapon', 'Weapon'),
+(238, 2, 23, '+1 attack', 'Additional hand weapon', 'Weapon'),
+(239, 2, 23, '+1 Str', 'Halberd', 'Weapon'),
+(240, 2, 23, '+1 Save/ 6+ ward save', 'Shield', 'Weapon'),
+(241, 25, 23, '+Buffs read ', 'Battle Standard', 'SingleBuy'),
+
+(242, 30, 23, 'One use only re-roll all failed to hit and to wound hits', 'Plague Banner', 'Magic Banner'),
+(243, 70, 23, 'All enemy within 12inches suffer -1 ld and owner can force enemy in base contact to re roll succesffull ld test', 'Sacred Banner of the horned Rat', 'Magic Banner'),
+(244, 50, 23, 'Banner can be activated at begin of any player turn no flying movement is allowed all missles has -2 penalty to hit p111', 'Storm Banner ', 'Magic Banner'),
+(245, 30, 23, 'p111', 'Grand Banner of Clan Superiority', 'Magic Banner'),
+(246, 25, 23, 'Any enemy in base contact suffer 2d6 S2 hits per any Close combat phase p111', 'Banner of Under-Empire', 'Magic Banner'),
+(247, 15, 23, 'Hatred against dwarfs', 'Dwarf-Hide Banner', 'Magic Banner'),
+(248, 55, 23, 'A unit with this magic standard can re-roll its charge distance ', 'Rampagers Standard', 'Magic Banner'),
+(249, 50, 23, 'A unit with this banner causes Terror in its enemies.', 'Wailing Banner', 'Magic Banner'),
+(250, 50, 23, 'A unit with the Rangers Standard has the Strider special ', 'Rangers Standard ', 'Magic Banner'),
+(251, 45, 23, 'Models in a unit with the Razor Standard have the Armour Piercing special rule.', 'Razor Standard ', 'Magic Banner'),
+(252, 35, 23, 'A unit with this banner adds +1 to combat resolution.', 'War Banner', 'Magic Banner'),
+(253, 15, 23, 'Models in a unit with the Banner of Swiftness have +1 to their Movement characteristic.', 'Banner of Swiftness', 'Magic Banner'),
+(254, 15, 23, 'Models in a unit with the Lichebone Pennant have Magic Resistance(1)', 'Lichebone Pennant', 'Magic Banner'),
+(255, 15, 23, 'Models in a unit with the Standard of Discipline have +1 Leadership, but cannot use the Generals Inspiring Presence special rule.', 'Standard of Discipline', 'Magic Banner'),
+(256, 10, 23, 'Models in a unit with the Banner of Eternal Flame have the have Flaming Attacks', 'Banner of Eternal Flame', 'Magic Banner'),
+(257, 5, 23, 'One use only. A unit with the Gleaming Pennant can re-roll its first failed Leadership test', 'Gleaming Pennant', 'Magic Banner'),
+(258, 5, 23, 'A unit with the Scarecrow Banner causes Fear in models with the Fly special ', 'Scarecrow Banner', 'Magic Banner'),
+(259, 10, 23, 'One use only can march as 3x speed but suffer 2d6 S3 hits', 'Banner of Verminous Scurring', 'Magic Banner'),
+
+(260, 15, 23, 'Warpmusket: a rifle like a warplock jezzail. Range 24 inches, Strength 5, Armour Piercing, uses Unstable Ammunition. Can move or fire. Warpstone Weapon.', 'Warpmusket', 'The Scavenge-Pile'),
+(261, 15, 23, 'Poisoned Attacks: all close combat attacks by this model are Poisoned. Affects tail weapons but not magic weapons or Rat Hound Bodyguard.', 'Poisoned Attacks', 'The Scavenge-Pile'),
+(262, 8, 23, 'Tail Weapon: an extra appendage wielding a blade, spike, or mace. Grants 1 additional S3 attack at the models WS and Initiative, usable with other attacks, but has no magical properties.', 'Tail Weapon', 'The Scavenge-Pile'),
+(263, 8, 23, 'Warplock Pistol: range 10in, Armour Piercing, uses Unstable Ammunition, Warpstone Weapon. Superior to other races pistols.', 'Warplock Pistol', 'The Scavenge-Pile'),
+(264, 5, 23, 'Rat Hound upgrade grants an extra WS3/S3 attack at the owners Initiative. On a To Hit roll of 1, the hound hits its owner. Despite loyalty, verminous instincts may make it attack if the master seems vulnerable.', 'Rat Hound Bodyguard', 'The Scavenge-Pile'),
+
+(265, 0, 23, 'Skaven may refuse a challenge without losing honour. Fleeing to safety is a leaders right. Model moves to back rank but the unit still benefits from its Leadership or Battle Standard ability.', 'Verminous Valour', 'Free upgrade'),
+(266, 0, 23, 'The Skaven embody the adage (he who runs away lives to fight another day) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(267, 0, 23, 'Skaven gain courage from numbers. With Strength in Numbers, a unit adds its rank bonus to Leadership (max 10). Losing rank bonus also loses Leadership bonus. Example: Clanrats Ld 5 in 3 ranks get +2.', 'Strength in numbers', 'Race special rule'),
+
+(268, 30, 23, 'Magic Weapon +1 to hit', 'Sword of Striking', 'Magic Weapon'),
+(269, 25, 23, 'Magic Weapon +1 to Attack', 'Sword of Battle', 'Magic Weapon'),
+(270, 20, 23, 'Magic Weapon +1 to Strength', 'Sword of Might', 'Magic Weapon'),
+(271, 5, 23, 'Magic Weapon -1 to armour save', 'Bitting Blade', 'Magic Weapon'),
+(272, 5, 23, 'Magic armour 5+ armour save', 'Enchanted Shield', 'Magic Weapon'),
+(273, 5, 23, 'Talisman grants 6+ ward save', 'Talisman of Protection', 'Magic Weapon'),
+(274, 100, 23, 'Str 10 enemy must reroll all succes ward saves, any unsaved roll is multiplied to d6. Roll d6 at any end of weilder turn 3+ nothing happens, 1-2 user takes wound without armour save allowed', 'Fellblade', 'Magic Weapon'),
+(275, 50, 23, 'Armour saves cannont be taken against this sword', 'Warpforged Blade', 'Magic Weapon'),
+(276, 45, 23, '+1 Str +1 Attack', 'Warlock-Augumented Weapon', 'Magic Weapon'),
+(277, 35, 23, '+1 Str any unsaved Wound is multipled to 2,If wielder makes a hit roll that has two or more rolls of 1 the wielder suffers wound that is multipled to 2', 'Blade of Corruption', 'Magic Weapon'),
+(278, 30, 23, 'Has armour piercing each unsaved wound is multipled to d3', 'Weeping Blade', 'Magic Weapon'),
+(279, 25, 23, '+1 Str to all attacks in close combat Agains Dwarfs grants armour piercing and re-rolls all failed to Wound rolls', 'Dwarfbane', 'Magic Weapon'),
+(280, 10, 23, 'Enemy lose 1 T of every wound taken if his T = 0 he dies', 'Blade of Nurglitch', 'Magic Weapon'),
+(281, 30, 23, 'Grants 4+ save, all succes armour saves armour inflicts S4 hit against the model that struckt the blow', 'Warpstone armour', 'Magic Weapon'),
+(282, 25, 23, 'Grants 4+ save, first succesfull wound Destroys the armour and wound is discounted ', 'Worlds Edge Armour', 'Magic Weapon'),
+(283, 15, 23, 'Any model in base contact suffer -1 attack (minimum 1 attack) to strike shield bearer', 'Shield of Distraction', 'Magic Weapon'),
+(284, 30, 23, 'ward save 5+', 'Foul Pendant', 'Magic Weapon'),
+(285, 15, 23, 'One Use Only A Skaven model can make a single enemy in game in base contact to re roll all its successful to hit dice rolls', 'Rival hide talisman', 'Magic Weapon'),
+(286, 50, 23, 'A character carrying can force Clanrats of Stormvermin to drink roll d6 - 1 gone bad the unit takes d6  s3 hits , 2-3 the units has hatred of all enemies, 4-5 Frienzied units has frenzy, 6 rabid grants +2 attacks per unit and d6 automatics hits per turn', 'Skavenbrew', 'Magic Weapon'),
+
+(287, 60, 23, '+3 Str p501 rulebook', 'Giant Blade', 'Magic Weapon'),
+(288, 60, 23, '+3 Attacks p501 rulebook', 'Sword of Bloodshed', 'Magic Weapon'),
+(290, 40, 23, 'Armour saves cannont be taken against wounds caused by Obsidian Blade', 'Obsidian Blade', 'Magic Weapon'),
+(291, 40, 23, '+2 Str', 'Ogre Blade', 'Magic Weapon'),
+(292, 40, 23, '+2 Attacks made by this sword in close combat', 'Sword of Strife', 'Magic Weapon'),
+(293, 35, 23, 'Paired weapons. The bearer has Weapon skill 10', 'Fencers Blades', 'Magic Weapon'),
+(294, 30, 23, 'The bearer has +1 Str and +1 for every enemy in base contact p501 rulebook', 'Sword of Anti-heroes', 'Magic Weapon'),
+(295, 25, 23, 'A Wizard that suffers unsaved  wounds  from  the Spellthieving Sword loses one of his spell (determined randomly) for each unsaved wound.', 'Spellthieving Sword', 'Magic Weapon'),
+(296, 25, 23, 'Always Strikes First special rule.', 'Sword of Swift Slaying', 'Magic Weapon'),
+(297, 20, 23, '+1 Attack', 'Sword of Battle', 'Magic Weapon'),
+(298, 20, 23, 'The bearer has the Frenzy special rule and can never lose his Frenzy', 'Berseker Sword', 'Magic Weapon'),
+(299, 20, 23, 'Close combat attacks made with this sword are resolved at +1 Strength.', 'Sword of Might', 'Magic Weapon'),
+(300, 15, 23, '+1 Attack', 'Gold Sigil Sword', 'Magic Weapon'),
+(301, 15, 23, 'Attacks made by this sword are made at Initiative 10', 'Sword of Striking', 'Magic Weapon'),
+(302, 15, 23, 'Attacks made with the Sword of Striking receive a +1 bonus to hit.', 'Sword of Striking', 'Magic Weapon'),
+(303, 10, 23, 'Close combat attacks made by the Biting Blade are armour piercing.', 'Bitting Blade', 'Magic Weapon'),
+(304, 10, 23, 'Attacks made with the Relic Sword will always wound on a 5+, unless they would normally need a lower result.', 'Relic Sword', 'Magic Weapon'),
+(305, 10, 23, 'The bearer causes Fear', 'Shrieking Sword', 'Magic Weapon'),
+(306, 5, 23, 'A monster or character that suffers an unsaved wound from the Tormentor sword has the Stupidity special rule for the rest of the game.', 'Tormentor Sword', 'Magic Weapon'),
+(307, 5, 23, 'A monster or character that suffers unsaved wounds from Warrior Bane permanently loses one Attack for each unsaved wound (to a minimum of Attacks 1).', 'Warriors Bane', 'Magic Weapon'),
+
+(308, 50, 23, 'The Armour of Destiny grants the Heavy armour. The Armour wearer a 4+ ward save.', 'Armour of Destiny', 'Magic Weapon'),
+(309, 50, 23, 'The wearer counts his armour save as being one point higher than normal. Any successful roll to wound made against the wound made against the wearer of the Tricksters Helm must be re-rolled.', 'Tricksters helm', 'Magic Weapon'),
+(310, 45, 23, 'Armour of Silvered Steel grants its wearer a 2+ armour save that cannot be improved by any means.', 'Armour of Silvered Steel', 'Magic Weapon'),
+(311, 35, 23, 'Heavy armour. The Armour of Fortune grants the wearer a 5+ ward save.', 'Armour of Fortune', 'Magic Weapon'),
+(312, 30, 23, 'The wearer counts his armour save as being one point higher than normal. p502 rulebook', 'Helm of Discord', 'Magic Weapon'),
+(313, 25, 23, 'Light armour: Enemies suffer a-1 to hit penalty when attempting', 'Glittering Scales', 'Magic Weapon'),
+(314, 25, 23, 'Shield. The bearer has +1 armour save against the shooting attacks', 'Shield of Ptolos', 'Magic Weapon'),
+(315, 20, 23, 'Shield. The bearer gains Magic Resistance(1)', 'Spellshield', 'Magic Weapon'),
+(316, 20, 23, 'Heavy Armour The Armour grants the wearer a 6+ ward save', 'Gamblers Armour', 'Magic Weapon'),
+(317, 10, 23, 'The wearer counts his armour save as being one point higher than normal. The wearer has a 2+ ward save against flaming ', 'Dragonhelm', 'Magic Weapon'),
+(318, 5, 23, 'Shield. The bearer counts his armour save as being two points higher than normal, rather than the it ur than the usual one point that a shield would normally grant', 'Enchanted Shield', 'Magic Weapon'),
+(319, 5, 23, 'Shield. One use only. The first hit suffered by the bearer of the Charmed Sield is discounted on a roll of 2+.', 'Charmed Shield', 'Magic Weapon'),
+
+(320, 45, 23, '4+ ward save', 'Talisman of Preservation', 'Magic Weapon'),
+(321, 45, 23, 'Grants Magic resistance(3)', 'Obsidian Lodestone', 'Magic Weapon'),
+(322, 30, 23, '5+ ward save', 'Talisman of Endurance', 'Magic Weapon'),
+(323, 30, 23, 'Grants Magic resistance(2)', 'Obsidian Amulet', 'Magic Weapon'),
+(324, 30, 23, 'The bearer re-rolls failed armour saves', 'Dawn Stone', 'Magic Weapon'),
+(325, 15, 23, 'One use only +4 ward save against the first wound suffered by bearer p503 rulebook', 'Opal Amulet', 'Magic Weapon'),
+(326, 15, 23, 'Grants Magic resistance(1)', 'Obsidian Trinket', 'Magic Weapon'),
+(327, 10, 23, 'The bearer has regeneration(6+) special rule', 'Seed of rebirth', 'Magic Weapon'),
+(328, 5, 23, 'The bearer of the Dragonbane Gem has a 2+ ward save against flaming attacks.', 'Dragonbane gem', 'Magic Weapon'),
+(329, 5, 23, 'This item grants grants the bearer a 5+ ward save against wounds caused in close combat by models that have the Fly special ', 'Pidgeon Plucker Pendant', 'Magic Weapon'),
+(330, 5, 23, 'One Use Only The luck stone allows the bearer to re-roll failed armour save', 'Luckstone', 'Magic Weapon'),
+
+/* Doomwheel */
+
+(331, 0, 5, 'Unit has armour save 4+', 'Armour Save(4+)', 'Free'),
+(332, 0, 5, ' p67 Skaven book', 'Grinding Down the Foe', 'Free'),
+(333, 0, 5, 'Rulebook', 'Immune to Psychology', 'Free'),
+(334, 0, 5, 'p67 Skaven book', 'Impact Hits (D6+1)', 'Free'),
+(335, 0, 5, 'p67 Skaven book', 'Large Target', 'Free'),
+(336, 0, 5, '3D6 movement p67 Skaven book', 'Rolling Doom', 'Free'),
+(337, 0, 5, 'p67 Skaven book', 'Terror', 'Free'),
+(338, 0, 5, 'p67 Skaven book', 'Zzzzap!', 'Free'),
+(339, 0, 5, '2d6 Attacks', 'Doomwheel crew', 'Mount'),
+
+/* Stormvermin */
+
+(340, 10, 2, 'Champion', 'Fangleader', 'Champion'),
+(341, 5, 2, 'Musician', 'Musician', 'SingleBuy'),
+(342, 10, 2, 'Standard Bearer', 'Standard Bearer', 'SingleBuy'),
+(343, 0, 2, 'Halberd', 'Halberd', 'Weapon'),
+(344, 1, 2, 'Shields', 'Shield', 'Weapon'),
+
+(345, 55, 2, 'Ratling Gun', 'Ratling Gun', 'Weapon Team'),
+(346, 70, 2, 'Warpfire Thrower', 'Warpfire Thrower', 'Weapon Team'),
+(347, 65, 2, 'Poisoned Wind Mortar', 'Poisoned Wind Mortar', 'Weapon Team'),
+(348, 55, 2, 'Doom-flayer', 'Doom-flayer', 'Weapon Team'),
+
+(349, 15, 2, 'Warpmusket: a rifle like a warplock jezzail. Range 24 inches, Strength 5, Armour Piercing, uses Unstable Ammunition. Can move or fire. Warpstone Weapon.', 'Warpmusket', 'The Scavenge-Pile'),
+(350, 15, 2, 'Poisoned Attacks: all close combat attacks by this model are Poisoned. Affects tail weapons but not magic weapons or Rat Hound Bodyguard.', 'Poisoned Attacks', 'The Scavenge-Pile'),
+(351, 8, 2, 'Tail Weapon: an extra appendage wielding a blade, spike, or mace. Grants 1 additional S3 attack at the models WS and Initiative, usable with other attacks, but has no magical properties.', 'Tail Weapon', 'The Scavenge-Pile'),
+(352, 8, 2, 'Warplock Pistol: range 10in, Armour Piercing, uses Unstable Ammunition, Warpstone Weapon. Superior to other races pistols.', 'Warplock Pistol', 'The Scavenge-Pile'),
+(353, 5, 2, 'Rat Hound upgrade grants an extra WS3/S3 attack at the owners Initiative. On a To Hit roll of 1, the hound hits its owner. Despite loyalty, verminous instincts may make it attack if the master seems vulnerable.', 'Rat Hound Bodyguard', 'The Scavenge-Pile'),
+
+(354, 30, 2, 'One use only re-roll all failed to hit and to wound hits', 'Plague Banner', 'Magic Banner'),
+(355, 70, 2, 'All enemy within 12inches suffer -1 ld and owner can force enemy in base contact to re roll succesffull ld test', 'Sacred Banner of the horned Rat', 'Magic Banner'),
+(356, 50, 2, 'Banner can be activated at begin of any player turn no flying movement is allowed all missles has -2 penalty to hit p111', 'Storm Banner ', 'Magic Banner'),
+(357, 30, 2, 'p111', 'Grand Banner of Clan Superiority', 'Magic Banner'),
+(358, 25, 2, 'Any enemy in base contact suffer 2d6 S2 hits per any Close combat phase p111', 'Banner of Under-Empire', 'Magic Banner'),
+(359, 15, 2, 'Hatred against dwarfs', 'Dwarf-Hide Banner', 'Magic Banner'),
+(360, 55, 2, 'A unit with this magic standard can re-roll its charge distance ', 'Rampagers Standard', 'Magic Banner'),
+(361, 50, 2, 'A unit with this banner causes Terror in its enemies.', 'Wailing Banner', 'Magic Banner'),
+(362, 50, 2, 'A unit with the Rangers Standard has the Strider special ', 'Rangers Standard ', 'Magic Banner'),
+(363, 45, 2, 'Models in a unit with the Razor Standard have the Armour Piercing special rule.', 'Razor Standard ', 'Magic Banner'),
+(364, 35, 2, 'A unit with this banner adds +1 to combat resolution.', 'War Banner', 'Magic Banner'),
+(365, 15, 2, 'Models in a unit with the Banner of Swiftness have +1 to their Movement characteristic.', 'Banner of Swiftness', 'Magic Banner'),
+(366, 15, 2, 'Models in a unit with the Lichebone Pennant have Magic Resistance(1)', 'Lichebone Pennant', 'Magic Banner'),
+(367, 15, 2, 'Models in a unit with the Standard of Discipline have +1 Leadership, but cannot use the Generals Inspiring Presence special rule.', 'Standard of Discipline', 'Magic Banner'),
+(368, 10, 2, 'Models in a unit with the Banner of Eternal Flame have the have Flaming Attacks', 'Banner of Eternal Flame', 'Magic Banner'),
+(369, 5, 2, 'One use only. A unit with the Gleaming Pennant can re-roll its first failed Leadership test', 'Gleaming Pennant', 'Magic Banner'),
+(370, 5, 2, 'A unit with the Scarecrow Banner causes Fear in models with the Fly special ', 'Scarecrow Banner', 'Magic Banner'),
+(371, 10, 2, 'One use only can march as 3x speed but suffer 2d6 S3 hits', 'Banner of Verminous Scurring', 'Magic Banner'),
+
+
+(131, 0, 2, 'Free hand weapons to fight', 'Hand Weapon', 'Free upgrade'),
+(372, 0, 2, 'Free Heavy armors grants 5+ save', 'Heavy Armour', 'Free upgrade'),
+(373, 0, 2, 'The Skaven embody the adage (he who runs away lives to fight another day) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(374, 0, 2, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+
+/* Slaves */
+
+(375, 4, 9, 'Champion', 'Pawleader', 'Champion'),
+(376, 2, 9, 'Musician', 'Musician', 'SingleBuy'),
+(377, 0.5, 9, 'One more rank can attack', 'Spears', 'Weapon'),
+(378, 0.5, 9, 'Slings', 'Slings', 'Weapon'),
+(379, 0.5, 9, 'Shields grants 6+ save and 6+ ward save in front', 'Shield', 'Weapon'),
+(380, 0, 9, 'Automatically passes all Panic test except of other skavenslaves', 'Expendable', 'Free upgrade'),
+(381, 0, 9, 'If unit breaks from combat all unit within d6 range suffers d3 s3 dmg from each rank left', 'Cornered rats', 'Free upgrade'),
+(382, 0, 9, 'The Skaven embody the adage (he who runs away lives to fight another day) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(383, 0, 9, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+(384, 0, 9, 'Free hand weapons to fight', 'Hand Weapon', 'Free upgrade'),
+
+/* Plague Priests */
+(777, 0, 24, 'Chose Ur General', 'General', 'Pick up General'),
+
+(385, 0, 24, 'Grants One spell', 'Level 1 Wizard', 'Free'),
+(386, 35, 24, 'Grants One more spell', 'Level 2 Wizard', 'Magic'),
+
+(387, 16, 24, 'All units around must pass Toughness test', 'Plague Censer', 'Weapon'),
+(388, 4, 24, 'Grants +2 Strength in first turn of combat', 'Flail', 'Weapon'),
+(389, 2, 24, 'Grants One more attack', 'Additional hand Weapon', 'Weapon'),
+
+(390, 30, 24, 'Big rat on rat', 'Great Pox Rat', 'Mount'),
+(391, 150, 24, 'Plague Furnace', 'Plague Furnace', 'Mount'),
+
+(392, 200, 24, 'Hand Weapon', 'Hand Weapon', 'Free'),
+(393, 0, 24, 'Frenzy grants +1 attack', 'Frenzy', 'Free'),
+(394, 0, 24, 'The Skaven embody the adage (he who runs away lives to fight another day) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(395, 0, 24, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+/* Skavenging pile */
+(396, 15, 14, 'Warpmusket: a rifle like a warplock jezzail. Range 24 inches, Strength 5, Armour Piercing, uses Unstable Ammunition. Can move or fire. Warpstone Weapon.', 'Warpmusket', 'The Scavenge-Pile'),
+(397, 15, 14, 'Poisoned Attacks: all close combat attacks by this model are Poisoned. Affects tail weapons but not magic weapons or Rat Hound Bodyguard.', 'Poisoned Attacks', 'The Scavenge-Pile'),
+(398, 8, 14, 'Tail Weapon: an extra appendage wielding a blade, spike, or mace. Grants 1 additional S3 attack at the models WS and Initiative, usable with other attacks, but has no magical properties.', 'Tail Weapon', 'The Scavenge-Pile'),
+(399, 8, 14, 'Warplock Pistol: range 10in, Armour Piercing, uses Unstable Ammunition, Warpstone Weapon. Superior to other races pistols.', 'Warplock Pistol', 'The Scavenge-Pile'),
+(400, 5, 14, 'Rat Hound upgrade grants an extra WS3/S3 attack at the owners Initiative. On a To Hit roll of 1, the hound hits its owner. Despite loyalty, verminous instincts may make it attack if the master seems vulnerable.', 'Rat Hound Bodyguard', 'The Scavenge-Pile'),
+/* Skaven magic items */
+(401, 30, 14, 'Magic Weapon +1 to hit', 'Sword of Striking', 'Magic Weapon'),
+(402, 25, 14, 'Magic Weapon +1 to Attack', 'Sword of Battle', 'Magic Weapon'),
+(403, 20, 14, 'Magic Weapon +1 to Strength', 'Sword of Might', 'Magic Weapon'),
+(404, 5, 14, 'Magic Weapon -1 to armour save', 'Bitting Blade', 'Magic Weapon'),
+(405, 5, 14, 'Magic armour 5+ armour save', 'Enchanted Shield', 'Magic Weapon'),
+(406, 5, 14, 'Talisman grants 6+ ward save', 'Talisman of Protection', 'Magic Weapon'),
+(407, 25, 14, 'One Use Only Automatically Dispel an enemy Spell', 'Dispell Scroll', 'Magic Weapon'),
+(408, 20, 14, 'One Use Only grants +2  dice to Cast a spell', 'Power Stone', 'Magic Weapon'),
+(409, 35, 14, 'Arcane +1 to dispell', 'Staff of Sorcerry', 'Magic Weapon'),
+(410, 100, 14, 'Str 10 enemy must reroll all succes ward saves, any unsaved roll is multiplied to d6. Roll d6 at any end of weilder turn 3+ nothing happens, 1-2 user takes wound without armour save allowed', 'Fellblade', 'Magic Weapon'),
+(411, 50, 14, 'Armour saves cannont be taken against this sword', 'Warpforged Blade', 'Magic Weapon'),
+(412, 45, 14, '+1 Str +1 Attack', 'Warlock-Augumented Weapon', 'Magic Weapon'),
+(413, 35, 14, '+1 Str any unsaved Wound is multipled to 2,If wielder makes a hit roll that has two or more rolls of 1 the wielder suffers wound that is multipled to 2', 'Blade of Corruption', 'Magic Weapon'),
+(414, 30, 14, 'Has armour piercing each unsaved wound is multipled to d3', 'Weeping Blade', 'Magic Weapon'),
+(415, 25, 14, '+1 Str to all attacks in close combat Agains Dwarfs grants armour piercing and re-rolls all failed to Wound rolls', 'Dwarfbane', 'Magic Weapon'),
+(416, 10, 14, 'Enemy lose 1 T of every wound taken if his T = 0 he dies', 'Blade of Nurglitch', 'Magic Weapon'),
+(417, 30, 14, 'Grants 4+ save, all succes armour saves armour inflicts S4 hit against the model that struckt the blow', 'Warpstone armour', 'Magic Weapon'),
+(418, 25, 14, 'Grants 4+ save, first succesfull wound Destroys the armour and wound is discounted ', 'Worlds Edge Armour', 'Magic Weapon'),
+(419, 15, 14, 'Any model in base contact suffer -1 attack (minimum 1 attack) to strike shield bearer', 'Shield of Distraction', 'Magic Weapon'),
+(420, 30, 14, 'ward save 5+', 'Foul Pendant', 'Magic Weapon'),
+(421, 15, 14, 'One Use Only A Skaven model can make a single enemy in game in base contact to re roll all its successful to hit dice rolls', 'Rival hide talisman', 'Magic Weapon'),
+(422, 50, 14, 'A character carrying can force Clanrats of Stormvermin to drink roll d6 - 1 gone bad the unit takes d6  s3 hits , 2-3 the units has hatred of all enemies, 4-5 Frienzied units has frenzy, 6 rabid grants +2 attacks per unit and d6 automatics hits per turn', 'Skavenbrew', 'Magic Weapon'),
+(423, 30, 14, 'One use only instantly cure all wound ( use only on begin of any phase)', 'Skalm', 'Magic Weapon'),
+(424, 25, 14, 'Enemy have to pass ld test when they want to charge this unit', 'Pipes of piebald', 'Magic Weapon'),
+(425, 20, 14, '-1 ld to enemy in base contact with units', 'Proteins of verminous doom', 'Magic Weapon'),
+(426, 50, 14, '3x Multiple shots S5 multiple d3 wounds', 'Warpstone stars', 'Magic Weapon'),
+(427, 30, 14, 'Read in army book p109', 'Infernal Bomb', 'Magic Weapon'),
+(428, 30, 14, 'p109 army book', 'Smoke bombs', 'Magic Weapon'),
+(429, 50, 14, 'One Use Only p110', 'Brass Orb', 'Magic Weapon'),
+(430, 30, 14, 'p110', 'Doomrocket', 'Magic Weapon'),
+(431, 25, 14, 'Any model touched by throw suffer 4+ hit without armour save allowed p110 ', 'Death globe', 'Magic Weapon'),
+(432, 20, 14, '+1 Bs no penalties of covers', 'Warlock Optics', 'Magic Weapon'),
+(433, 35, 14, 'One use Only bound spell (lvl 5) 24inches range. Spell inflicts S2 hit on every model in unit with no armour save allowed', 'Warp scroll', 'Magic Weapon'),
+/*  magic items from book */
+(434, 60, 14, '+3 Str p501 rulebook', 'Giant Blade', 'Magic Weapon'),
+(435, 60, 14, '+3 Attacks p501 rulebook', 'Sword of Bloodshed', 'Magic Weapon'),
+(436, 40, 14, 'Armour saves cannont be taken against wounds caused by Obsidian Blade', 'Obsidian Blade', 'Magic Weapon'),
+(437, 40, 14, '+2 Str', 'Ogre Blade', 'Magic Weapon'),
+(438, 40, 14, '+2 Attacks made by this sword in close combat', 'Sword of Strife', 'Magic Weapon'),
+(439, 35, 14, 'Paired weapons. The bearer has Weapon skill 10', 'Fencers Blades', 'Magic Weapon'),
+(440, 30, 14, 'The bearer has +1 Str and +1 for every enemy in base contact p501 rulebook', 'Sword of Anti-heroes', 'Magic Weapon'),
+(441, 25, 14, 'A Wizard that suffers unsaved  wounds  from  the Spellthieving Sword loses one of his spell (determined randomly) for each unsaved wound.', 'Spellthieving Sword', 'Magic Weapon'),
+(442, 25, 14, 'Always Strikes First special rule.', 'Sword of Swift Slaying', 'Magic Weapon'),
+(443, 20, 14, '+1 Attack', 'Sword of Battle', 'Magic Weapon'),
+(444, 20, 14, 'The bearer has the Frenzy special rule and can never lose his Frenzy', 'Berseker Sword', 'Magic Weapon'),
+(445, 20, 14, 'Close combat attacks made with this sword are resolved at +1 Strength.', 'Sword of Might', 'Magic Weapon'),
+(446, 15, 14, 'Grants 10 Initiative', 'Gold Sigil Sword', 'Magic Weapon'),
+(448, 15, 14, 'Attacks made with the Sword of Striking receive a +1 bonus to hit.', 'Sword of Striking', 'Magic Weapon'),
+(449, 10, 14, 'Close combat attacks made by the Biting Blade are armour piercing.', 'Bitting Blade', 'Magic Weapon'),
+(450, 10, 14, 'Attacks made with the Relic Sword will always wound on a 5+, unless they would normally need a lower result.', 'Relic Sword', 'Magic Weapon'),
+(451, 10, 14, 'The bearer causes Fear', 'Shrieking Sword', 'Magic Weapon'),
+(452, 5, 14, 'A monster or character that suffers an unsaved wound from the Tormentor sword has the Stupidity special rule for the rest of the game.', 'Tormentor Sword', 'Magic Weapon'),
+(453, 5, 14, 'A monster or character that suffers unsaved wounds from Warrior Bane permanently loses one Attack for each unsaved wound (to a minimum of Attacks 1).', 'Warriors Bane', 'Magic Weapon'),
+
+(454, 50, 14, 'The Armour of Destiny grants the Heavy armour. The Armour wearer a 4+ ward save.', 'Armour of Destiny', 'Magic Weapon'),
+(455, 50, 14, 'The wearer counts his armour save as being one point higher than normal. Any successful roll to wound made against the wound made against the wearer of the Tricksters Helm must be re-rolled.', 'Tricksters helm', 'Magic Weapon'),
+(456, 45, 14, 'Armour of Silvered Steel grants its wearer a 2+ armour save that cannot be improved by any means.', 'Armour of Silvered Steel', 'Magic Weapon'),
+(457, 35, 14, 'Heavy armour. The Armour of Fortune grants the wearer a 5+ ward save.', 'Armour of Fortune', 'Magic Weapon'),
+(458, 30, 14, 'The wearer counts his armour save as being one point higher than normal. p502 rulebook', 'Helm of Discord', 'Magic Weapon'),
+(459, 25, 14, 'Light armour: Enemies suffer a-1 to hit penalty when attempting', 'Glittering Scales', 'Magic Weapon'),
+(460, 25, 14, 'Shield. The bearer has +1 armour save against the shooting attacks', 'Shield of Ptolos', 'Magic Weapon'),
+(461, 20, 14, 'Shield. The bearer gains Magic Resistance(1)', 'Spellshield', 'Magic Weapon'),
+(462, 20, 14, 'Heavy Armour The Armour grants the wearer a 6+ ward save', 'Gamblers Armour', 'Magic Weapon'),
+(463, 10, 14, 'The wearer counts his armour save as being one point higher than normal. The wearer has a 2+ ward save against flaming ', 'Dragonhelm', 'Magic Weapon'),
+(464, 5, 14, 'Shield. The bearer counts his armour save as being two points higher than normal, rather than the it ur than the usual one point that a shield would normally grant', 'Enchanted Shield', 'Magic Weapon'),
+(465, 5, 14, 'Shield. One use only. The first hit suffered by the bearer of the Charmed Sield is discounted on a roll of 2+.', 'Charmed Shield', 'Magic Weapon'),
+
+(466, 45, 14, '4+ ward save', 'Talisman of Preservation', 'Magic Weapon'),
+(467, 45, 14, 'Grants Magic resistance(3)', 'Obsidian Lodestone', 'Magic Weapon'),
+(468, 30, 14, '5+ ward save', 'Talisman of Endurance', 'Magic Weapon'),
+(469, 30, 14, 'Grants Magic resistance(2)', 'Obsidian Amulet', 'Magic Weapon'),
+(470, 30, 14, 'The bearer re-rolls failed armour saves', 'Dawn Stone', 'Magic Weapon'),
+(471, 15, 14, 'One use only +4 ward save against the first wound suffered by bearer p503 rulebook', 'Opal Amulet', 'Magic Weapon'),
+(472, 15, 14, 'Grants Magic resistance(1)', 'Obsidian Trinket', 'Magic Weapon'),
+(473, 10, 14, 'The bearer has regeneration(6+) special rule', 'Seed of rebirth', 'Magic Weapon'),
+(474, 5, 14, 'The bearer of the Dragonbane Gem has a 2+ ward save against flaming attacks.', 'Dragonbane gem', 'Magic Weapon'),
+(475, 5, 14, 'This item grants grants the bearer a 5+ ward save against wounds caused in close combat by models that have the Fly special ', 'Pidgeon Plucker Pendant', 'Magic Weapon'),
+(476, 5, 14, 'One Use Only The luck stone allows the bearer to re-roll failed armour save', 'Luckstone', 'Magic Weapon'),
+
+(477, 70, 14, 'The bearer receives a +1 bonus on attempts to cast and dispel.', 'Book of Ashur', 'Magic Weapon'),
+(478, 50, 14, '(One use): Instead of dispelling, let the spell be cast. After it resolves, roll 1D6 for each casting die — the caster suffers 1 wound on each 5+, no armour saves allowed.', 'Feedback Scroll', 'Magic Weapon'),
+(479, 50, 14, 'Scroll of Leeching (One use): Instead of dispelling, let the spell be cast. After it resolves, add dispel dice equal to the number of casting dice (max pool 12).', 'Scroll of Leeching', 'Magic Weapon'),
+(480, 50, 14, 'Hex Scroll (One use): Instead of dispelling, let the spell be cast. Caster tests D6 ≤ Wizard level or is turned into a toad: no spells, no items, stats 1 (Wounds unchanged). At each magic phase, roll 4+ to return.', 'Sivjirs Hex Scroll', 'Magic Weapon'),
+(481, 35, 14, 'One use only. A Power Scroll can be used when the Wizard makes a casting attempt. During that casting attempt, any roll of a double will cause irresistible force (and a miscast).', 'Power Scroll', 'Magic Weapon'),
+(482, 35, 14, 'One use only. The bearer can increase one of his casting results by an additional +D6, after other casting dice have been rolled. This extra power dice can contribute to casting a spell with irresistible force (and a miscast).', 'Wand of Jet', 'Magic Weapon'),
+(483, 35, 14, 'One Use only adds +D6 dice to the power pool at the start of the casters own magic phase, but also inflicts D3 wounds on the bearer (with no armour saves allowed).', 'Forbiden Rod', 'Magic Weapon'),
+(484, 25, 14, 'Feedback effect item (One use): At the start of your magic phase, activate. For that phase, each time an enemy wizard dispels the bearers spell, roll a D6; on 5+, that wizard suffers a wound with no armour save.', 'Tricksters shard', 'Magic Weapon'),
+(485, 25, 14, 'One use only. If the wizard rolls on the miscast table he can re-roll the result.', 'Earthing Rod', 'Magic Weapon'),
+(486, 20, 14, '(One use): Before casting, the wizard may add 2 extra dice to the casting roll (at least 1 die must still come from the power pool).', 'Power Scroll', 'Magic Weapon'),
+(487, 15, 14, '(One use): After rolling dispel dice, the bearer may add +D6 to a single dispel attempt. This bonus can contribute to an Irresistible Dispel.', 'Scetre of Stability', 'Magic Weapon'),
+(488, 15, 14, 'The Wizard adds +1 to all of his channeling attempts.', 'Channeling staff', 'Magic Weapon'),
+(489, 15, 14, '(One use): After an enemy spell is cast, the bearer may use this scroll. The spell is resolved normally, but its target gains a 4+ ward save against any wounds it causes.', 'Scroll of Shielding', 'Magic Weapon'),
+
+(490, 100, 14, 'The wearer is treated as being a Level 2 Wizard who can use a randomly chosen spell lore. However, he also has the Stupidity special ', 'Wizzard Hat', 'Magic Weapon'),
+(491, 100, 14, '(One use): After deployment zones are set but before armies are deployed, place a Watchtower-sized building in your deployment zone. Treated as a standard building. If no model is available, it cannot be used.', 'Fozzirks Folding Fortess', 'Magic Weapon'),
+(492, 50, 14, 'Infantry or monstrous infantry models on foot only. The owner of this magical carpet has the Fly special rule. However, he cannot join units. ', 'Arabyan Carpet', 'Magic Weapon'),
+(493, 35, 14, 'The bearer of the Crown of Command has the Stubborn special rule.', 'Crown of Command', 'Magic Weapon'),
+(494, 35, 14, 'One use only. The Healing Potion can be drunk at the start of the controlling players turn. Immediately recovers D6 Wounds lost in the battle.', 'Healing potion', 'Magic Weapon'),
+(495, 35, 14, 'Flying creatures (and their riders) must re-roll successful rolls to hit against the bearer (and any unit he is with) in close combat.', 'Featherfoe Torc', 'Magic Weapon'),
+(496, 25, 14, 'Bound spell (power level 3). The Ruby Ring of Ruin contains the Fireball spell (see the Lore of Fire).', 'Ruby Ring of Ruin', 'Magic Weapon'),
+(497, 25, 14, 'The wearer of this mask causes Terror. However, other models can never use his Leadership', 'The Terrifying Mask of EEE!', 'Magic Weapon'),
+(498, 20, 14, 'One use only. The Potion of Strength can be drunk at the start of any players turn. The imbiber has +3 The imbiber Strength until the end of the turn', 'Potion of Strenght', 'Magic Weapon'),
+(499, 20, 14, 'One use only. The Potion of Toughness can be drunk at the start of any players turn. The imbiber has +3 The imbiber Tougness until the end of the turn', 'Potion of Toughness', 'Magic Weapon'),
+(500, 15, 14, 'Models in base contact with the bearer (friends and foes) must re-roll successful ward saves.', 'The other tricksters shard', 'Magic Weapon'),
+(501, 5, 14, 'The character (and any unit he is with) gain a 6+ ward save against war machine weapons.', 'Ironcurse icon', 'Magic Weapon'),
+(502, 5, 14, '(One use): Drink at the start of any players turn. The user gains Immune to Psychology and Devastating Charge until the end of that turn.', 'Potion of Foolhardiness', 'Magic Weapon'),
+(503, 5, 14, 'One use only. The Potion of Speed can be drunk at the start of any players turn. The imbiber has +3 Initiative until the end of the turn.', 'Potion of Speed', 'Magic Weapon'),
+
+/* Gutter Runners */
+
+(504, 0, 13, 'Enemy suffer -1 WS', 'Snare-net', 'Weapon'),
+(505, 1, 13, '24range', 'Slings', 'Weapon'),
+(506, 5, 13, 'Model with the Poisoned Attacks special rule wounds his target automatically if his natural dice roll to hit is a 6. Armour saves are modified by the Strength of the attack as normal.', 'Poisoned attacks', 'Weapon'),
+(507, 12, 13, '24range', 'Deathrunner', 'Champion'),
+(508, 10, 13, 'p109', 'Smokebombs', 'Weapon'),
+(509, 30, 13, 'd3 wound armour piercing ', 'Weepingblade', 'Weapon'),
+(510, 60, 13, 'Warp-grinder', 'Warp-grinder', 'Weapon Team'),
+
+(511, 0, 13, 'The Skaven embody the adage (he who runs away lives to fight another day) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(512, 0, 13, 'Check ', 'Skirmish', 'Weapon'),
+(513, 0, 13, 'Check', 'Scouts', 'Weapon'),
+(514, 0, 13, 'Check', 'Sneaky Infiltrators', 'Weapon'),
+(515, 0, 13, 'Ward save', 'Dodge 6+ / Deathrunner 5+', 'Weapon'),
+(516, 0, 13, '+1 attack', 'Two handed weapons', 'Weapon'),
+(517, 0, 13, 'range weapon', 'Throwing stars', 'Weapon'),
+
+/* Plague Monks */
+(518, 10, 3, 'Champion', 'Bringer-of-the-Word', 'Champion'),
+(519, 5, 3, 'Musician', 'Musician', 'SingleBuy'),
+(520, 10, 3, 'Standard Bearer', 'Standard Bearer', 'SingleBuy'),
+(521, 10, 3, 'Add Magic standard', 'Magic Standard Bearer', 'SingleBuy'),
+
+(522, 0, 3, '+1 attack', 'Frenzy', 'SingleBuy'),
+
+(523, 0, 3, '+1 attack', 'Two hand weapon', 'SingleBuy'),
+(524, 0, 3, '+1 attack', 'Frenzy', 'SingleBuy'),
+
+(525, 30, 3, 'One use only re-roll all failed to hit and to wound hits', 'Plague Banner', 'Magic Banner'),
+(526, 70, 3, 'All enemy within 12inches suffer -1 ld and owner can force enemy in base contact to re roll succesffull ld test', 'Sacred Banner of the horned Rat', 'Magic Banner'),
+(527, 50, 3, 'Banner can be activated at begin of any player turn no flying movement is allowed all missles has -2 penalty to hit p111', 'Storm Banner ', 'Magic Banner'),
+(528, 30, 3, 'p111', 'Grand Banner of Clan Superiority', 'Magic Banner'),
+(529, 25, 3, 'Any enemy in base contact suffer 2d6 S2 hits per any Close combat phase p111', 'Banner of Under-Empire', 'Magic Banner'),
+(530, 15, 3, 'Hatred against dwarfs', 'Dwarf-Hide Banner', 'Magic Banner'),
+
+(531, 55, 3, 'A unit with this magic standard can re-roll its charge distance ', 'Rampagers Standard', 'Magic Banner'),
+(532, 50, 3, 'A unit with this banner causes Terror in its enemies.', 'Wailing Banner', 'Magic Banner'),
+(533, 50, 3, 'A unit with the Rangers Standard has the Strider special ', 'Rangers Standard ', 'Magic Banner'),
+(534, 45, 3, 'Models in a unit with the Razor Standard have the Armour Piercing special rule.', 'Razor Standard ', 'Magic Banner'),
+(535, 35, 3, 'A unit with this banner adds +1 to combat resolution.', 'War Banner', 'Magic Banner'),
+(536, 15, 3, 'Models in a unit with the Banner of Swiftness have +1 to their Movement characteristic.', 'Banner of Swiftness', 'Magic Banner'),
+(537, 15, 3, 'Models in a unit with the Lichebone Pennant have Magic Resistance(1)', 'Lichebone Pennant', 'Magic Banner'),
+(538, 15, 3, 'Models in a unit with the Standard of Discipline have +1 Leadership, but cannot use the Generals Inspiring Presence special rule.', 'Standard of Discipline', 'Magic Banner'),
+(539, 10, 3, 'Models in a unit with the Banner of Eternal Flame have the have Flaming Attacks', 'Banner of Eternal Flame', 'Magic Banner'),
+(540, 5, 3, 'One use only. A unit with the Gleaming Pennant can re-roll its first failed Leadership test', 'Gleaming Pennant', 'Magic Banner'),
+(541, 5, 3, 'A unit with the Scarecrow Banner causes Fear in models with the Fly special ', 'Scarecrow Banner', 'Magic Banner'),
+
+(542, 10, 3, 'One use only can march as 3x speed but suffer 2d6 S3 hits', 'Banner of Verminous Scurring', 'Magic Banner'),
+
+(543, 0, 3, 'The Skaven embody the adage (he who runs away lives to fight another day) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(544, 0, 3, 'Skaven gain courage from numbers. With Strength in Numbers, a unit adds its rank bonus to Leadership (max 10). Losing rank bonus also loses Leadership bonus. Example: Clanrats Ld 5 in 3 ranks get +2.', 'Strength in numbers', 'Race special rule'),
+
+/* Warlock Eng */
+(778, 0, 22, 'Chose Ur General', 'General', 'Pick up General'),
+
+(545, 50, 22, 'Grants One spell', 'Level 1 Wizard', 'Magic'),
+(546, 85, 22, 'Grants One more spell', 'Level 2 Wizard', 'Magic'),
+(547, 0, 22, 'Free Weapons to fight', 'Hand Weapon', 'Magic'),
+
+(548, 0, 22, 'Skaven may refuse a challenge without losing honour. Fleeing to safety is a leaders right. Model moves to back rank but the unit still benefits from its Leadership or Battle Standard ability.', 'Verminous Valour', 'Free upgrade'),
+(549, 0, 22, 'The Skaven embody the adage (he who runs away lives to fight another day) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(550, 0, 22, 'Grants More Ld for each rank (max 10Ld)', 'Strength in numbers', 'Race special rule'),
+
+(551, 15, 22, 'Warpmusket: a rifle like a warplock jezzail. Range 24 inches, Strength 5, Armour Piercing, uses Unstable Ammunition. Can move or fire. Warpstone Weapon.', 'Warpmusket', 'The Scavenge-Pile'),
+(552, 15, 22, 'Poisoned Attacks: all close combat attacks by this model are Poisoned. Affects tail weapons but not magic weapons or Rat Hound Bodyguard.', 'Poisoned Attacks', 'The Scavenge-Pile'),
+(553, 8, 22, 'Tail Weapon: an extra appendage wielding a blade, spike, or mace. Grants 1 additional S3 attack at the models WS and Initiative, usable with other attacks, but has no magical properties.', 'Tail Weapon', 'The Scavenge-Pile'),
+(554, 8, 22, 'Warplock Pistol: range 10in, Armour Piercing, uses Unstable Ammunition, Warpstone Weapon. Superior to other races pistols.', 'Warplock Pistol', 'The Scavenge-Pile'),
+(555, 5, 22, 'Rat Hound upgrade grants an extra WS3/S3 attack at the owners Initiative. On a To Hit roll of 1, the hound hits its owner. Despite loyalty, verminous instincts may make it attack if the master seems vulnerable.', 'Rat Hound Bodyguard', 'The Scavenge-Pile'),
+
+(556, 30, 22, 'Magic Weapon +1 to hit', 'Sword of Striking', 'Magic Weapon'),
+(557, 25, 22, 'Magic Weapon +1 to Attack', 'Sword of Battle', 'Magic Weapon'),
+(558, 20, 22, 'Magic Weapon +1 to Strength', 'Sword of Might', 'Magic Weapon'),
+(559, 5, 22, 'Magic Weapon -1 to armour save', 'Bitting Blade', 'Magic Weapon'),
+(560, 5, 22, 'Magic armour 5+ armour save', 'Enchanted Shield', 'Magic Weapon'),
+(561, 5, 22, 'Talisman grants 6+ ward save', 'Talisman of Protection', 'Magic Weapon'),
+(562, 25, 22, 'One Use Only Automatically Dispel an enemy Spell', 'Dispell Scroll', 'Magic Weapon'),
+(563, 20, 22, 'One Use Only grants +2  dice to Cast a spell', 'Power Stone', 'Magic Weapon'),
+(564, 35, 22, 'Arcane +1 to dispell', 'Staff of Sorcerry', 'Magic Weapon'),
+(565, 100, 22, 'Str 10 enemy must reroll all succes ward saves, any unsaved roll is multiplied to d6. Roll d6 at any end of weilder turn 3+ nothing happens, 1-2 user takes wound without armour save allowed', 'Fellblade', 'Magic Weapon'),
+(566, 50, 22, 'Armour saves cannont be taken against this sword', 'Warpforged Blade', 'Magic Weapon'),
+(567, 45, 22, '+1 Str +1 Attack', 'Warlock-Augumented Weapon', 'Magic Weapon'),
+(568, 35, 22, '+1 Str any unsaved Wound is multipled to 2,If wielder makes a hit roll that has two or more rolls of 1 the wielder suffers wound that is multipled to 2', 'Blade of Corruption', 'Magic Weapon'),
+(569, 30, 22, 'Has armour piercing each unsaved wound is multipled to d3', 'Weeping Blade', 'Magic Weapon'),
+(570, 25, 22, '+1 Str to all attacks in close combat Agains Dwarfs grants armour piercing and re-rolls all failed to Wound rolls', 'Dwarfbane', 'Magic Weapon'),
+(571, 10, 22, 'Enemy lose 1 T of every wound taken if his T = 0 he dies', 'Blade of Nurglitch', 'Magic Weapon'),
+(572, 30, 22, 'Grants 4+ save, all succes armour saves armour inflicts S4 hit against the model that struckt the blow', 'Warpstone armour', 'Magic Weapon'),
+(573, 25, 22, 'Grants 4+ save, first succesfull wound Destroys the armour and wound is discounted ', 'Worlds Edge Armour', 'Magic Weapon'),
+(574, 15, 22, 'Any model in base contact suffer -1 attack (minimum 1 attack) to strike shield bearer', 'Shield of Distraction', 'Magic Weapon'),
+(575, 30, 22, 'ward save 5+', 'Foul Pendant', 'Magic Weapon'),
+(576, 15, 22, 'One Use Only A Skaven model can make a single enemy in game in base contact to re roll all its successful to hit dice rolls', 'Rival hide talisman', 'Magic Weapon'),
+(577, 50, 22, 'A character carrying can force Clanrats or Stormvermin to drink roll d6 - 1 gone bad the unit takes d6  s3 hits , 2-3 the units has hatred of all enemies, 4-5 Frienzied units has frenzy, 6 rabid grants +2 attacks per unit and d6 automatics hits per turn', 'Skavenbrew', 'Magic Weapon'),
+(578, 30, 22, 'One use only instantly cure all wound ( use only on begin of any phase)', 'Skalm', 'Magic Weapon'),
+(579, 25, 22, 'Enemy have to pass ld test when they want to charge this unit', 'Pipes of piebald', 'Magic Weapon'),
+(580, 20, 22, '-1 ld to enemy in base contact with units', 'Proteins of verminous doom', 'Magic Weapon'),
+(581, 50, 22, '3x Multiple shots S5 multiple d3 wounds', 'Warpstone stars', 'Magic Weapon'),
+(582, 30, 22, 'Read in army book p109', 'Infernal Bomb', 'Magic Weapon'),
+(583, 30, 22, 'p109 army book', 'Smoke bombs', 'Magic Weapon'),
+(584, 50, 22, 'One Use Only p110', 'Brass Orb', 'Magic Weapon'),
+(585, 30, 22, 'p110', 'Doomrocket', 'Magic Weapon'),
+(586, 25, 22, 'Any model touched by throw suffer 4+ hit without armour save allowed p110 ', 'Death globe', 'Magic Weapon'),
+(587, 20, 22, '+1 Bs no penalties of covers', 'Warlock Optics', 'Magic Weapon'),
+(588, 35, 22, 'One use Only bound spell (lvl 5) 24inches range. Spell inflicts S2 hit on every model in unit with no armour save allowed', 'Warp scroll', 'Magic Weapon'),
+
+(589, 60, 22, '+3 Str p501 rulebook', 'Giant Blade', 'Magic Weapon'),
+(590, 60, 22, '+3 Attacks p501 rulebook', 'Sword of Bloodshed', 'Magic Weapon'),
+(591, 40, 22, 'Armour saves cannont be taken against wounds caused by Obsidian Blade', 'Obsidian Blade', 'Magic Weapon'),
+(592, 40, 22, '+2 Str', 'Ogre Blade', 'Magic Weapon'),
+(593, 40, 22, '+2 Attacks made by this sword in close combat', 'Sword of Strife', 'Magic Weapon'),
+(594, 35, 22, 'Paired weapons. The bearer has Weapon skill 10', 'Fencers Blades', 'Magic Weapon'),
+(595, 30, 22, 'The bearer has +1 Str and +1 for every enemy in base contact p501 rulebook', 'Sword of Anti-heroes', 'Magic Weapon'),
+(596, 25, 22, 'A Wizard that suffers unsaved  wounds  from  the Spellthieving Sword loses one of his spell (determined randomly) for each unsaved wound.', 'Spellthieving Sword', 'Magic Weapon'),
+(597, 25, 22, 'Always Strikes First special rule.', 'Sword of Swift Slaying', 'Magic Weapon'),
+(598, 20, 22, '+1 Attack', 'Sword of Battle', 'Magic Weapon'),
+(599, 20, 22, 'The bearer has the Frenzy special rule and can never lose his Frenzy', 'Berseker Sword', 'Magic Weapon'),
+(600, 20, 22, 'Close combat attacks made with this sword are resolved at +1 Strength.', 'Sword of Might', 'Magic Weapon'),
+(601, 15, 22, '+1 Attack', 'Gold Sigil Sword', 'Magic Weapon'),
+(602, 15, 22, 'Attacks made by this sword are made at Initiative 10', 'Sword of Striking', 'Magic Weapon'),
+(603, 15, 22, 'Attacks made with the Sword of Striking receive a +1 bonus to hit.', 'Sword of Striking', 'Magic Weapon'),
+(604, 10, 22, 'Close combat attacks made by the Biting Blade are armour piercing.', 'Bitting Blade', 'Magic Weapon'),
+(605, 10, 22, 'Attacks made with the Relic Sword will always wound on a 5+, unless they would normally need a lower result.', 'Relic Sword', 'Magic Weapon'),
+(606, 10, 22, 'The bearer causes Fear', 'Shrieking Sword', 'Magic Weapon'),
+(607, 5, 22, 'A monster or character that suffers an unsaved wound from the Tormentor sword has the Stupidity special rule for the rest of the game.', 'Tormentor Sword', 'Magic Weapon'),
+(608, 5, 22, 'A monster or character that suffers unsaved wounds from Warrior Bane permanently loses one Attack for each unsaved wound (to a minimum of Attacks 1).', 'Warriors Bane', 'Magic Weapon'),
+
+(609, 50, 22, 'The Armour of Destiny grants the Heavy armour. The Armour wearer a 4+ ward save.', 'Armour of Destiny', 'Magic Weapon'),
+(610, 50, 22, 'The wearer counts his armour save as being one point higher than normal. Any successful roll to wound made against the wound made against the wearer of the Tricksters Helm must be re-rolled.', 'Tricksters helm', 'Magic Weapon'),
+(611, 45, 22, 'Armour of Silvered Steel grants its wearer a 2+ armour save that cannot be improved by any means.', 'Armour of Silvered Steel', 'Magic Weapon'),
+(612, 35, 22, 'Heavy armour. The Armour of Fortune grants the wearer a 5+ ward save.', 'Armour of Fortune', 'Magic Weapon'),
+(613, 30, 22, 'The wearer counts his armour save as being one point higher than normal. p502 rulebook', 'Helm of Discord', 'Magic Weapon'),
+(614, 25, 22, 'Light armour: Enemies suffer a-1 to hit penalty when attempting', 'Glittering Scales', 'Magic Weapon'),
+(615, 25, 22, 'Shield. The bearer has +1 armour save against the shooting attacks', 'Shield of Ptolos', 'Magic Weapon'),
+(616, 20, 22, 'Shield. The bearer gains Magic Resistance(1)', 'Spellshield', 'Magic Weapon'),
+(617, 20, 22, 'Heavy Armour The Armour grants the wearer a 6+ ward save', 'Gamblers Armour', 'Magic Weapon'),
+(618, 10, 22, 'The wearer counts his armour save as being one point higher than normal. The wearer has a 2+ ward save against flaming ', 'Dragonhelm', 'Magic Weapon'),
+(619, 5, 22, 'Shield. The bearer counts his armour save as being two points higher than normal, rather than the it ur than the usual one point that a shield would normally grant', 'Enchanted Shield', 'Magic Weapon'),
+(620, 5, 22, 'Shield. One use only. The first hit suffered by the bearer of the Charmed Sield is discounted on a roll of 2+.', 'Charmed Shield', 'Magic Weapon'),
+
+(621, 45, 22, '4+ ward save', 'Talisman of Preservation', 'Magic Weapon'),
+(772, 45, 22, 'Grants Magic resistance(3)', 'Obsidian Lodestone', 'Magic Weapon'),
+(622, 30, 22, '5+ ward save', 'Talisman of Endurance', 'Magic Weapon'),
+(623, 30, 22, 'Grants Magic resistance(2)', 'Obsidian Amulet', 'Magic Weapon'),
+(624, 30, 22, 'The bearer re-rolls failed armour saves', 'Dawn Stone', 'Magic Weapon'),
+(625, 15, 22, 'One use only +4 ward save against the first wound suffered by bearer p503 rulebook', 'Opal Amulet', 'Magic Weapon'),
+(626, 15, 22, 'Grants Magic resistance(1)', 'Obsidian Trinket', 'Magic Weapon'),
+(627, 10, 22, 'The bearer has regeneration(6+) special rule', 'Seed of rebirth', 'Magic Weapon'),
+(628, 5, 22, 'The bearer of the Dragonbane Gem has a 2+ ward save against flaming attacks.', 'Dragonbane gem', 'Magic Weapon'),
+(629, 5, 22, 'This item grants grants the bearer a 5+ ward save against wounds caused in close combat by models that have the Fly special ', 'Pidgeon Plucker Pendant', 'Magic Weapon'),
+(630, 5, 22, 'One Use Only The luck stone allows the bearer to re-roll failed armour save', 'Luckstone', 'Magic Weapon'),
+
+(631, 70, 22, 'The bearer receives a +1 bonus on attempts to cast and dispel.', 'Book of Ashur', 'Magic Weapon'),
+(632, 50, 22, '(One use): Instead of dispelling, let the spell be cast. After it resolves, roll 1D6 for each casting die — the caster suffers 1 wound on each 5+, no armour saves allowed.', 'Feedback Scroll', 'Magic Weapon'),
+(633, 50, 22, 'Scroll of Leeching (One use): Instead of dispelling, let the spell be cast. After it resolves, add dispel dice equal to the number of casting dice (max pool 12).', 'Scroll of Leeching', 'Magic Weapon'),
+(634, 50, 22, 'Hex Scroll (One use): Instead of dispelling, let the spell be cast. Caster tests D6 ≤ Wizard level or is turned into a toad: no spells, no items, stats 1 (Wounds unchanged). At each magic phase, roll 4+ to return.', 'Sivjirs Hex Scroll', 'Magic Weapon'),
+(635, 35, 22, 'One use only. A Power Scroll can be used when the Wizard makes a casting attempt. During that casting attempt, any roll of a double will cause irresistible force (and a miscast).', 'Power Scroll', 'Magic Weapon'),
+(636, 35, 22, 'One use only. The bearer can increase one of his casting results by an additional +D6, after other casting dice have been rolled. This extra power dice can contribute to casting a spell with irresistible force (and a miscast).', 'Wand of Jet', 'Magic Weapon'),
+(773, 35, 22, 'One Use only adds +D6 dice to the power pool at the start of the casters own magic phase, but also inflicts D3 wounds on the bearer (with no armour saves allowed).', 'Forbiden Rod', 'Magic Weapon'),
+(637, 25, 22, 'Feedback effect item (One use): At the start of your magic phase, activate. For that phase, each time an enemy wizard dispels the bearers spell, roll a D6; on 5+, that wizard suffers a wound with no armour save.', 'Tricksters shard', 'Magic Weapon'),
+(638, 25, 22, 'One use only. If the wizard rolls on the miscast table he can re-roll the result.', 'Earthing Rod', 'Magic Weapon'),
+(639, 20, 22, '(One use): Before casting, the wizard may add 2 extra dice to the casting roll (at least 1 die must still come from the power pool).', 'Power Scroll', 'Magic Weapon'),
+(640, 15, 22, '(One use): After rolling dispel dice, the bearer may add +D6 to a single dispel attempt. This bonus can contribute to an Irresistible Dispel.', 'Scetre of Stability', 'Magic Weapon'),
+(641, 15, 22, 'The Wizard adds +1 to all of his channeling attempts.', 'Channeling staff', 'Magic Weapon'),
+(642, 15, 22, '(One use): After an enemy spell is cast, the bearer may use this scroll. The spell is resolved normally, but its target gains a 4+ ward save against any wounds it causes.', 'Scroll of Shielding', 'Magic Weapon'),
+
+(643, 100, 22, 'The wearer is treated as being a Level 2 Wizard who can use a randomly chosen spell lore. However, he also has the Stupidity special ', 'Wizzard Hat', 'Magic Weapon'),
+(644, 100, 22, '(One use): After deployment zones are set but before armies are deployed, place a Watchtower-sized building in your deployment zone. Treated as a standard building. If no model is available, it cannot be used.', 'Fozzirks Folding Fortess', 'Magic Weapon'),
+(645, 50, 22, 'Infantry or monstrous infantry models on foot only. The owner of this magical carpet has the Fly special rule. However, he cannot join units. ', 'Arabyan Carpet', 'Magic Weapon'),
+(646, 35, 22, 'The bearer of the Crown of Command has the Stubborn special rule.', 'Crown of Command', 'Magic Weapon'),
+(647, 35, 22, 'One use only. The Healing Potion can be drunk at the start of the controlling players turn. Immediately recovers D6 Wounds lost in the battle.', 'Healing potion', 'Magic Weapon'),
+(648, 35, 22, 'Flying creatures (and their riders) must re-roll successful rolls to hit against the bearer (and any unit he is with) in close combat.', 'Featherfoe Torc', 'Magic Weapon'),
+(649, 25, 22, 'Bound spell (power level 3). The Ruby Ring of Ruin contains the Fireball spell (see the Lore of Fire).', 'Ruby Ring of Ruin', 'Magic Weapon'),
+(650, 25, 22, 'The wearer of this mask causes Terror. However, other models can never use his Leadership', 'The Terrifying Mask of EEE!', 'Magic Weapon'),
+(651, 20, 22, 'One use only. The Potion of Strength can be drunk at the start of any players turn. The imbiber has +3 The imbiber Strength until the end of the turn', 'Potion of Strenght', 'Magic Weapon'),
+(652, 20, 22, 'One use only. The Potion of Toughness can be drunk at the start of any players turn. The imbiber has +3 The imbiber Tougness until the end of the turn', 'Potion of Toughness', 'Magic Weapon'),
+(653, 15, 22, 'Models in base contact with the bearer (friends and foes) must re-roll successful ward saves.', 'The other tricksters shard', 'Magic Weapon'),
+(654, 5, 22, 'The character (and any unit he is with) gain a 6+ ward save against war machine weapons.', 'Ironcurse icon', 'Magic Weapon'),
+(655, 5, 22, '(One use): Drink at the start of any player’s turn. The user gains Immune to Psychology and Devastating Charge until the end of that turn.', 'Potion of Foolhardiness', 'Magic Weapon'),
+(656, 5, 22, 'One use only. The Potion of Speed can be drunk at the start of any players turn. The imbiber has +3 Initiative until the end of the turn.', 'Potion of Speed', 'Magic Weapon'),
+
+/* GreySeer */
+(779, 0, 20, 'Chose Ur General', 'General', 'Pick up General'),
+
+(657, 200, 20, 'Screaming Bell', 'Screaming Bell', 'Mount'),
+
+(658, 15, 20, 'Warpmusket: a rifle like a warplock jezzail. Range 24 inches, Strength 5, Armour Piercing, uses Unstable Ammunition. Can move or fire. Warpstone Weapon.', 'Warpmusket', 'The Scavenge-Pile'),
+(659, 15, 20, 'Poisoned Attacks: all close combat attacks by this model are Poisoned. Affects tail weapons but not magic weapons or Rat Hound Bodyguard.', 'Poisoned Attacks', 'The Scavenge-Pile'),
+(660, 8, 20, 'Tail Weapon: an extra appendage wielding a blade, spike, or mace. Grants 1 additional S3 attack at the models WS and Initiative, usable with other attacks, but has no magical properties.', 'Tail Weapon', 'The Scavenge-Pile'),
+(661, 8, 20, 'Warplock Pistol: range 10in, Armour Piercing, uses Unstable Ammunition, Warpstone Weapon. Superior to other races pistols.', 'Warplock Pistol', 'The Scavenge-Pile'),
+(662, 5, 20, 'Rat Hound upgrade grants an extra WS3/S3 attack at the owners Initiative. On a To Hit roll of 1, the hound hits its owner. Despite loyalty, verminous instincts may make it attack if the master seems vulnerable.', 'Rat Hound Bodyguard', 'The Scavenge-Pile'),
+
+
+(663, 30, 20, 'Magic Weapon +1 to hit', 'Sword of Striking', 'Magic Weapon'),
+(664, 25, 20, 'Magic Weapon +1 to Attack', 'Sword of Battle', 'Magic Weapon'),
+(665, 20, 20, 'Magic Weapon +1 to Strength', 'Sword of Might', 'Magic Weapon'),
+(666, 5, 20, 'Magic Weapon -1 to armour save', 'Bitting Blade', 'Magic Weapon'),
+(667, 5, 20, 'Magic armour 5+ armour save', 'Enchanted Shield', 'Magic Weapon'),
+(668, 5, 20, 'Talisman grants 6+ ward save', 'Talisman of Protection', 'Magic Weapon'),
+(669, 25, 20, 'One Use Only Automatically Dispel an enemy Spell', 'Dispell Scroll', 'Magic Weapon'),
+(670, 20, 20, 'One Use Only grants +2  dice to Cast a spell', 'Power Stone', 'Magic Weapon'),
+(671, 35, 20, 'Arcane +1 to dispell', 'Staff of Sorcerry', 'Magic Weapon'),
+(672, 100, 20, 'Str 10 enemy must reroll all succes ward saves, any unsaved roll is multiplied to d6. Roll d6 at any end of weilder turn 3+ nothing happens, 1-2 user takes wound without armour save allowed', 'Fellblade', 'Magic Weapon'),
+(673, 50, 20, 'Armour saves cannont be taken against this sword', 'Warpforged Blade', 'Magic Weapon'),
+(674, 45, 20, '+1 Str +1 Attack', 'Warlock-Augumented Weapon', 'Magic Weapon'),
+(675, 35, 20, '+1 Str any unsaved Wound is multipled to 2,If wielder makes a hit roll that has two or more rolls of 1 the wielder suffers wound that is multipled to 2', 'Blade of Corruption', 'Magic Weapon'),
+(676, 30, 20, 'Has armour piercing each unsaved wound is multipled to d3', 'Weeping Blade', 'Magic Weapon'),
+(677, 25, 20, '+1 Str to all attacks in close combat Agains Dwarfs grants armour piercing and re-rolls all failed to Wound rolls', 'Dwarfbane', 'Magic Weapon'),
+(678, 10, 20, 'Enemy lose 1 T of every wound taken if his T = 0 he dies', 'Blade of Nurglitch', 'Magic Weapon'),
+(679, 30, 20, 'Grants 4+ save, all succes armour saves armour inflicts S4 hit against the model that struckt the blow', 'Warpstone armour', 'Magic Weapon'),
+(680, 25, 20, 'Grants 4+ save, first succesfull wound Destroys the armour and wound is discounted ', 'Worlds Edge Armour', 'Magic Weapon'),
+(681, 15, 20, 'Any model in base contact suffer -1 attack (minimum 1 attack) to strike shield bearer', 'Shield of Distraction', 'Magic Weapon'),
+(682, 30, 20, 'ward save 5+', 'Foul Pendant', 'Magic Weapon'),
+(683, 15, 20, 'One Use Only A Skaven model can make a single enemy in game in base contact to re roll all its successful to hit dice rolls', 'Rival hide talisman', 'Magic Weapon'),
+(684, 50, 20, 'A character carrying can force Clanrats of Stormvermin to drink roll d6 - 1 gone bad the unit takes d6  s3 hits , 2-3 the units has hatred of all enemies, 4-5 Frienzied units has frenzy, 6 rabid grants +2 attacks per unit and d6 automatics hits per turn', 'Skavenbrew', 'Magic Weapon'),
+(685, 30, 20, 'One use only instantly cure all wound ( use only on begin of any phase)', 'Skalm', 'Magic Weapon'),
+(686, 25, 20, 'Enemy have to pass ld test when they want to charge this unit', 'Pipes of piebald', 'Magic Weapon'),
+(687, 20, 20, '-1 ld to enemy in base contact with units', 'Proteins of verminous doom', 'Magic Weapon'),
+(688, 50, 20, '3x Multiple shots S5 multiple d3 wounds', 'Warpstone stars', 'Magic Weapon'),
+(689, 30, 20, 'Read in army book p109', 'Infernal Bomb', 'Magic Weapon'),
+(690, 30, 20, 'p109 army book', 'Smoke bombs', 'Magic Weapon'),
+(691, 50, 20, 'One Use Only p110', 'Brass Orb', 'Magic Weapon'),
+(692, 30, 20, 'p110', 'Doomrocket', 'Magic Weapon'),
+(693, 25, 20, 'Any model touched by throw suffer 4+ hit without armour save allowed p110 ', 'Death globe', 'Magic Weapon'),
+(694, 20, 20, '+1 Bs no penalties of covers', 'Warlock Optics', 'Magic Weapon'),
+(695, 35, 20, 'One use Only bound spell (lvl 5) 24inches range. Spell inflicts S2 hit on every model in unit with no armour save allowed', 'Warp scroll', 'Magic Weapon'),
+
+(696, 60, 20, '+3 Str p501 rulebook', 'Giant Blade', 'Magic Weapon'),
+(697, 60, 20, '+3 Attacks p501 rulebook', 'Sword of Bloodshed', 'Magic Weapon'),
+(698, 40, 20, 'Armour saves cannont be taken against wounds caused by Obsidian Blade', 'Obsidian Blade', 'Magic Weapon'),
+(699, 40, 20, '+2 Str', 'Ogre Blade', 'Magic Weapon'),
+(700, 40, 20, '+2 Attacks made by this sword in close combat', 'Sword of Strife', 'Magic Weapon'),
+(701, 35, 20, 'Paired weapons. The bearer has Weapon skill 10', 'Fencers Blades', 'Magic Weapon'),
+(702, 30, 20, 'The bearer has +1 Str and +1 for every enemy in base contact p501 rulebook', 'Sword of Anti-heroes', 'Magic Weapon'),
+(703, 25, 20, 'A Wizard that suffers unsaved  wounds  from  the Spellthieving Sword loses one of his spell (determined randomly) for each unsaved wound.', 'Spellthieving Sword', 'Magic Weapon'),
+(704, 25, 20, 'Always Strikes First special rule.', 'Sword of Swift Slaying', 'Magic Weapon'),
+(705, 20, 20, '+1 Attack', 'Sword of Battle', 'Magic Weapon'),
+(706, 20, 20, 'The bearer has the Frenzy special rule and can never lose his Frenzy', 'Berseker Sword', 'Magic Weapon'),
+(707, 20, 20, 'Close combat attacks made with this sword are resolved at +1 Strength.', 'Sword of Might', 'Magic Weapon'),
+(708, 15, 20, '+1 Attack', 'Gold Sigil Sword', 'Magic Weapon'),
+(709, 15, 20, 'Attacks made by this sword are made at Initiative 10', 'Sword of Striking', 'Magic Weapon'),
+(710, 15, 20, 'Attacks made with the Sword of Striking receive a +1 bonus to hit.', 'Sword of Striking', 'Magic Weapon'),
+(711, 10, 20, 'Close combat attacks made by the Biting Blade are armour piercing.', 'Bitting Blade', 'Magic Weapon'),
+(712, 10, 20, 'Attacks made with the Relic Sword will always wound on a 5+, unless they would normally need a lower result.', 'Relic Sword', 'Magic Weapon'),
+(713, 10, 20, 'The bearer causes Fear', 'Shrieking Sword', 'Magic Weapon'),
+(714, 5, 20, 'A monster or character that suffers an unsaved wound from the Tormentor sword has the Stupidity special rule for the rest of the game.', 'Tormentor Sword', 'Magic Weapon'),
+(715, 5, 20, 'A monster or character that suffers unsaved wounds from Warrior Bane permanently loses one Attack for each unsaved wound (to a minimum of Attacks 1).', 'Warriors Bane', 'Magic Weapon'),
+
+(716, 50, 20, 'The Armour of Destiny grants the Heavy armour. The Armour wearer a 4+ ward save.', 'Armour of Destiny', 'Magic Weapon'),
+(717, 50, 20, 'The wearer counts his armour save as being one point higher than normal. Any successful roll to wound made against the wound made against the wearer of the Tricksters Helm must be re-rolled.', 'Tricksters helm', 'Magic Weapon'),
+(718, 45, 20, 'Armour of Silvered Steel grants its wearer a 2+ armour save that cannot be improved by any means.', 'Armour of Silvered Steel', 'Magic Weapon'),
+(719, 35, 20, 'Heavy armour. The Armour of Fortune grants the wearer a 5+ ward save.', 'Armour of Fortune', 'Magic Weapon'),
+(720, 30, 20, 'The wearer counts his armour save as being one point higher than normal. p502 rulebook', 'Helm of Discord', 'Magic Weapon'),
+(721, 25, 20, 'Light armour: Enemies suffer a-1 to hit penalty when attempting', 'Glittering Scales', 'Magic Weapon'),
+(722, 25, 20, 'Shield. The bearer has +1 armour save against the shooting attacks', 'Shield of Ptolos', 'Magic Weapon'),
+(723, 20, 20, 'Shield. The bearer gains Magic Resistance(1)', 'Spellshield', 'Magic Weapon'),
+(724, 20, 20, 'Heavy Armour The Armour grants the wearer a 6+ ward save', 'Gamblers Armour', 'Magic Weapon'),
+(725, 10, 20, 'The wearer counts his armour save as being one point higher than normal. The wearer has a 2+ ward save against flaming ', 'Dragonhelm', 'Magic Weapon'),
+(726, 5, 20, 'Shield. The bearer counts his armour save as being two points higher than normal, rather than the it ur than the usual one point that a shield would normally grant', 'Enchanted Shield', 'Magic Weapon'),
+(727, 5, 20, 'Shield. One use only. The first hit suffered by the bearer of the Charmed Sield is discounted on a roll of 2+.', 'Charmed Shield', 'Magic Weapon'),
+
+(728, 45, 20, '4+ ward save', 'Talisman of Preservation', 'Magic Weapon'),
+(729, 45, 20, 'Grants Magic resistance(3)', 'Obsidian Lodestone', 'Magic Weapon'),
+(730, 30, 20, '5+ ward save', 'Talisman of Endurance', 'Magic Weapon'),
+(731, 30, 20, 'Grants Magic resistance(2)', 'Obsidian Amulet', 'Magic Weapon'),
+(732, 30, 20, 'The bearer re-rolls failed armour saves', 'Dawn Stone', 'Magic Weapon'),
+(733, 15, 20, 'One use only +4 ward save against the first wound suffered by bearer p503 rulebook', 'Opal Amulet', 'Magic Weapon'),
+(734, 15, 20, 'Grants Magic resistance(1)', 'Obsidian Trinket', 'Magic Weapon'),
+(735, 10, 20, 'The bearer has regeneration(6+) special rule', 'Seed of rebirth', 'Magic Weapon'),
+(736, 5, 20, 'The bearer of the Dragonbane Gem has a 2+ ward save against flaming attacks.', 'Dragonbane gem', 'Magic Weapon'),
+(737, 5, 20, 'This item grants grants the bearer a 5+ ward save against wounds caused in close combat by models that have the Fly special ', 'Pidgeon Plucker Pendant', 'Magic Weapon'),
+(738, 5, 20, 'One Use Only The luck stone allows the bearer to re-roll failed armour save', 'Luckstone', 'Magic Weapon'),
+
+(739, 70, 20, 'The bearer receives a +1 bonus on attempts to cast and dispel.', 'Book of Ashur', 'Magic Weapon'),
+(740, 50, 20, '(One use): Instead of dispelling, let the spell be cast. After it resolves, roll 1D6 for each casting die — the caster suffers 1 wound on each 5+, no armour saves allowed.', 'Feedback Scroll', 'Magic Weapon'),
+(741, 50, 20, 'Scroll of Leeching (One use): Instead of dispelling, let the spell be cast. After it resolves, add dispel dice equal to the number of casting dice (max pool 12).', 'Scroll of Leeching', 'Magic Weapon'),
+(742, 50, 20, 'Hex Scroll (One use): Instead of dispelling, let the spell be cast. Caster tests D6 ≤ Wizard level or is turned into a toad: no spells, no items, stats 1 (Wounds unchanged). At each magic phase, roll 4+ to return.', 'Sivjirs Hex Scroll', 'Magic Weapon'),
+(743, 35, 20, 'One use only. A Power Scroll can be used when the Wizard makes a casting attempt. During that casting attempt, any roll of a double will cause irresistible force (and a miscast).', 'Power Scroll', 'Magic Weapon'),
+(744, 35, 20, 'One use only. The bearer can increase one of his casting results by an additional +D6, after other casting dice have been rolled. This extra power dice can contribute to casting a spell with irresistible force (and a miscast).', 'Wand of Jet', 'Magic Weapon'),
+(745, 35, 20, 'One Use only adds +D6 dice to the power pool at the start of the casters own magic phase, but also inflicts D3 wounds on the bearer (with no armour saves allowed).', 'Forbiden Rod', 'Magic Weapon'),
+(746, 25, 20, 'Feedback effect item (One use): At the start of your magic phase, activate. For that phase, each time an enemy wizard dispels the bearers spell, roll a D6; on 5+, that wizard suffers a wound with no armour save.', 'Tricksters shard', 'Magic Weapon'),
+(747, 25, 20, 'One use only. If the wizard rolls on the miscast table he can re-roll the result.', 'Earthing Rod', 'Magic Weapon'),
+(748, 20, 20, '(One use): Before casting, the wizard may add 2 extra dice to the casting roll (at least 1 die must still come from the power pool).', 'Power Scroll', 'Magic Weapon'),
+(749, 15, 20, '(One use): After rolling dispel dice, the bearer may add +D6 to a single dispel attempt. This bonus can contribute to an Irresistible Dispel.', 'Scetre of Stability', 'Magic Weapon'),
+(750, 15, 20, 'The Wizard adds +1 to all of his channeling attempts.', 'Channeling staff', 'Magic Weapon'),
+(751, 15, 20, '(One use): After an enemy spell is cast, the bearer may use this scroll. The spell is resolved normally, but its target gains a 4+ ward save against any wounds it causes.', 'Scroll of Shielding', 'Magic Weapon'),
+
+(752, 100, 20, 'The wearer is treated as being a Level 2 Wizard who can use a randomly chosen spell lore. However, he also has the Stupidity special ', 'Wizzard Hat', 'Magic Weapon'),
+(753, 100, 20, '(One use): After deployment zones are set but before armies are deployed, place a Watchtower-sized building in your deployment zone. Treated as a standard building. If no model is available, it cannot be used.', 'Fozzirks Folding Fortess', 'Magic Weapon'),
+(754, 50, 20, 'Infantry or monstrous infantry models on foot only. The owner of this magical carpet has the Fly special rule. However, he cannot join units. ', 'Arabyan Carpet', 'Magic Weapon'),
+(755, 35, 20, 'The bearer of the Crown of Command has the Stubborn special rule.', 'Crown of Command', 'Magic Weapon'),
+(756, 35, 20, 'One use only. The Healing Potion can be drunk at the start of the controlling players turn. Immediately recovers D6 Wounds lost in the battle.', 'Healing potion', 'Magic Weapon'),
+(757, 35, 20, 'Flying creatures (and their riders) must re-roll successful rolls to hit against the bearer (and any unit he is with) in close combat.', 'Featherfoe Torc', 'Magic Weapon'),
+(758, 25, 20, 'Bound spell (power level 3). The Ruby Ring of Ruin contains the Fireball spell (see the Lore of Fire).', 'Ruby Ring of Ruin', 'Magic Weapon'),
+(759, 25, 20, 'The wearer of this mask causes Terror. However, other models can never use his Leadership', 'The Terrifying Mask of EEE!', 'Magic Weapon'),
+(760, 20, 20, 'One use only. The Potion of Strength can be drunk at the start of any players turn. The imbiber has +3 The imbiber Strength until the end of the turn', 'Potion of Strenght', 'Magic Weapon'),
+(761, 20, 20, 'One use only. The Potion of Toughness can be drunk at the start of any players turn. The imbiber has +3 The imbiber Tougness until the end of the turn', 'Potion of Toughness', 'Magic Weapon'),
+(762, 15, 20, 'Models in base contact with the bearer (friends and foes) must re-roll successful ward saves.', 'The other tricksters shard', 'Magic Weapon'),
+(763, 5, 20, 'The character (and any unit he is with) gain a 6+ ward save against war machine weapons.', 'Ironcurse icon', 'Magic Weapon'),
+(764, 5, 20, '(One use): Drink at the start of any players turn. The user gains Immune to Psychology and Devastating Charge until the end of that turn.', 'Potion of Foolhardiness', 'Magic Weapon'),
+(765, 5, 20, 'One use only. The Potion of Speed can be drunk at the start of any players turn. The imbiber has +3 Initiative until the end of the turn.', 'Potion of Speed', 'Magic Weapon'),
+
+
+(766, 0, 20, 'A Grey Seer or Clan Skryre Warlock may use warpstone to boost magic. Declare tokens before casting; each adds a dice. Spells can use only warpstone. A 1 causes a wound. Miscasts and irresistible force apply as usual.', 'D3 Warpstone tokens', 'Free upgrade'),
+(767, 0, 20, 'Free hand weapons to fight', 'Hand Weapon', 'Free upgrade'),
+(768, 0, 20, 'Grants 4 spells from Ruin or Plague Spells', 'Lvl 4 Wizzard', 'Free upgrade'),
+(769, 0, 20, 'Skaven may refuse a challenge without losing honour. Fleeing to safety is a leaders right. Model moves to back rank but the unit still benefits from its Leadership or Battle Standard ability.', 'Verminous Valour', 'Free upgrade'),
+(770, 0, 20, 'The Skaven embody the adage (he who runs away lives to fight another day) All models in the Skaven army add add +1 to the total rolled to determine the distance they flee.', 'Scurry Away', 'Race special rule'),
+(771, 0, 20, 'Skaven gain courage from numbers. With Strength in Numbers, a unit adds its rank bonus to Leadership (max 10). Losing rank bonus also loses Leadership bonus. Example: Clanrats Ld 5 in 3 ranks get +2.', 'Strength in numbers', 'Race special rule');

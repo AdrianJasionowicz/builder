@@ -11,14 +11,10 @@ import java.util.List;
 @RestController
 public class SelectedUpgradeController {
 
-    private final SelectedUnitService selectedUnitService;
-    private SelectedUpgradeService selectedUpgradeService;
-    private ArmyService armyService;
+    private final SelectedUpgradeService selectedUpgradeService;
 
-    public SelectedUpgradeController(SelectedUpgradeService selectedUpgradeService, ArmyService armyService, SelectedUnitService selectedUnitService) {
+    public SelectedUpgradeController(SelectedUpgradeService selectedUpgradeService) {
         this.selectedUpgradeService = selectedUpgradeService;
-        this.armyService = armyService;
-        this.selectedUnitService = selectedUnitService;
     }
 
 
@@ -26,7 +22,6 @@ public class SelectedUpgradeController {
     public ResponseEntity<String> addUpgrade(@RequestParam Integer upgradeId) {
         selectedUpgradeService.addUpgrade(upgradeId);
 
-      //  armyService.calculateDedicatedPoints();
 
         return ResponseEntity.ok("Upgrade added successfully");
     }
@@ -38,11 +33,4 @@ public class SelectedUpgradeController {
         selectedUpgradeService.removeSelectedUpgrade(upgradeId);
         return ResponseEntity.ok().body("Error while deleting selectedUpgrade");
     }
-//
-//    @GetMapping("/units/{id}/upgrades")
-//    public ResponseEntity<List<SelectedUpgradeDTO>> getSelectedUpgrades(@PathVariable Integer id) {
-//        List<SelectedUpgradeDTO> selectedUpgradeDTO = selectedUpgradeService.getSelectedUpgradesBySelectedUnitId(id);
-//
-//        return ResponseEntity.ok().body(selectedUpgradeDTO);
-//    }
 }

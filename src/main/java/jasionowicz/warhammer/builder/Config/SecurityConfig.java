@@ -24,9 +24,9 @@ import java.util.List;
 @EnableWebSecurity
 public class SecurityConfig {
 
-private JwtUtil jwtUtil;
-private UserDetailsService userDetailsService;
-private JwtFilter jwtFilter;
+private final JwtUtil jwtUtil;
+private final UserDetailsService userDetailsService;
+private final JwtFilter jwtFilter;
 
     public SecurityConfig(JwtUtil jwtUtil, UserDetailsService userDetailsService, JwtFilter jwtFilter) {
         this.jwtUtil = jwtUtil;
@@ -38,7 +38,7 @@ private JwtFilter jwtFilter;
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()))
-                .cors(cors -> {})
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .csrf(csrf -> csrf.disable())
                 .sessionManagement(sess -> sess.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth

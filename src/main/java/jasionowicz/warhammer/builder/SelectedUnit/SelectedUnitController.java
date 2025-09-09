@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 public class SelectedUnitController {
-    private SelectedUnitService selectedUnitService;
+    private final SelectedUnitService selectedUnitService;
 
     public SelectedUnitController(SelectedUnitService selectedUnitService) {
         this.selectedUnitService = selectedUnitService;

@@ -43,12 +43,5 @@ public class UnitService {
         unitRepository.deleteById(id);
     }
 
-
-    public void getUnitByIdAndSendItToSelectedUnit(Integer unitId) {
-       Unit unit = unitRepository.getReferenceById(unitId);
-        SelectedUnit selectedUnit = new SelectedUnit(unit);
-        selectedUnitService.saveSelectedUnit(selectedUnit);
-
-    }
 }
 

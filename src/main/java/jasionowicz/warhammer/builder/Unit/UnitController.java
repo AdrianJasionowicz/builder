@@ -15,8 +15,8 @@ import java.util.Optional;
 
 @RestController
 public class UnitController {
-    private UnitService unitService;
-    private SelectedUnitService selectedUnitService;
+    private final UnitService unitService;
+    private final SelectedUnitService selectedUnitService;
 
 
     public UnitController(UnitService unitService, SelectedUnitService selectedUnitService) {
@@ -33,28 +33,6 @@ public class UnitController {
     }
 
 
-    @DeleteMapping("/admin/unit/{id}")
-     @PreAuthorize("hasRole('ADMIN')")
-    public void deleteUnit(@PathVariable Integer id) {
-        unitService.deleteById(id);
-    }
-
-
-
-
-        @PostMapping("/addUnit")
-    public void addUnit(@RequestParam("unitId") Integer unitId) {
-                unitService.getUnitByIdAndSendItToSelectedUnit(unitId);
-        }
-
-
-
-    @GetMapping("/army/{armyId}/unitsByType")
-    @PreAuthorize("isAuthenticated()")
-    public ResponseEntity<?> getUnitsGroupedByType(@PathVariable Long armyId) {
-        var groupedUnits = selectedUnitService.getUnitsGroupedByType(armyId);
-        return ResponseEntity.ok(groupedUnits);
-    }
 }
 
 

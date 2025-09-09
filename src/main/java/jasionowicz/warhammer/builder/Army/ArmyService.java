@@ -1,5 +1,6 @@
 package jasionowicz.warhammer.builder.Army;
 
+import jakarta.persistence.EntityNotFoundException;
 import jasionowicz.warhammer.builder.LoginUser.LoginUser;
 import jasionowicz.warhammer.builder.LoginUser.LoginUserService;
 import jasionowicz.warhammer.builder.Mapper.*;
@@ -19,6 +20,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class ArmyService {
@@ -33,12 +35,12 @@ public class ArmyService {
     private final SelectedUnitMapper selectedUnitMapper;
     private final SelectedUpgradeMapper selectedUpgradeMapper;
     private final SelectedUpgradeService selectedUpgradeService;
-    private SelectedUnitService selectedUnitService;
-    private ArmyMapper armyMapper;
-    private UnitMapper unitMapper;
-    private UpgradeMapper upgradeMapper;
-    private UnitRepository unitRepository;
-private UpgradeRepository upgradeRepository;
+    private final SelectedUnitService selectedUnitService;
+    private final ArmyMapper armyMapper;
+    private final UnitMapper unitMapper;
+    private final UpgradeMapper upgradeMapper;
+    private final UnitRepository unitRepository;
+    private final UpgradeRepository upgradeRepository;
 
     public ArmyService(SelectedUnit selectedUnit, SelectedUnitRepository selectedUnitRepository, SelectedUpgradeRepository selectedUpgradeRepository, ArmyRepository armyRepository, LoginUserService loginUserService, ArmyMapper armyMapper, UnitMapper unitMapper, UpgradeMapper upgradeMapper, UnitRepository unitRepository, UpgradeRepository upgradeRepository, SelectedUnitMapper selectedUnitMapper, SelectedUnitService selectedUnitService, SelectedUpgradeMapper selectedUpgradeMapper, SelectedUpgradeService selectedUpgradeService) {
         this.selectedUnit = selectedUnit;
@@ -59,27 +61,34 @@ private UpgradeRepository upgradeRepository;
 
 
     public Map<String, Double> calculateDedicatedPoints(Long armyId) {
-        Army army = armyRepository.findById(armyId).get();
+        Army army = armyRepository.findById(armyId).orElseThrow(() -> new EntityNotFoundException("Army not found"));
         List<SelectedUnit> selectedUnitsList = army.getSelectedUnitsList();
 
-
-
         Map<String, Double> pointsByType = new HashMap<>();
-
+        double totalPoints =0;
 
         for (SelectedUnit selectedUnit : selectedUnitsList) {
             String unitType = selectedUnit.getUnit().getUnitType();
             double unitPoints = selectedUnit.getUnit().getPointsCostPerUnit() * selectedUnit.getQuantity();
-
             double upgradesPoints = selectedUnit.getSelectedUpgrades().stream()
                     .filter(SelectedUpgrade::isSelected)
                     .mapToDouble(upg -> upg.getQuantity() * upg.getUpgrade().getPointsCost())
                     .sum();
 
             pointsByType.put(unitType, pointsByType.getOrDefault(unitType, 0.0) + unitPoints + upgradesPoints);
+            totalPoints += unitPoints +  upgradesPoints;
+
         }
 
 
+
+        army.setLordPointsUsed(pointsByType.get("Lords"));
+        army.setHeroPointsUsed(pointsByType.get("Hero"));
+        army.setCorePointsUsed(pointsByType.get("Core"));
+        army.setSpecialPointsUsed(pointsByType.get("Special"));
+        army.setRarePointsUsed(pointsByType.get("Rare"));
+        army.setPointsUsed(totalPoints);
+        armyRepository.save(army);
         return pointsByType;
     }
 
@@ -93,7 +102,6 @@ private UpgradeRepository upgradeRepository;
         pointsLimitsByType.put("Rare", pointsRestriction * 0.25);
 
         pointsLimitsByType.put("Total", pointsRestriction);
-
         return pointsLimitsByType;
     }
 
@@ -118,49 +126,17 @@ private UpgradeRepository upgradeRepository;
         armyRepository.delete(template);
     }
 
-    public ArmyDTO loadTemplate(Long templateId, Authentication authentication) {
-        LoginUser user = (LoginUser) loginUserService.loadUserByUsername(authentication.getName());
-        Army template = armyRepository.findById(templateId)
-                .orElseThrow(() -> new RuntimeException("Template not found"));
-        if (!template.getOwner().getId().equals(user.getId())) {
-            throw new RuntimeException("Access denied");
-        }
-        return armyMapper.armyToArmyDTO(template);
-    }
-
-
-
-    public void updateTemplate(Long templateId, ArmyDTO armyDTO, Authentication authentication) {
-        String username = authentication.getName();
-        LoginUser user = (LoginUser) loginUserService.loadUserByUsername(username);
-
-        Army existingTemplate = armyRepository.findById(templateId)
-                .orElseThrow(() -> new RuntimeException("Template not found"));
-
-        if (!existingTemplate.getOwner().getId().equals(user.getId())) {
-            throw new RuntimeException("Access denied");
-        }
-
-        existingTemplate.setName(armyDTO.getName());
-        existingTemplate.setDescription(armyDTO.getDescription());
-        existingTemplate.setFactionName(armyDTO.getFactionName());
-        List<SelectedUnitDTO> selectedUnitList = armyDTO.getSelectedUnitsList();
-        for (SelectedUnitDTO selectedUnitDTO : selectedUnitList) {
-            selectedUnitDTO.getUnit().getNation();
-            existingTemplate.setFactionName(selectedUnitDTO.getUnit().getNation());
-            if (existingTemplate.getFactionName().equals(selectedUnitDTO.getUnit().getNation()))
-                break;
-
-        }
-
-
-        armyRepository.save(existingTemplate);
-    }
 
     public Long createNewArmy(Authentication authentication,String name,String faction, Double points) {
         Army army = new Army();
         String username = authentication.getName();
         LoginUser user = (LoginUser) loginUserService.loadUserByUsername(username);
+        army.setLordPointsLimit(points * 0.5);
+        army.setHeroPointsLimit(points * 0.5);
+        army.setCorePointsLimit(points * 0.25);
+        army.setSpecialPointsLimit(points * 0.5);
+        army.setRarePointsLimit(points * 0.25);
+
         army.setOwner(user);
         army.setFactionName(faction);
         army.setName(name);
@@ -179,9 +155,8 @@ private UpgradeRepository upgradeRepository;
         Unit unit = unitRepository.findById(unitId).orElseThrow(() -> new RuntimeException("Unit not found"));
 
         SelectedUnit selectedUnit = new SelectedUnit(unit);
-
+        selectedUpgradeService.addFreeUpgradesAndSpecialRaceUpgrades(selectedUnit);
         selectedUnit.setArmy(army);
-
         army.getSelectedUnitsList().add(selectedUnit);
         armyRepository.save(army);
 
@@ -234,6 +209,124 @@ private UpgradeRepository upgradeRepository;
 
 
         return selectedUpgradeList;
+    }
+
+
+    public Boolean isArmyValid(Long armyId) {
+        boolean isGeneralPickedUp = true;
+        boolean minimalAmmountOfCoreTaken = true;
+        boolean areLordsValid = true;
+        boolean areHeroValid = true;
+        boolean areSpecialValid = true;
+        boolean areRareValid = true;
+        boolean noDuplicateOfMagicWeapon = true;
+        boolean maxAmmoutOfDuplicationInSpecialAndRare = true;
+
+        Army army = armyRepository.getReferenceById(armyId);
+        List<SelectedUnit> selectedUnitList = army.getSelectedUnitsList();
+        List<SelectedUpgrade> selectedUpgradeList = army.getSelectedUnitsList().stream()
+                .flatMap(unit -> unit.getSelectedUpgrades().stream())
+                .filter(SelectedUpgrade::isSelected)
+                .toList();
+
+        isGeneralPickedUp = isGeneralPickedUp(selectedUpgradeList);
+        minimalAmmountOfCoreTaken = minimalAmmountOfCoreTaken(army);
+        areLordsValid = areLordsValid(army);
+        areHeroValid = areHeroValid(army);
+        areSpecialValid = areSpecialValid(army);
+        areRareValid = areRareValid(army);
+        noDuplicateOfMagicWeapon = noDuplicateOfMagicWeapon(selectedUpgradeList);
+        maxAmmoutOfDuplicationInSpecialAndRare = maxAmmoutOfDuplicationInSpecialAndRare(selectedUnitList,army);
+
+        return isGeneralPickedUp &&
+                minimalAmmountOfCoreTaken &&
+                areLordsValid &&
+                areHeroValid &&
+                areSpecialValid &&
+                areRareValid &&
+                noDuplicateOfMagicWeapon &&
+                maxAmmoutOfDuplicationInSpecialAndRare;
+    }
+
+    public boolean maxAmmoutOfDuplicationInSpecialAndRare(List<SelectedUnit> selectedUnitList,Army army) {
+       boolean maxAmmoutOfDuplicationInSpecialAndRare = true;
+
+        Map<String, Long> unitCounts = selectedUnitList.stream()
+                .filter(u -> u.getUnit().getUnitType().equalsIgnoreCase("Special")
+                        || u.getUnit().getUnitType().equalsIgnoreCase("Rare"))
+                .collect(Collectors.groupingBy(u -> u.getUnit().getName(), Collectors.counting()));
+
+        for (long count : unitCounts.values()) {
+            if ((army.getPointsLimit() < 3000 && count > 3) ||
+                    (army.getPointsLimit() >= 3000 && count > 6)) {
+                maxAmmoutOfDuplicationInSpecialAndRare = false;
+                break;
+            }
+        }
+
+        return maxAmmoutOfDuplicationInSpecialAndRare;
+    }
+
+    public boolean noDuplicateOfMagicWeapon(List<SelectedUpgrade> selectedUpgradeList) {
+        boolean noDuplicateOfMagicWeapon = selectedUpgradeList.stream()
+                .filter(SelectedUpgrade::isSelected)
+                .filter(upg -> "Magic Weapon".equalsIgnoreCase(upg.getUpgrade().getName()))
+                .count() <= 1;
+        return noDuplicateOfMagicWeapon;
+    }
+
+    public boolean areRareValid(Army army) {
+        if (army.getRarePointsUsed() != null) {
+           return army.getRarePointsUsed() <= army.getRarePointsLimit();
+        } else {
+            return true;
+        }
+    }
+
+
+    public boolean areSpecialValid(Army army) {
+        if (army.getSpecialPointsUsed() != null) {
+           return army.getSpecialPointsUsed() <= army.getSpecialPointsLimit();
+        } else {
+            return true;
+        }
+    }
+
+    public boolean areHeroValid(Army army) {
+        if (army.getHeroPointsUsed() != null) {
+            return army.getHeroPointsUsed() <= army.getHeroPointsLimit();
+        } else {
+            return true;
+        }
+    }
+
+    public boolean areLordsValid(Army army) {
+
+        if (army.getLordPointsUsed() != null) {
+            return army.getLordPointsUsed() <= army.getLordPointsLimit();
+        } else {
+            return true;
+        }
+    }
+
+    public boolean minimalAmmountOfCoreTaken(Army army) {
+        if (army.getCorePointsUsed() != null) {
+            return army.getCorePointsUsed() > army.getCorePointsLimit() || army.getCorePointsUsed() < army.getPointsLimit();
+        } else {
+            return false;
+        }
+    }
+
+
+    public boolean isGeneralPickedUp(List<SelectedUpgrade> selectedUpgradeList) {
+        int ammountOfGenerals = 0;
+        for (SelectedUpgrade selectedUpgrade : selectedUpgradeList) {
+            if (selectedUpgrade.getUpgrade().getName().equalsIgnoreCase("General")) {
+                ammountOfGenerals++;
+                return ammountOfGenerals == 1;
+            }
+        }
+        return false;
     }
 
 }

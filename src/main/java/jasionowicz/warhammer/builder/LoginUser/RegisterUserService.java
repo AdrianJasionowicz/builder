@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class RegisterUserService {
 
-    private LoginUserRepository loginUserRepository;
-    private PasswordEncoder passwordEncoder;
+    private final LoginUserRepository loginUserRepository;
+    private final PasswordEncoder passwordEncoder;
 
     public RegisterUserService(LoginUserRepository loginUserRepository, PasswordEncoder passwordEncoder) {
         this.loginUserRepository = loginUserRepository;
