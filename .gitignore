@@ -1,9 +1,10 @@
-HELP.md
+# Maven / Java
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# IDE
 ### STS ###
 .apt_generated
 .classpath
@@ -24,10 +25,14 @@ target/
 /nbbuild/
 /dist/
 /nbdist/
-/.nb-gradle/
+.nb-gradle/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
+
+# React / Node
+/frontend/node_modules/
+frontend/build/
