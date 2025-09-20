@@ -15,6 +15,7 @@ import jasionowicz.warhammer.builder.Army.ArmyService;
 import jasionowicz.warhammer.builder.SelectedStats.SelectedStatsService;
 import jasionowicz.warhammer.builder.SelectedUnit.SelectedUnit;
 import jasionowicz.warhammer.builder.SelectedUpgrade.SelectedUpgrade;
+import jasionowicz.warhammer.builder.SelectedUpgrade.SelectedUpgradeRepository;
 import jasionowicz.warhammer.builder.Unit.Unit;
 import jasionowicz.warhammer.builder.Unit.UnitRepository;
 import jasionowicz.warhammer.builder.UnitStats.UnitStats;
@@ -22,7 +23,10 @@ import jasionowicz.warhammer.builder.UnitStats.UnitStatsRepository;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class PdfTemplateService {
@@ -31,15 +35,19 @@ public class PdfTemplateService {
     private final ArmyService armyService;
     private final UnitRepository unitRepository;
     private final UnitStatsRepository unitStatsRepository;
+    private final SelectedUnit selectedUnit;
+    private final SelectedUpgradeRepository selectedUpgradeRepository;
     private ArmyRepository armyRepository;
     private SelectedStatsService selectedStatsService;
 
-    public PdfTemplateService(ArmyRepository armyRepository, ArmyService armyService, SelectedStatsService selectedStatsService, UnitRepository unitRepository, UnitStatsRepository unitStatsRepository) {
+    public PdfTemplateService(ArmyRepository armyRepository, ArmyService armyService, SelectedStatsService selectedStatsService, UnitRepository unitRepository, UnitStatsRepository unitStatsRepository, SelectedUnit selectedUnit, SelectedUpgradeRepository selectedUpgradeRepository) {
         this.armyRepository = armyRepository;
         this.armyService = armyService;
         this.selectedStatsService = selectedStatsService;
         this.unitRepository = unitRepository;
         this.unitStatsRepository = unitStatsRepository;
+        this.selectedUnit = selectedUnit;
+        this.selectedUpgradeRepository = selectedUpgradeRepository;
     }
 
     public byte[] generateArmyPdf(String armyName, Long armyId) {
@@ -752,9 +760,20 @@ public class PdfTemplateService {
                 document.add(new Paragraph("Upgrades:").setFontSize(10).setMarginTop(10));
                 document.add(upgradesTable);
 
-
             }
+            Table upgradesNewTable = new Table(2).setWidth(UnitValue.createPercentValue(100));
+            Set<String> added = new HashSet<>();
 
+            selectedUnitList.stream()
+                    .flatMap(unit -> unit.getSelectedUpgrades().stream())
+                    .filter(SelectedUpgrade::isSelected)
+                    .map(SelectedUpgrade::getUpgrade)
+                    .filter(upgrade -> added.add(upgrade.getName()))
+                    .forEach(upgrade -> {
+                        upgradesNewTable.addCell(new Cell().add(new Paragraph(upgrade.getName())));
+                        upgradesNewTable.addCell(new Cell().add(new Paragraph(upgrade.getDescription())));
+                    });
+            document.add(upgradesNewTable);
 
             document.close();
             return baos.toByteArray();

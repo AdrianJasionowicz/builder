@@ -9,4 +9,5 @@ import java.util.List;
 public interface SelectedUpgradeRepository extends JpaRepository<SelectedUpgrade, Integer> {
     List<SelectedUpgrade> findAllBySelectedUnitId(Integer unitId);
 
+
 }
