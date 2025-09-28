@@ -55,12 +55,14 @@ export default function SelectedUnits({ armyId, refreshTrigger, onIncrease, onDe
                   <button
                     onClick={() => onIncrease(unit.id)}
                     className={unit.quantity === 1 ? "btn-disabled" : "btn-increase"}
+                    disabled={unit.quantity === 1}
                   >
                     +
                   </button>
                   <button
                     onClick={() => onDecrease(unit.id)}
                     className={unit.quantity === 1 ? "btn-disabled" : "btn-decrease"}
+                    disabled={unit.quantity === 1}
                   >
                     -
                   </button>

@@ -11,6 +11,4 @@ import java.util.List;
 public interface SelectedUnitRepository extends JpaRepository<SelectedUnit, Integer> {
     List<SelectedUnit> findAll();
 
-    @Query("select  u from SelectedUnit u where u.unit.id=:id")
-    List<SelectedUnit> findAllByUnitId(Integer id);
 }

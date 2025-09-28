@@ -26,20 +26,12 @@ import java.util.stream.Collectors;
 public class SelectedUnitService {
     private final SelectedUnitRepository selectedUnitRepository;
     private final SelectedUpgradeService selectedUpgradeService;
-    private final SelectedStatsRepository selectedStatsRepository;
-    private final SelectedUpgradeRepository selectedUpgradeRepository;
-    private final SelectedUnitMapper selectedUnitMapper;
     private final LoginUserRepository loginUserRepository;
     private final ArmyRepository armyRepository;
-    private final SelectedUpgradeService selectdUpgradeService;
 
-    public SelectedUnitService(SelectedStatsRepository selectedStatsRepository, SelectedUpgradeRepository selectedUpgradeRepository, SelectedUnitMapper selectedUnitMapper, UnitRepository unitRepository, SelectedUnitRepository selectedUnitRepository, SelectedUpgradeService selectedUpgradeService, SelectedUpgradeService selectdUpgradeService, LoginUserRepository loginUserRepository, ArmyRepository armyRepository) {
-        this.selectedStatsRepository = selectedStatsRepository;
-        this.selectedUpgradeRepository = selectedUpgradeRepository;
-        this.selectedUnitMapper = selectedUnitMapper;
+    public SelectedUnitService(SelectedStatsRepository selectedStatsRepository, SelectedUnitRepository selectedUnitRepository, SelectedUpgradeService selectedUpgradeService, LoginUserRepository loginUserRepository, ArmyRepository armyRepository) {
         this.selectedUnitRepository = selectedUnitRepository;
         this.selectedUpgradeService = selectedUpgradeService;
-        this.selectdUpgradeService = selectdUpgradeService;
         this.loginUserRepository = loginUserRepository;
         this.armyRepository = armyRepository;
     }

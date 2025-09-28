@@ -4,6 +4,7 @@ import LoginForm from './LoginForm';
 import RegisterForm from './RegisterForm';
 import HomePage from './HomePage';
 import PrivateRoute from './PrivateRoute';
+import UserSettings from './UserSettings';
 
 function App() {
   return (
@@ -12,6 +13,11 @@ function App() {
         <Route path="/" element={
           <PrivateRoute>
             <HomePage />
+          </PrivateRoute>
+        } />
+        <Route path="/settings" element={
+          <PrivateRoute>
+            <UserSettings />
           </PrivateRoute>
         } />
         <Route path="/login" element={<LoginForm />} />

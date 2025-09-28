@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import './Header.css';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Header.css";
 
-export default function Header({ onTemplateLoaded, refreshTemplates, army, onExportPdf, onOpenSettings }) {
+export default function Header({ onTemplateLoaded, refreshTemplates, army }) {
   const [isTemplatesOpen, setIsTemplatesOpen] = useState(false);
   const [templates, setTemplates] = useState([]);
-
+  const navigate = useNavigate();
   const API_URL = "http://localhost:8080";
 
   const fetchTemplates = async () => {
     try {
-      const res = await fetch(`${API_URL}/templates`, { credentials: 'include' });
+      const res = await fetch(`${API_URL}/templates`, {
+        credentials: "include"
+      });
       if (res.ok) setTemplates(await res.json());
     } catch (e) {
       console.error(e);
@@ -21,32 +24,50 @@ export default function Header({ onTemplateLoaded, refreshTemplates, army, onExp
   }, [isTemplatesOpen, refreshTemplates]);
 
   const handleLogout = () => {
-    document.cookie = 'token=; path=/; max-age=0';
-    window.location.href = '/login';
+    document.cookie = "token=; path=/; max-age=0";
+    navigate("/login");
   };
 
-  const handleLoadTemplate = async (id) => {
+  const handleSettings = () => {
+    navigate("/settings");
+  };
+
+  const handleExportPdf = async () => {
+    if (!army) {
+      alert("Najpierw wybierz armię!");
+      return;
+    }
+
+    const armyName = prompt("Podaj nazwę pliku PDF:", army.name || "army_export");
+    if (!armyName) return;
+
     try {
-      const templateRes = await fetch(`${API_URL}/template/${id}`, { credentials: 'include' });
-      if (!templateRes.ok) {
-        alert('Błąd wczytywania szablonu');
-        return;
-      }
-      const templateData = await templateRes.json();
+      const res = await fetch(`${API_URL}/exportPdf`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/pdf"
+        },
+        credentials: "include",
+        body: JSON.stringify({ armyName, armyId: army.id })
+      });
 
-      const unitsRes = await fetch(`${API_URL}/army/${id}/units`, { credentials: 'include' });
-      if (!unitsRes.ok) {
-        alert('Błąd wczytywania jednostek');
-        return;
+      if (!res.ok) {
+        const text = await res.text();
+        console.error("Błąd backendu:", text);
+        throw new Error("Błąd pobierania PDF");
       }
-      const unitsData = await unitsRes.json();
 
-      onTemplateLoaded && onTemplateLoaded({ ...templateData, units: unitsData });
-      setIsTemplatesOpen(false);
-      alert(`Wczytano szablon: ${templateData.name}`);
+      const blob = await res.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${armyName}.pdf`;
+      link.click();
+      window.URL.revokeObjectURL(url);
     } catch (e) {
       console.error(e);
-      alert('Błąd wczytywania');
+      alert("Nie udało się wygenerować PDF");
     }
   };
 
@@ -56,34 +77,25 @@ export default function Header({ onTemplateLoaded, refreshTemplates, army, onExp
         <span className="logo-icon">⚔️</span>
         <h1 className="logo-text">Warhammer Army Builder</h1>
       </div>
-
       <div className="header-center">
-        <button onClick={onExportPdf} className="btn export-btn">📄 Eksportuj PDF</button>
-
+        <button onClick={handleExportPdf} className="btn export-btn">📄 Eksportuj PDF</button>
         <div className="dropdown">
           <button onClick={() => setIsTemplatesOpen(!isTemplatesOpen)} className="btn load-btn">📂 Wczytaj</button>
           {isTemplatesOpen && (
             <div className="dropdown-menu">
-              {templates.length === 0 ? (
-                <p>Brak szablonów</p>
-              ) : (
+              {templates.length === 0 ? <p>Brak szablonów</p> :
                 templates.map(t => (
-                  <div
-                    key={t.id}
-                    className="template-item"
-                    onClick={() => handleLoadTemplate(t.id)}
-                  >
+                  <div key={t.id} className="template-item" onClick={() => onTemplateLoaded(t)}>
                     {t.name} • {t.factionName} • {t.pointsLimit} pkt
                   </div>
                 ))
-              )}
+              }
             </div>
           )}
         </div>
       </div>
-
       <div className="header-right">
-        <button className="btn settings-btn" onClick={onOpenSettings}>⚙️ Ustawienia</button>
+        <button className="btn settings-btn" onClick={handleSettings}>⚙️ Ustawienia</button>
         <button className="btn logout-btn" onClick={handleLogout}>🚪 Wyloguj</button>
       </div>
     </header>

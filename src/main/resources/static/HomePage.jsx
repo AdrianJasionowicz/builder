@@ -10,20 +10,20 @@ import "./HomePage.css";
 
 export default function HomePage() {
   const [selectedNation, setSelectedNation] = useState("");
-  const [armyId, setArmyId] = useState(null);
+  const [army, setArmy] = useState(null);
   const [selectedUnit, setSelectedUnit] = useState(null);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
   const [templateUnits, setTemplateUnits] = useState(null);
 
-  const handleArmySelected = ({ id, faction }) => {
-    setArmyId(id);
-    setSelectedNation(faction);
+  const handleArmySelected = (selectedArmy) => {
+    setArmy(selectedArmy);
+    setSelectedNation(selectedArmy.faction);
     setTemplateUnits(null);
   };
 
   const handleAddUnit = async (unit) => {
     const token = localStorage.getItem("jwtToken");
-    await api.post(`/army/${armyId}/addUnit/${unit.id}`, null, {
+    await api.post(`/army/${army.id}/addUnit/${unit.id}`, null, {
       headers: { Authorization: `Bearer ${token}` },
     });
     setRefreshTrigger(prev => prev + 1);
@@ -31,7 +31,7 @@ export default function HomePage() {
 
   const handleRemoveUnit = async (unitId) => {
     const token = localStorage.getItem("jwtToken");
-    await api.delete(`/army/${armyId}/units/${unitId}`, {
+    await api.delete(`/army/${army.id}/units/${unitId}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     setRefreshTrigger(prev => prev + 1);
@@ -55,11 +55,10 @@ export default function HomePage() {
   };
 
   const handleShowUpgrades = (unit) => setSelectedUnit(unit);
-
   const handleUpgradeChange = () => setRefreshTrigger(prev => prev + 1);
 
   const handleTemplateLoaded = (templateData) => {
-    setArmyId(templateData.id);
+    setArmy(templateData);
     setSelectedNation(templateData.factionName);
     setTemplateUnits(templateData.units);
     setSelectedUnit(null);
@@ -68,17 +67,17 @@ export default function HomePage() {
 
   return (
     <div>
-      <Header onTemplateLoaded={handleTemplateLoaded} />
-      {!armyId ? (
+      <Header army={army} onTemplateLoaded={handleTemplateLoaded} />
+      {!army ? (
         <ArmySelector onArmySelected={handleArmySelected} />
       ) : (
         <div className="page-container">
           <div className="column">
-            <AvailableUnits armyId={armyId} onAdd={handleAddUnit} />
+            <AvailableUnits armyId={army.id} onAdd={handleAddUnit} />
           </div>
           <div className="column">
             <SelectedUnits
-              armyId={armyId}
+              armyId={army.id}
               refreshTrigger={refreshTrigger}
               onRemove={handleRemoveUnit}
               onIncrease={handleIncrease}
@@ -89,10 +88,10 @@ export default function HomePage() {
           </div>
           <div className="column">
             <div className="right-panel">
-              <ArmyPoints armyId={armyId} refreshTrigger={refreshTrigger} />
+              <ArmyPoints armyId={army.id} refreshTrigger={refreshTrigger} />
               {selectedUnit && (
                 <UpgradePanel
-                  armyId={armyId}
+                  armyId={army.id}
                   selectedUnit={selectedUnit}
                   onUpgradeChange={handleUpgradeChange}
                 />

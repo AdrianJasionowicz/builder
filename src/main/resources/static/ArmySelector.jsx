@@ -34,10 +34,9 @@ export default function ArmySelector({ onArmySelected }) {
     }
   };
 
-  // Funkcja do załadowania istniejącej armii
   const handleSelectArmy = (army) => {
     onArmySelected({
-      id: army.id,           // armyId potrzebne do pobrania jednostek
+      id: army.id,           
       name: army.name,
       points: army.pointsLimit,
       faction: army.faction
@@ -45,7 +44,6 @@ export default function ArmySelector({ onArmySelected }) {
     setShowModal(false);
   };
 
-  // Funkcja do stworzenia nowej armii
   const handleCreateArmy = async () => {
     if (!newArmyName || !faction) {
       alert("Podaj nazwę armii i wybierz frakcję!");
@@ -59,7 +57,6 @@ export default function ArmySelector({ onArmySelected }) {
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      // res.data to już armyId (Long z backendu)
       const armyId = res.data;
 
       onArmySelected({
@@ -76,7 +73,6 @@ export default function ArmySelector({ onArmySelected }) {
     }
   };
 
-  // Funkcja do usuwania szablonu
   const handleDeleteArmy = async (id) => {
     if (!window.confirm("Na pewno chcesz usunąć tę armię?")) return;
     try {

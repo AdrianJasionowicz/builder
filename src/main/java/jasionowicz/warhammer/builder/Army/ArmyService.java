@@ -25,37 +25,24 @@ import java.util.stream.Collectors;
 @Service
 public class ArmyService {
 
-    private final SelectedUnit selectedUnit;
     @Getter
     private final Army army = new Army();
-    private final SelectedUnitRepository selectedUnitRepository;
-    private final SelectedUpgradeRepository selectedUpgradeRepository;
     private final ArmyRepository armyRepository;
     private final LoginUserService loginUserService;
     private final SelectedUnitMapper selectedUnitMapper;
-    private final SelectedUpgradeMapper selectedUpgradeMapper;
     private final SelectedUpgradeService selectedUpgradeService;
     private final SelectedUnitService selectedUnitService;
     private final ArmyMapper armyMapper;
-    private final UnitMapper unitMapper;
-    private final UpgradeMapper upgradeMapper;
     private final UnitRepository unitRepository;
-    private final UpgradeRepository upgradeRepository;
 
-    public ArmyService(SelectedUnit selectedUnit, SelectedUnitRepository selectedUnitRepository, SelectedUpgradeRepository selectedUpgradeRepository, ArmyRepository armyRepository, LoginUserService loginUserService, ArmyMapper armyMapper, UnitMapper unitMapper, UpgradeMapper upgradeMapper, UnitRepository unitRepository, UpgradeRepository upgradeRepository, SelectedUnitMapper selectedUnitMapper, SelectedUnitService selectedUnitService, SelectedUpgradeMapper selectedUpgradeMapper, SelectedUpgradeService selectedUpgradeService) {
-        this.selectedUnit = selectedUnit;
-        this.selectedUnitRepository = selectedUnitRepository;
-        this.selectedUpgradeRepository = selectedUpgradeRepository;
+    public ArmyService(ArmyRepository armyRepository, LoginUserService loginUserService, ArmyMapper armyMapper, UnitRepository unitRepository, SelectedUnitMapper selectedUnitMapper, SelectedUnitService selectedUnitService, SelectedUpgradeService selectedUpgradeService) {
+
         this.armyRepository = armyRepository;
         this.loginUserService = loginUserService;
         this.armyMapper = armyMapper;
-        this.unitMapper = unitMapper;
-        this.upgradeMapper = upgradeMapper;
         this.unitRepository = unitRepository;
-        this.upgradeRepository = upgradeRepository;
         this.selectedUnitMapper = selectedUnitMapper;
         this.selectedUnitService = selectedUnitService;
-        this.selectedUpgradeMapper = selectedUpgradeMapper;
         this.selectedUpgradeService = selectedUpgradeService;
     }
 
@@ -145,22 +132,22 @@ public class ArmyService {
         return army.getId();
     }
 
-    public void addUnit(Long armyId, Integer unitId) {
-        Army army = armyRepository.findById(armyId).orElseThrow(() -> new RuntimeException("Army not found"));
+        public void addUnit(Long armyId, Integer unitId) {
+            Army army = armyRepository.findById(armyId).orElseThrow(() -> new RuntimeException("Army not found"));
 
-        if (unitId == null) {
-            throw new RuntimeException("Unit id is required");
+            if (unitId == null) {
+                throw new RuntimeException("Unit id is required");
+            }
+
+            Unit unit = unitRepository.findById(unitId).orElseThrow(() -> new RuntimeException("Unit not found"));
+
+            SelectedUnit selectedUnit = new SelectedUnit(unit);
+            selectedUpgradeService.addFreeUpgradesAndSpecialRaceUpgrades(selectedUnit);
+            selectedUnit.setArmy(army);
+            army.getSelectedUnitsList().add(selectedUnit);
+            armyRepository.save(army);
+
         }
-
-        Unit unit = unitRepository.findById(unitId).orElseThrow(() -> new RuntimeException("Unit not found"));
-
-        SelectedUnit selectedUnit = new SelectedUnit(unit);
-        selectedUpgradeService.addFreeUpgradesAndSpecialRaceUpgrades(selectedUnit);
-        selectedUnit.setArmy(army);
-        army.getSelectedUnitsList().add(selectedUnit);
-        armyRepository.save(army);
-
-    }
 
     public List<SelectedUnitDTO> getArmySelectedUnitsList(Long armyId, Authentication authentication) {
        String loginUsername = authentication.getName();
@@ -310,23 +297,17 @@ public class ArmyService {
     }
 
     public boolean minimalAmmountOfCoreTaken(Army army) {
-        if (army.getCorePointsUsed() != null) {
-            return army.getCorePointsUsed() > army.getCorePointsLimit() || army.getCorePointsUsed() < army.getPointsLimit();
-        } else {
-            return false;
-        }
+        if (army.getCorePointsUsed() == null) return false;
+        return army.getCorePointsUsed() >= army.getCorePointsLimit();
     }
 
 
     public boolean isGeneralPickedUp(List<SelectedUpgrade> selectedUpgradeList) {
         int ammountOfGenerals = 0;
-        for (SelectedUpgrade selectedUpgrade : selectedUpgradeList) {
-            if (selectedUpgrade.getUpgrade().getName().equalsIgnoreCase("General")) {
-                ammountOfGenerals++;
-                return ammountOfGenerals == 1;
-            }
-        }
-        return false;
+        long generalsCount = selectedUpgradeList.stream()
+                .filter(su -> su.getUpgrade().getName().equalsIgnoreCase("General"))
+                .count();
+        return generalsCount == 1;
     }
 
 }

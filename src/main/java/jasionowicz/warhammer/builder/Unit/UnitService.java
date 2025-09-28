@@ -15,13 +15,11 @@ import java.util.Optional;
 public class UnitService {
    private final UnitRepository unitRepository;
    private final UnitMapper unitMapper;
-   private final SelectedUnitService selectedUnitService;
     private final ArmyRepository armyRepository;
 
-    public UnitService(UnitRepository unitRepository, UnitMapper unitMapper, SelectedUnitService selectedUnitService, ArmyRepository armyRepository) {
+    public UnitService(UnitRepository unitRepository, UnitMapper unitMapper, ArmyRepository armyRepository) {
         this.unitRepository = unitRepository;
         this.unitMapper = unitMapper;
-        this.selectedUnitService = selectedUnitService;
         this.armyRepository = armyRepository;
     }
 
@@ -39,9 +37,7 @@ public class UnitService {
                 .toList();
     }
 
-    public void deleteById(Integer id) {
-        unitRepository.deleteById(id);
-    }
+
 
 }
 

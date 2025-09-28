@@ -1,5 +1,7 @@
 package jasionowicz.warhammer.builder.Unit;
 
+import jasionowicz.warhammer.builder.Army.Army;
+import jasionowicz.warhammer.builder.Army.ArmyRepository;
 import jasionowicz.warhammer.builder.Mapper.UnitMapper;
 import jasionowicz.warhammer.builder.SelectedUnit.SelectedUnit;
 import jasionowicz.warhammer.builder.SelectedUnit.SelectedUnitRepository;
@@ -12,6 +14,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -22,23 +25,38 @@ import static org.mockito.Mockito.when;
 public class UnitServiceTests {
 
     @Mock
+    private ArmyRepository armyRepository;
+    @Mock
     private UnitRepository unitRepository;
     @Mock
     private UnitMapper unitMapper;
     @InjectMocks
     private UnitService unitService;
-    @Mock
-    private SelectedUnitService selectedUnitService;
-
 
 
     @Test
-    public void checkDelteById() {
+    public void testIfGetAllUnitsByNation() {
+        Long armyId = 1L;
+        Army army = new Army();
+        army.setFactionName("Berlin");
+        when(armyRepository.getReferenceById(armyId)).thenReturn(army);
         Unit unit1 = new Unit();
-        unit1.setId(99199);
-        unitService.deleteById(99199);
-        verify(unitRepository).deleteById(99199);
+        Unit unit2 = new Unit();
+        unit1.setNation("Berlin");
+        unit2.setNation("Berlin");
+        List<Unit> units = Arrays.asList(unit1, unit2);
+        when(unitRepository.getAllByNation("Berlin")).thenReturn(units);
+        UnitDTO dto1 = new UnitDTO();
+        UnitDTO dto2 = new UnitDTO();
+        when(unitMapper.unitToUnitDTO(unit1)).thenReturn(dto1);
+        when(unitMapper.unitToUnitDTO(unit2)).thenReturn(dto2);
+        List<UnitDTO> result = unitService.getAllUnitsByNation(armyId);
+        assertEquals(2, result.size());
+        assertEquals(dto1, result.get(0));
+        assertEquals(dto2, result.get(1));
+
     }
+
 
 
 

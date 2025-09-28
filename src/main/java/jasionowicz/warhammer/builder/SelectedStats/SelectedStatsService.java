@@ -59,7 +59,7 @@ public class SelectedStatsService {
     }
 
 
-    private void setArmourStats(SelectedUnit selectedUnit) {
+    public void setArmourStats(SelectedUnit selectedUnit) {
         SelectedStats selectedStats = selectedStatsRepository.getReferenceById(selectedUnit.getId());
         List<SelectedUpgrade> selectedUpgrades = selectedUnit.getSelectedUpgrades().stream()
                 .filter(SelectedUpgrade::isSelected)
